@@ -119,71 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &251588974
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: f4781853c96f7c7459ddfd88bc1c1f18, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.0287776
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f4781853c96f7c7459ddfd88bc1c1f18, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.98775053
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f4781853c96f7c7459ddfd88bc1c1f18, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.2248678
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f4781853c96f7c7459ddfd88bc1c1f18, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f4781853c96f7c7459ddfd88bc1c1f18, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f4781853c96f7c7459ddfd88bc1c1f18, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f4781853c96f7c7459ddfd88bc1c1f18, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f4781853c96f7c7459ddfd88bc1c1f18, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f4781853c96f7c7459ddfd88bc1c1f18, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f4781853c96f7c7459ddfd88bc1c1f18, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -3435199661164616285, guid: f4781853c96f7c7459ddfd88bc1c1f18, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 96c14976d321b354fbdea5856cbaa2ce, type: 2}
-    - target: {fileID: 622547682857904308, guid: f4781853c96f7c7459ddfd88bc1c1f18, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 96c14976d321b354fbdea5856cbaa2ce, type: 2}
-    - target: {fileID: 919132149155446097, guid: f4781853c96f7c7459ddfd88bc1c1f18, type: 3}
-      propertyPath: m_Name
-      value: Cooking Sim Hotdog + Bun
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f4781853c96f7c7459ddfd88bc1c1f18, type: 3}
 --- !u!1 &260182176
 GameObject:
   m_ObjectHideFlags: 0
@@ -403,10 +338,67 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1001 &2551854358030027078
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5843690216206358533, guid: 9018de81bd06119419db5a72919436ee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.0287776
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843690216206358533, guid: 9018de81bd06119419db5a72919436ee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.98775053
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843690216206358533, guid: 9018de81bd06119419db5a72919436ee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.2248678
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843690216206358533, guid: 9018de81bd06119419db5a72919436ee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843690216206358533, guid: 9018de81bd06119419db5a72919436ee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843690216206358533, guid: 9018de81bd06119419db5a72919436ee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843690216206358533, guid: 9018de81bd06119419db5a72919436ee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843690216206358533, guid: 9018de81bd06119419db5a72919436ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843690216206358533, guid: 9018de81bd06119419db5a72919436ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5843690216206358533, guid: 9018de81bd06119419db5a72919436ee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6508587559488553663, guid: 9018de81bd06119419db5a72919436ee, type: 3}
+      propertyPath: m_Name
+      value: Cooking Sim Hotdog + Bun
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9018de81bd06119419db5a72919436ee, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 260182179}
   - {fileID: 480509769}
-  - {fileID: 251588974}
+  - {fileID: 2551854358030027078}
