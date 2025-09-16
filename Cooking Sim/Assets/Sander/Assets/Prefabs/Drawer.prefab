@@ -125,5 +125,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drawer
   foodPrefab: {fileID: 0}
-  currentStock: 3
-  maxStock: 5
+  stock: 5

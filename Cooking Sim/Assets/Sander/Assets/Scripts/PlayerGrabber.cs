@@ -48,6 +48,7 @@ public class PlayerGrabber : MonoBehaviour
             hoveredStation = hit.collider.GetComponent<CookStation>();
             hoveredFoodItem = hit.collider.GetComponent<FoodItem>();
 
+            // Handle highlight
             Interactable interactable = hit.collider.GetComponent<Interactable>();
             if (interactable != lastInteractable)
             {
@@ -58,6 +59,12 @@ public class PlayerGrabber : MonoBehaviour
 
             if (interactionText)
                 interactionText.text = interactable ? interactable.promptMessage : "";
+
+            // Show drawer stock UI when hovering a drawer
+            if (hoveredDrawer != null && DrawerUIManager.Instance != null)
+                DrawerUIManager.Instance.ShowStock(hoveredDrawer);
+            else if (DrawerUIManager.Instance != null)
+                DrawerUIManager.Instance.HideStock();
         }
         else
         {
@@ -70,6 +77,9 @@ public class PlayerGrabber : MonoBehaviour
             lastInteractable = null;
 
             if (interactionText) interactionText.text = "";
+
+            if (DrawerUIManager.Instance != null)
+                DrawerUIManager.Instance.HideStock();
         }
     }
 
@@ -84,7 +94,7 @@ public class PlayerGrabber : MonoBehaviour
 
         if (hoveredCell != null)
         {
-            hoveredCell.OpenMenu(this); // open UI menu, will call Grab() after selection
+            hoveredCell.OpenMenu(this);
             return;
         }
 
