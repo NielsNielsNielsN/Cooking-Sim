@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2857960336204442379}
   - component: {fileID: 5622819609739600355}
   - component: {fileID: 719812589086768379}
-  - component: {fileID: 7025536874655130469}
+  - component: {fileID: -4801957876033771514}
   m_Layer: 0
   m_Name: RefillBagHotdog
   m_TagString: Untagged
@@ -140,7 +140,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7025536874655130469
+--- !u!114 &-4801957876033771514
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,8 +149,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4537235873912927909}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9938fab2d768db544b18ec45c4ff314d, type: 3}
+  m_Script: {fileID: 11500000, guid: fe31252c334c8774e8c0135beb68ea95, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RefillBag
-  bagType: 0
-  refillAmount: 10
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  promptMessage: Press E to pick up
+  highlightMat: {fileID: 0}

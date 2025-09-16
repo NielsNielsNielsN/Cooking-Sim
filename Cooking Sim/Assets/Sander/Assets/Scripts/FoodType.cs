@@ -1,1 +1,0 @@
-public enum FoodType { Hotdog, Fries, RefillBagHotdog, RefillBagFries }

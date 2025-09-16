@@ -1,15 +1,14 @@
 using UnityEngine;
 
-public class TrashBin : MonoBehaviour, IPlacementZone
+[RequireComponent(typeof(Collider))]
+public class TrashBin : MonoBehaviour
 {
-    public bool CanPlace(GameObject item)
+    private void OnTriggerEnter(Collider other)
     {
-        ICookable cookable = item.GetComponent<ICookable>();
-        return cookable != null; // Add burned check if implemented
-    }
-
-    public void Place(GameObject item)
-    {
-        Destroy(item);
+        FoodItem fi = other.GetComponent<FoodItem>();
+        if (fi != null && fi.state == CookState.Burned)
+        {
+            Destroy(fi.gameObject);
+        }
     }
 }

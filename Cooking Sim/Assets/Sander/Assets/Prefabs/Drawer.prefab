@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2915047133292913565}
   - component: {fileID: 6749267310147166960}
   - component: {fileID: 656322956190469621}
-  - component: {fileID: 6465494828821481839}
+  - component: {fileID: -3213747703630423074}
   m_Layer: 0
   m_Name: Drawer
   m_TagString: Untagged
@@ -112,7 +112,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6465494828821481839
+--- !u!114 &-3213747703630423074
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,10 +121,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 547951564164393908}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26f9dfd7efe50d244b77b9b3cad7efeb, type: 3}
+  m_Script: {fileID: 11500000, guid: 48be8c53a3682084c8cadd5c6be26ca5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StorageContainer
-  foodType: 0
-  maxStock: 10
-  hotdogPrefab: {fileID: 0}
-  friesPrefab: {fileID: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::Drawer
+  foodPrefab: {fileID: 0}
+  currentStock: 3
+  maxStock: 5

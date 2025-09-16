@@ -1,17 +1,19 @@
 using UnityEngine;
 
-public class Pan : MonoBehaviour, IPlacementZone
+public class Fryer : MonoBehaviour
 {
-    public bool CanPlace(GameObject item)
-    {
-        return item.GetComponent<Hotdog>() != null;
-    }
+    private CookStation station;
 
-    public void Place(GameObject item)
+    private void Awake()
     {
-        item.transform.SetParent(transform);
-        item.transform.localPosition = Vector3.zero;
-        if (item.TryGetComponent<Rigidbody>(out Rigidbody rb)) rb.isKinematic = false;
-        item.GetComponent<ICookable>().StartCooking();
+        station = GetComponent<CookStation>();
+        if (station == null)
+        {
+            Debug.LogWarning("Fryer expects a CookStation component on same GameObject.");
+        }
+        else
+        {
+            station.accepts = FoodType.Fries;
+        }
     }
 }
