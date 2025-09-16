@@ -1,18 +1,56 @@
 using UnityEngine;
+using UnityEngine.UI;
 
-public class CoolingCell : MonoBehaviour, IInteractable
+public class CoolingCell : MonoBehaviour
 {
-    public GameObject refillBagHotdogPrefab;
-    public GameObject refillBagFriesPrefab;
+    public GameObject hotdogPrefab;
+    public GameObject friesPrefab;
 
-    public GameObject Pickup(Transform holder)
+    public GameObject menuUI;   // Assign a small UI Canvas prefab
+    public Button hotdogButton;
+    public Button friesButton;
+
+    private PlayerGrabber currentPlayer;
+
+    private void Start()
     {
-        // Dispense bag based on input or context (e.g., raycast tag or player choice)
-        FoodType bagType = Random.value > 0.5f ? FoodType.RefillBagHotdog : FoodType.RefillBagFries; // Placeholder logic
-        GameObject bag = Instantiate(bagType == FoodType.RefillBagHotdog ? refillBagHotdogPrefab : refillBagFriesPrefab,
-                                    transform.position + Vector3.up, Quaternion.identity);
-        bag.transform.SetParent(holder);
-        bag.transform.localPosition = Vector3.forward * 0.5f;
-        return bag;
+        if (menuUI) menuUI.SetActive(false);
+
+        if (hotdogButton)
+            hotdogButton.onClick.AddListener(() => SpawnFood(FoodType.Hotdog));
+        if (friesButton)
+            friesButton.onClick.AddListener(() => SpawnFood(FoodType.Fries));
+    }
+
+    public void OpenMenu(PlayerGrabber player)
+    {
+        if (menuUI == null) return;
+        currentPlayer = player;
+        menuUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    private void SpawnFood(FoodType type)
+    {
+        GameObject prefab = null;
+        if (type == FoodType.Hotdog) prefab = hotdogPrefab;
+        if (type == FoodType.Fries) prefab = friesPrefab;
+
+        if (prefab != null && currentPlayer != null)
+        {
+            GameObject instance = Instantiate(prefab, Vector3.zero, Quaternion.identity);
+            currentPlayer.Grab(instance);
+        }
+
+        CloseMenu();
+    }
+
+    private void CloseMenu()
+    {
+        if (menuUI) menuUI.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        currentPlayer = null;
     }
 }

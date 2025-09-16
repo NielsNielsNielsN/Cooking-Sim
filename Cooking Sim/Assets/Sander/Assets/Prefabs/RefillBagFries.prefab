@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1293185181008753730}
   - component: {fileID: 5557176817142527652}
   - component: {fileID: 4046847160632559662}
-  - component: {fileID: 1770427844775142110}
+  - component: {fileID: -7944257719943941506}
   m_Layer: 0
   m_Name: RefillBagFries
   m_TagString: Untagged
@@ -140,7 +140,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1770427844775142110
+--- !u!114 &-7944257719943941506
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -149,8 +149,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 8029115510167110023}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9938fab2d768db544b18ec45c4ff314d, type: 3}
+  m_Script: {fileID: 11500000, guid: fe31252c334c8774e8c0135beb68ea95, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RefillBag
-  bagType: 1
-  refillAmount: 10
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  promptMessage: Press E to pick up
+  highlightMat: {fileID: 0}

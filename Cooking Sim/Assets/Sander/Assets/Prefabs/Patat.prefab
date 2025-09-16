@@ -12,7 +12,10 @@ GameObject:
   - component: {fileID: 4270029356070724160}
   - component: {fileID: 6910826796005891775}
   - component: {fileID: 3625114028055137771}
-  - component: {fileID: 8130076966164964399}
+  - component: {fileID: 5697057997311540342}
+  - component: {fileID: 2318050668481069143}
+  - component: {fileID: -5169972286534294507}
+  - component: {fileID: 6786584390277434424}
   m_Layer: 0
   m_Name: Patat
   m_TagString: Untagged
@@ -112,7 +115,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8130076966164964399
+--- !u!114 &5697057997311540342
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,9 +124,64 @@ MonoBehaviour:
   m_GameObject: {fileID: 6435773127931919734}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98789f6f1483a984983b30689ccd7391, type: 3}
+  m_Script: {fileID: 11500000, guid: cf566e309eac7c6488dfeb039ffdbc19, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Fries
-  type: 1
-  cookTime: 10
-  progressBarPrefab: {fileID: 5745309965182550192, guid: 1b2221b8272eccf46951b181011754bc, type: 3}
+  m_EditorClassIdentifier: Assembly-CSharp::FoodItem
+  foodType: 1
+  state: 0
+  cookedVisual: {fileID: 0}
+  burnedVisual: {fileID: 0}
+  rawVisual: {fileID: 0}
+--- !u!114 &2318050668481069143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435773127931919734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47e42d28cda46b34cb7f8804e6db4c25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.UI.BaseInputOverride
+--- !u!54 &-5169972286534294507
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435773127931919734}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &6786584390277434424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435773127931919734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe31252c334c8774e8c0135beb68ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  promptMessage: Press E to pick up
+  highlightMat: {fileID: 0}

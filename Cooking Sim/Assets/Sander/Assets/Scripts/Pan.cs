@@ -1,20 +1,19 @@
 using UnityEngine;
 
-namespace CookingSimulator
+public class Pan : MonoBehaviour
 {
-    public class Pan : MonoBehaviour, IPlacementZone
-    {
-        public bool CanPlace(GameObject item)
-        {
-            return item.GetComponent<Hotdog>() != null;
-        }
+    private CookStation station;
 
-        public void Place(GameObject item)
+    private void Awake()
+    {
+        station = GetComponent<CookStation>();
+        if (station == null)
         {
-            item.transform.SetParent(transform);
-            item.transform.localPosition = Vector3.zero;
-            if (item.TryGetComponent<Rigidbody>(out Rigidbody rb)) rb.isKinematic = false;
-            item.GetComponent<ICookable>().StartCooking();
+            Debug.LogWarning("Pan expects a CookStation component on same GameObject.");
+        }
+        else
+        {
+            station.accepts = FoodType.Hotdog;
         }
     }
 }
