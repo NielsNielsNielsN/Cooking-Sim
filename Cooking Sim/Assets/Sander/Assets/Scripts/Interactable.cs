@@ -1,26 +1,21 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Renderer))]
 public class Interactable : MonoBehaviour
 {
     [Tooltip("Text shown when looking at this object.")]
     public string promptMessage = "Press E to interact";
 
     private Renderer rend;
-    private Material originalMat;
-    public Material highlightMat;
 
-    private void Start()
+    private void Awake()
     {
         rend = GetComponent<Renderer>();
-        if (rend) originalMat = rend.material;
     }
 
     public void Highlight(bool active)
     {
-        if (rend == null) return;
-        if (active && highlightMat != null)
-            rend.material = highlightMat;
-        else
-            rend.material = originalMat;
+        // No material changes anymore
+        // You can still use this method for other effects if needed
     }
 }
