@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5557176817142527652}
   - component: {fileID: 4046847160632559662}
   - component: {fileID: -7944257719943941506}
+  - component: {fileID: 6210173924249198976}
   m_Layer: 0
   m_Name: RefillBagFries
   m_TagString: Untagged
@@ -154,3 +155,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   promptMessage: Press E to pick up
   highlightMat: {fileID: 0}
+--- !u!114 &6210173924249198976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8029115510167110023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a150dd463f3374b9b4587e813ce14c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoodBag
+  bagType: 1
+  refillAmount: 10

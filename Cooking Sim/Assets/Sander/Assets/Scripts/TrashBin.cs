@@ -1,14 +1,16 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
 public class TrashBin : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    [Header("Optional UI Prompt")]
+    public string promptMessage = "Press E to throw away";
+
+    // This method will be called by PlayerGrabber when the player presses E while looking at the bin
+    public void Interact(PlayerGrabber player)
     {
-        FoodItem fi = other.GetComponent<FoodItem>();
-        if (fi != null && fi.state == CookState.Burned)
-        {
-            Destroy(fi.gameObject);
-        }
+        if (player == null) return;
+
+        // Destroy whatever the player is holding
+        player.ThrowHeld();
     }
 }

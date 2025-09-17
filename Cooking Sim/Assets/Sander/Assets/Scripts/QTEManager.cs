@@ -24,7 +24,7 @@ public class QTEManager : MonoBehaviour
     public IEnumerator RunQTE(float window, Action<bool> callback)
     {
         // choose random key
-        KeyCode[] keys = { KeyCode.Space, KeyCode.F, KeyCode.E };
+        KeyCode[] keys = { KeyCode.Space, KeyCode.F };
         KeyCode chosen = keys[UnityEngine.Random.Range(0, keys.Length)];
 
         // spawn UI

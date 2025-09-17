@@ -1,6 +1,5 @@
 using UnityEngine;
 
-public enum FoodType { Hotdog, Fries }
 public enum CookState { Raw, Cooking, Cooked, Burned }
 
 public class FoodItem : MonoBehaviour
