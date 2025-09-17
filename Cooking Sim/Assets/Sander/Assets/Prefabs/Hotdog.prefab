@@ -128,9 +128,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoodItem
   foodType: 0
   state: 0
-  cookedVisual: {fileID: 0}
-  burnedVisual: {fileID: 0}
-  rawVisual: {fileID: 0}
+  cookedVisual: {fileID: 9124030603350088460, guid: 85a8ec51f19892e49bb22b661a494891, type: 3}
+  burnedVisual: {fileID: 5492490633195630906, guid: 5857b7ce553366d4b91eaee05594b305, type: 3}
+  rawVisual: {fileID: 7053279956773836808, guid: f617f3034f513e9449b8e40bab5f6854, type: 3}
 --- !u!54 &3420140152761209502
 Rigidbody:
   m_ObjectHideFlags: 0
