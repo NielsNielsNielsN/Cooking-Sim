@@ -338,6 +338,63 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1001 &1806650486
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7288889148856793938, guid: 97d2f01f3d9d2c741af96d7267c4de79, type: 3}
+      propertyPath: m_Name
+      value: Cooking Sim Fries (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956882786193678824, guid: 97d2f01f3d9d2c741af96d7267c4de79, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956882786193678824, guid: 97d2f01f3d9d2c741af96d7267c4de79, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956882786193678824, guid: 97d2f01f3d9d2c741af96d7267c4de79, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956882786193678824, guid: 97d2f01f3d9d2c741af96d7267c4de79, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956882786193678824, guid: 97d2f01f3d9d2c741af96d7267c4de79, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956882786193678824, guid: 97d2f01f3d9d2c741af96d7267c4de79, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956882786193678824, guid: 97d2f01f3d9d2c741af96d7267c4de79, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956882786193678824, guid: 97d2f01f3d9d2c741af96d7267c4de79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956882786193678824, guid: 97d2f01f3d9d2c741af96d7267c4de79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7956882786193678824, guid: 97d2f01f3d9d2c741af96d7267c4de79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 97d2f01f3d9d2c741af96d7267c4de79, type: 3}
 --- !u!1001 &2551854358030027078
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -348,15 +405,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5843690216206358533, guid: 9018de81bd06119419db5a72919436ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.0287776
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5843690216206358533, guid: 9018de81bd06119419db5a72919436ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.98775053
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5843690216206358533, guid: 9018de81bd06119419db5a72919436ee, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.2248678
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5843690216206358533, guid: 9018de81bd06119419db5a72919436ee, type: 3}
       propertyPath: m_LocalRotation.w
@@ -402,3 +459,4 @@ SceneRoots:
   - {fileID: 260182179}
   - {fileID: 480509769}
   - {fileID: 2551854358030027078}
+  - {fileID: 1806650486}
