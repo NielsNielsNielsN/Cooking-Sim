@@ -5,25 +5,30 @@ public class DrawerUIManager : MonoBehaviour
 {
     public static DrawerUIManager Instance;
 
-    public GameObject panel;         // UI panel with background
-    public TextMeshProUGUI stockText; // Text field inside panel
+    [Header("UI References")]
+    public GameObject stockPanel;        // Parent panel (hidden by default)
+    public TextMeshProUGUI stockText;    // TMP Text for stock
 
     private void Awake()
     {
         Instance = this;
-        if (panel) panel.SetActive(false);
+
+        // Hide panel at start
+        if (stockPanel != null)
+            stockPanel.SetActive(false);
     }
 
     public void ShowStock(Drawer drawer)
     {
-        if (panel == null || stockText == null) return;
+        if (drawer == null || stockPanel == null || stockText == null) return;
 
-        stockText.text = $"Stock: {drawer.stock}";
-        panel.SetActive(true);
+        stockText.text = $"{drawer.currentStock}/{drawer.maxStock}";
+        stockPanel.SetActive(true);
     }
 
     public void HideStock()
     {
-        if (panel) panel.SetActive(false);
+        if (stockPanel != null)
+            stockPanel.SetActive(false);
     }
 }

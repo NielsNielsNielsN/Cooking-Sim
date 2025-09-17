@@ -3,54 +3,89 @@ using UnityEngine.UI;
 
 public class CoolingCell : MonoBehaviour
 {
-    public GameObject hotdogPrefab;
-    public GameObject friesPrefab;
-
-    public GameObject menuUI;   // Assign a small UI Canvas prefab
+    [Header("UI")]
+    public GameObject menuUI;
     public Button hotdogButton;
     public Button friesButton;
+    public Button closeButton;
 
-    private PlayerGrabber currentPlayer;
+    [Header("Bag Prefabs")]
+    public GameObject hotdogBagPrefab;
+    public GameObject friesBagPrefab;
+
+    private PlayerGrabber currentGrabber;
 
     private void Start()
     {
-        if (menuUI) menuUI.SetActive(false);
+        // Start hidden
+        if (menuUI != null) menuUI.SetActive(false);
 
-        if (hotdogButton)
-            hotdogButton.onClick.AddListener(() => SpawnFood(FoodType.Hotdog));
-        if (friesButton)
-            friesButton.onClick.AddListener(() => SpawnFood(FoodType.Fries));
+        // Link buttons
+        if (hotdogButton != null)
+            hotdogButton.onClick.AddListener(SpawnHotdogBag);
+
+        if (friesButton != null)
+            friesButton.onClick.AddListener(SpawnFriesBag);
+
+        if (closeButton != null)
+            closeButton.onClick.AddListener(CloseMenu);
     }
 
-    public void OpenMenu(PlayerGrabber player)
+    public void OpenMenu(PlayerGrabber grabber)
     {
-        if (menuUI == null) return;
-        currentPlayer = player;
-        menuUI.SetActive(true);
+        currentGrabber = grabber;
+
+        if (menuUI) menuUI.SetActive(true);
+
+        if (currentGrabber != null)
+            currentGrabber.DisableScripts();
+
+        // Unlock cursor for UI
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
 
-    private void SpawnFood(FoodType type)
+    public void CloseMenu()
     {
-        GameObject prefab = null;
-        if (type == FoodType.Hotdog) prefab = hotdogPrefab;
-        if (type == FoodType.Fries) prefab = friesPrefab;
+        if (menuUI) menuUI.SetActive(false);
 
-        if (prefab != null && currentPlayer != null)
+        if (currentGrabber != null)
         {
-            GameObject instance = Instantiate(prefab, Vector3.zero, Quaternion.identity);
-            currentPlayer.Grab(instance);
+            currentGrabber.EnableScripts();
+            currentGrabber.OpenedCoolingCell = null;
         }
 
+        currentGrabber = null;
+
+        // Lock cursor back for player control
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    public void SpawnHotdogBag()
+    {
+        if (currentGrabber == null || hotdogBagPrefab == null) return;
+
+        GameObject bag = Instantiate(hotdogBagPrefab);
+        currentGrabber.Grab(bag);
         CloseMenu();
     }
 
-    private void CloseMenu()
+    public void SpawnFriesBag()
     {
-        if (menuUI) menuUI.SetActive(false);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        currentPlayer = null;
+        if (currentGrabber == null || friesBagPrefab == null) return;
+
+        GameObject bag = Instantiate(friesBagPrefab);
+        currentGrabber.Grab(bag);
+        CloseMenu();
+    }
+
+    private void Update()
+    {
+        // Optional: close menu with Escape
+        if (menuUI != null && menuUI.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+        {
+            CloseMenu();
+        }
     }
 }
