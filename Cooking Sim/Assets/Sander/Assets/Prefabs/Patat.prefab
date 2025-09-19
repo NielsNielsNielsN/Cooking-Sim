@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5660630148159167661}
   - component: {fileID: 4270029356070724160}
   - component: {fileID: 6910826796005891775}
-  - component: {fileID: 3625114028055137771}
+  - component: {fileID: -2895529256400545121}
   - component: {fileID: 5697057997311540342}
   - component: {fileID: 2318050668481069143}
   - component: {fileID: -5169972286534294507}
@@ -33,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.8, y: 1.26, z: -1.32}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.2}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -45,7 +45,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6435773127931919734}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 6704402513957279669, guid: 08128ee07c2a4be438ba1387618f00d3, type: 3}
 --- !u!23 &6910826796005891775
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -71,7 +71,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 233615bedd6a5864c92fe1cec914e1a3, type: 2}
+  - {fileID: 2100000, guid: 29cb8fa97311c534ab1f8a65de0bad5b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,7 +94,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3625114028055137771
+--- !u!65 &-2895529256400545121
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,8 +113,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.10002868, y: 0.052109063, z: 0.10413706}
+  m_Center: {x: 0, y: 0.024826914, z: 0.0047811866}
 --- !u!114 &5697057997311540342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,9 +129,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FoodItem
   foodType: 1
   state: 0
-  cookedVisual: {fileID: 0}
-  burnedVisual: {fileID: 0}
-  rawVisual: {fileID: 0}
+  rawMaterial: {fileID: 2100000, guid: 29cb8fa97311c534ab1f8a65de0bad5b, type: 2}
+  cookedMaterial: {fileID: 2100000, guid: 2c385c0f4991b314eb00e64a06d47627, type: 2}
+  burnedMaterial: {fileID: 2100000, guid: fd9196eb3ce813f4ca1633d3237c46bf, type: 2}
 --- !u!114 &2318050668481069143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,4 +184,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   promptMessage: Press E to pick up
-  highlightMat: {fileID: 0}

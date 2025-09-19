@@ -1,32 +1,54 @@
 using UnityEngine;
 
-public enum CookState { Raw, Cooking, Cooked, Burned }
+public enum CookState { Raw, Cooked, Burned }
 
+[RequireComponent(typeof(MeshRenderer))]
 public class FoodItem : MonoBehaviour
 {
     public FoodType foodType;
     public CookState state = CookState.Raw;
 
-    // visual placeholders
-    public GameObject cookedVisual;
-    public GameObject burnedVisual;
-    public GameObject rawVisual;
+    public Material rawMaterial;
+    public Material cookedMaterial;
+    public Material burnedMaterial;
 
-    private void Start()
+    private MeshRenderer meshRenderer;
+
+    private void Awake()
     {
-        UpdateVisual();
+        meshRenderer = GetComponent<MeshRenderer>();
+    }
+
+    private void OnEnable()
+    {
+        ApplyCurrentMaterial();
+    }
+
+    private void OnValidate()
+    {
+        if (meshRenderer == null) meshRenderer = GetComponent<MeshRenderer>();
+        ApplyCurrentMaterial();
     }
 
     public void SetState(CookState newState)
     {
         state = newState;
-        UpdateVisual();
+        ApplyCurrentMaterial();
     }
 
-    private void UpdateVisual()
+    private void ApplyCurrentMaterial()
     {
-        if (rawVisual) rawVisual.SetActive(state == CookState.Raw);
-        if (cookedVisual) cookedVisual.SetActive(state == CookState.Cooked);
-        if (burnedVisual) burnedVisual.SetActive(state == CookState.Burned);
+        if (!meshRenderer) return;
+
+        Material mat = null;
+        switch (state)
+        {
+            case CookState.Raw: mat = rawMaterial; break;
+            case CookState.Cooked: mat = cookedMaterial; break;
+            case CookState.Burned: mat = burnedMaterial; break;
+        }
+
+        if (mat != null)
+            meshRenderer.material = mat; // force unique instance material
     }
 }
