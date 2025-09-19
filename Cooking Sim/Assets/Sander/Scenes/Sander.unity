@@ -575,7 +575,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   promptMessage: Press E to trash
-  highlightMat: {fileID: 0}
 --- !u!1 &191335994
 GameObject:
   m_ObjectHideFlags: 0
@@ -946,8 +945,8 @@ MonoBehaviour:
   burnAfterCooked: 4
   cookingSliderPrefab: {fileID: 7896559731396627023, guid: 9982a4ca1cc88f44a825564c9ad393cc, type: 3}
   qteCount: 2
-  qteChancePerSecond: 0.25
-  qteWindow: 0.8
+  qteChancePerSecond: 0.4
+  qteWindow: 1.5
 --- !u!114 &660591834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -961,7 +960,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   promptMessage: Press E to insert fries
-  highlightMat: {fileID: 0}
 --- !u!1 &797850866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,7 +1477,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   promptMessage: Press E to grab supplies
-  highlightMat: {fileID: 0}
 --- !u!1 &1011922666
 GameObject:
   m_ObjectHideFlags: 0
@@ -2208,8 +2205,8 @@ MonoBehaviour:
   burnAfterCooked: 4
   cookingSliderPrefab: {fileID: 7896559731396627023, guid: 9982a4ca1cc88f44a825564c9ad393cc, type: 3}
   qteCount: 2
-  qteChancePerSecond: 0.25
-  qteWindow: 0.8
+  qteChancePerSecond: 0.4
+  qteWindow: 1.5
 --- !u!114 &1231470142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2223,7 +2220,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   promptMessage: Press E to insert hotdog
-  highlightMat: {fileID: 0}
 --- !u!1 &1289679752
 GameObject:
   m_ObjectHideFlags: 0
@@ -2453,7 +2449,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   promptMessage: Press E to grab fries
-  highlightMat: {fileID: 0}
 --- !u!1 &1499634300 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 547951564164393908, guid: b75bdf56665e35742b6b5df786a3ed8c, type: 3}
@@ -2472,7 +2467,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   promptMessage: Press E to grab hotdog
-  highlightMat: {fileID: 0}
 --- !u!1 &1514871449
 GameObject:
   m_ObjectHideFlags: 0
