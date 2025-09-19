@@ -580,6 +580,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3921827524494871413, guid: a55ccef553f4879408ee51971291fd5d, type: 3}
   m_PrefabInstance: {fileID: 613451433}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &746211939
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 4bff0698eddd36a46843b6016835b5e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4bff0698eddd36a46843b6016835b5e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4bff0698eddd36a46843b6016835b5e1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4bff0698eddd36a46843b6016835b5e1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.70710784
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4bff0698eddd36a46843b6016835b5e1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4bff0698eddd36a46843b6016835b5e1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.70710576
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4bff0698eddd36a46843b6016835b5e1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4bff0698eddd36a46843b6016835b5e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4bff0698eddd36a46843b6016835b5e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4bff0698eddd36a46843b6016835b5e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 4bff0698eddd36a46843b6016835b5e1, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 78299b613f3829c4a9681db1f6f02550, type: 2}
+    - target: {fileID: 919132149155446097, guid: 4bff0698eddd36a46843b6016835b5e1, type: 3}
+      propertyPath: m_Name
+      value: Fridge Counter
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4bff0698eddd36a46843b6016835b5e1, type: 3}
 --- !u!1001 &773097217
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3380,3 +3441,4 @@ SceneRoots:
   - {fileID: 2260043595374990244}
   - {fileID: 1337845917137199845}
   - {fileID: 4555368571581933417}
+  - {fileID: 746211939}
