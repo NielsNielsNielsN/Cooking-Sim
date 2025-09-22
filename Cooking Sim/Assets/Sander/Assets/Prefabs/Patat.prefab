@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 5660630148159167661}
   - component: {fileID: 4270029356070724160}
   - component: {fileID: 6910826796005891775}
-  - component: {fileID: -2895529256400545121}
   - component: {fileID: 5697057997311540342}
   - component: {fileID: 2318050668481069143}
   - component: {fileID: -5169972286534294507}
   - component: {fileID: 6786584390277434424}
+  - component: {fileID: -4774137016739507250}
   m_Layer: 0
   m_Name: Patat
   m_TagString: Untagged
@@ -45,7 +45,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6435773127931919734}
-  m_Mesh: {fileID: 6704402513957279669, guid: 08128ee07c2a4be438ba1387618f00d3, type: 3}
+  m_Mesh: {fileID: -2144412244347025258, guid: 508a645ab12bb8d45b4d78a2a108eb7e, type: 3}
 --- !u!23 &6910826796005891775
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -94,27 +94,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &-2895529256400545121
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6435773127931919734}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.10002868, y: 0.052109063, z: 0.10413706}
-  m_Center: {x: 0, y: 0.024826914, z: 0.0047811866}
 --- !u!114 &5697057997311540342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +131,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6435773127931919734}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 0.01
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -184,3 +163,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
   promptMessage: Press E to pick up
+--- !u!65 &-4774137016739507250
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435773127931919734}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.1731601, y: 0.04863762, z: 0.10204217}
+  m_Center: {x: -0.008896884, y: 0.025991391, z: 0.003866896}

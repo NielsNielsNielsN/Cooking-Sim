@@ -13,6 +13,7 @@ public class CookStation : MonoBehaviour
     private FoodItem currentFood;
     private GameObject sliderInstance;
     private Slider slider;
+    private RectTransform cookMarker;   // vertical marker line
     private Coroutine cookingRoutine;
     private bool isCooking = false;
 
@@ -34,9 +35,24 @@ public class CookStation : MonoBehaviour
     public void PlaceFood(FoodItem f)
     {
         currentFood = f;
+
+        // Save the world scale of the food before parenting
+        Vector3 originalScale = currentFood.transform.lossyScale;
+
+        // Parent it to the station
         currentFood.transform.SetParent(transform);
+
+        // Set its position/rotation
         currentFood.transform.localPosition = Vector3.up * 0.2f;
         currentFood.transform.localRotation = Quaternion.identity;
+
+        // Restore original scale so it doesn’t inherit from the pan/fryer
+        currentFood.transform.localScale = new Vector3(
+            originalScale.x / transform.lossyScale.x,
+            originalScale.y / transform.lossyScale.y,
+            originalScale.z / transform.lossyScale.z
+        );
+
         StartCooking();
     }
 
@@ -61,17 +77,35 @@ public class CookStation : MonoBehaviour
 
         if (cookingSliderPrefab)
         {
-            sliderInstance = Instantiate(cookingSliderPrefab, transform.position + Vector3.up * 1.2f, Quaternion.identity, transform);
+            // Instantiate in world space (no parent)
+            sliderInstance = Instantiate(cookingSliderPrefab, transform.position + Vector3.up * 1.2f, Quaternion.identity);
             slider = sliderInstance.GetComponentInChildren<Slider>();
-
-            // Fix scale
-            sliderInstance.transform.localScale = Vector3.one * 0.01f;
 
             // Billboard
             sliderInstance.AddComponent<BillboardUI>();
 
             if (slider) slider.value = 0f;
+
+            // Add a follow script so it stays above the pan/fryer
+            var follow = sliderInstance.AddComponent<UIFollower>();
+            follow.target = transform;
+            follow.offset = Vector3.up * 1.2f;
+
+            // Add a vertical marker for the "cooked" point
+            cookMarker = sliderInstance.transform.Find("CookMarker")?.GetComponent<RectTransform>();
+            if (cookMarker != null)
+            {
+                float totalTime = cookingTime + burnAfterCooked;
+                float normalizedCookPoint = cookingTime / totalTime;
+
+                RectTransform sliderRect = slider.GetComponent<RectTransform>();
+                float sliderWidth = sliderRect.rect.width;
+                float xPos = (normalizedCookPoint * sliderWidth) - (sliderWidth * 0.5f);
+
+                cookMarker.anchoredPosition = new Vector2(xPos, cookMarker.anchoredPosition.y);
+            }
         }
+
         cookingRoutine = StartCoroutine(CookingProcess());
     }
 
@@ -79,12 +113,17 @@ public class CookStation : MonoBehaviour
     {
         float elapsed = 0f;
         int qtesTriggered = 0;
-        while (elapsed < cookingTime)
+        float totalTime = cookingTime + burnAfterCooked;
+
+        while (elapsed < totalTime)
         {
             elapsed += Time.deltaTime;
-            if (slider) slider.value = elapsed / cookingTime;
 
-            if (QTEManager.Instance != null && qtesTriggered < qteCount)
+            // Slider now fills over both cooking + burning
+            if (slider) slider.value = Mathf.Clamp01(elapsed / totalTime);
+
+            // QTEs only during cooking phase
+            if (elapsed < cookingTime && QTEManager.Instance != null && qtesTriggered < qteCount)
             {
                 if (Random.value < qteChancePerSecond * Time.deltaTime)
                 {
@@ -98,20 +137,19 @@ public class CookStation : MonoBehaviour
                     }
                 }
             }
+
+            // Mark as cooked when cooking time ends
+            if (elapsed >= cookingTime && currentFood != null && currentFood.state == CookState.Raw)
+                currentFood.SetState(CookState.Cooked);
+
+            // Burn when burn time ends
+            if (elapsed >= totalTime && currentFood != null && currentFood.state == CookState.Cooked)
+                BurnCurrent();
+
             yield return null;
         }
-
-        if (currentFood != null) currentFood.SetState(CookState.Cooked);
-
-        float burnTimer = 0f;
-        while (burnTimer < burnAfterCooked)
-        {
-            burnTimer += Time.deltaTime;
-            yield return null;
-        }
-
-        BurnCurrent();
     }
+
 
     private void BurnCurrent()
     {
