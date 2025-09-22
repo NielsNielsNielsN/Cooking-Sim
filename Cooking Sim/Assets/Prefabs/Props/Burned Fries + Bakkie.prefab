@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6515488043293340758
+--- !u!1001 &967582630936306073
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 508a645ab12bb8d45b4d78a2a108eb7e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 508a645ab12bb8d45b4d78a2a108eb7e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -51,15 +51,15 @@ PrefabInstance:
     - target: {fileID: -6674004959326440291, guid: 508a645ab12bb8d45b4d78a2a108eb7e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 2c385c0f4991b314eb00e64a06d47627, type: 2}
+      objectReference: {fileID: 2100000, guid: fd9196eb3ce813f4ca1633d3237c46bf, type: 2}
     - target: {fileID: 919132149155446097, guid: 508a645ab12bb8d45b4d78a2a108eb7e, type: 3}
       propertyPath: m_Name
-      value: Fried Fries + Bakkie
+      value: Burned Fries + Bakkie
       objectReference: {fileID: 0}
     - target: {fileID: 4639400753964178308, guid: 508a645ab12bb8d45b4d78a2a108eb7e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 2c385c0f4991b314eb00e64a06d47627, type: 2}
+      objectReference: {fileID: 2100000, guid: fd9196eb3ce813f4ca1633d3237c46bf, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
