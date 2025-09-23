@@ -910,6 +910,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30b91559d150c9d43b53a7b45a783118, type: 3}
+--- !u!1001 &6850427217159300791
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1211188714035324182, guid: 0bed1d17e55cd7d4690e9266723d33e7, type: 3}
+      propertyPath: m_Name
+      value: Cooking Sim Cardboard Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982939651903193004, guid: 0bed1d17e55cd7d4690e9266723d33e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982939651903193004, guid: 0bed1d17e55cd7d4690e9266723d33e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982939651903193004, guid: 0bed1d17e55cd7d4690e9266723d33e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982939651903193004, guid: 0bed1d17e55cd7d4690e9266723d33e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982939651903193004, guid: 0bed1d17e55cd7d4690e9266723d33e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982939651903193004, guid: 0bed1d17e55cd7d4690e9266723d33e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982939651903193004, guid: 0bed1d17e55cd7d4690e9266723d33e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982939651903193004, guid: 0bed1d17e55cd7d4690e9266723d33e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982939651903193004, guid: 0bed1d17e55cd7d4690e9266723d33e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1982939651903193004, guid: 0bed1d17e55cd7d4690e9266723d33e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0bed1d17e55cd7d4690e9266723d33e7, type: 3}
 --- !u!1001 &6934748467006721575
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1216,3 +1273,4 @@ SceneRoots:
   - {fileID: 6934748467006721575}
   - {fileID: 8921707611820480208}
   - {fileID: 6962910658304287021}
+  - {fileID: 6850427217159300791}
