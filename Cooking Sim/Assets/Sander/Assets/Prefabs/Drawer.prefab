@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6749267310147166960}
   - component: {fileID: 656322956190469621}
   - component: {fileID: -3213747703630423074}
+  - component: {fileID: 6188156319178221669}
   m_Layer: 0
   m_Name: Drawer
   m_TagString: Untagged
@@ -124,5 +125,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48be8c53a3682084c8cadd5c6be26ca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Drawer
+  drawerFoodType: 0
+  maxStock: 10
+  currentStock: 5
   foodPrefab: {fileID: 0}
-  stock: 5
+--- !u!114 &6188156319178221669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547951564164393908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe31252c334c8774e8c0135beb68ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  promptMessage: Press E to interact
