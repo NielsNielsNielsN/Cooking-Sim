@@ -1,13 +1,18 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Customer : MonoBehaviour
 {
     [HideInInspector] public OrderSystem orderSystem;
-    [HideInInspector] public OrderScreenPoint orderScreenPoint; // one chosen point
+    [HideInInspector] public OrderScreenPoint orderScreenPoint;
     [HideInInspector] public Transform[] waitingSpots;
     [HideInInspector] public Transform pickupPoint;
     [HideInInspector] public Transform exitPoint;
+
+    [HideInInspector] public List<Transform> pathToOrderScreen;  // NEW
+    [HideInInspector] public List<Transform> pathToPickup;       // NEW
+    [HideInInspector] public List<Transform> pathToExit;         // NEW
 
     private float moveSpeed = 2f;
 
@@ -18,8 +23,9 @@ public class Customer : MonoBehaviour
 
     private IEnumerator CustomerRoutine()
     {
-        // Step 1: Walk to chosen order screen
+        // Step 1: Walk through path to order screen
         orderScreenPoint.isOccupied = true;
+        yield return FollowPath(pathToOrderScreen);
         yield return MoveTo(orderScreenPoint.transform.position);
 
         // Step 2: Wait 10 seconds at order screen
@@ -27,22 +33,23 @@ public class Customer : MonoBehaviour
 
         // Generate order
         orderSystem.GenerateOrder();
-
-        // Free the order screen
         orderScreenPoint.isOccupied = false;
 
-        // Step 3: Pick random waiting spot
+        // Step 3: Go to waiting spot
         Transform randomSpot = waitingSpots[Random.Range(0, waitingSpots.Length)];
         yield return MoveTo(randomSpot.position);
 
-        // Simulate order completion (replace later with "order ready" event)
+        // Fake wait for order ready
         yield return new WaitForSeconds(5f);
 
-        // Step 4: Go to pickup point
+        // Step 4: Walk through path to pickup
+        yield return FollowPath(pathToPickup);
         yield return MoveTo(pickupPoint.position);
 
-        // Step 5: Walk to exit and despawn
+        // Step 5: Walk through path to exit
+        yield return FollowPath(pathToExit);
         yield return MoveTo(exitPoint.position);
+
         Destroy(gameObject);
     }
 
@@ -52,6 +59,14 @@ public class Customer : MonoBehaviour
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
             yield return null;
+        }
+    }
+
+    private IEnumerator FollowPath(List<Transform> waypoints)
+    {
+        foreach (var point in waypoints)
+        {
+            yield return MoveTo(point.position);
         }
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class CustomerSpawner : MonoBehaviour
 {
@@ -9,7 +10,12 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeField] private Transform pickupPoint;
     [SerializeField] private Transform exitPoint;
 
-    private float spawnDelay = 1f; // check every second
+    [Header("Paths")]
+    [SerializeField] private List<Transform> pathToOrderScreen;
+    [SerializeField] private List<Transform> pathToPickup;
+    [SerializeField] private List<Transform> pathToExit;
+
+    private float spawnDelay = 1f;
     private float timer = 0f;
 
     private void Update()
@@ -24,13 +30,12 @@ public class CustomerSpawner : MonoBehaviour
 
     private void TrySpawnCustomer()
     {
-        // Find a free order screen
         foreach (var screen in orderScreenPoints)
         {
             if (!screen.isOccupied)
             {
                 SpawnCustomer(screen);
-                return; // only spawn one at a time
+                return;
             }
         }
     }
@@ -45,6 +50,11 @@ public class CustomerSpawner : MonoBehaviour
         c.waitingSpots = waitingSpots;
         c.pickupPoint = pickupPoint;
         c.exitPoint = exitPoint;
+
+        // Assign paths
+        c.pathToOrderScreen = pathToOrderScreen;
+        c.pathToPickup = pathToPickup;
+        c.pathToExit = pathToExit;
 
         screen.isOccupied = true;
     }
