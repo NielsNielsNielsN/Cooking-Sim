@@ -207,6 +207,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6188156319178221669, guid: b75bdf56665e35742b6b5df786a3ed8c, type: 3}
+      propertyPath: promptMessage
+      value: Press E to grab fries
+      objectReference: {fileID: 0}
     - target: {fileID: 6465494828821481839, guid: b75bdf56665e35742b6b5df786a3ed8c, type: 3}
       propertyPath: foodType
       value: 1
@@ -223,10 +227,7 @@ PrefabInstance:
     - {fileID: 6465494828821481839, guid: b75bdf56665e35742b6b5df786a3ed8c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 547951564164393908, guid: b75bdf56665e35742b6b5df786a3ed8c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1334853512}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b75bdf56665e35742b6b5df786a3ed8c, type: 3}
 --- !u!1 &102722240
 GameObject:
@@ -2319,42 +2320,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304546758}
   m_CullTransparentMesh: 1
---- !u!1 &1334853506 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 547951564164393908, guid: b75bdf56665e35742b6b5df786a3ed8c, type: 3}
-  m_PrefabInstance: {fileID: 31065730}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1334853512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1334853506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe31252c334c8774e8c0135beb68ea95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  promptMessage: Press E to grab fries
---- !u!1 &1499634300 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 547951564164393908, guid: b75bdf56665e35742b6b5df786a3ed8c, type: 3}
-  m_PrefabInstance: {fileID: 6251890701425480630}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1499634306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1499634300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe31252c334c8774e8c0135beb68ea95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  promptMessage: Press E to grab hotdog
 --- !u!1 &1514871449
 GameObject:
   m_ObjectHideFlags: 0
@@ -3504,6 +3469,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6188156319178221669, guid: b75bdf56665e35742b6b5df786a3ed8c, type: 3}
+      propertyPath: promptMessage
+      value: Press E to grab hotdog
+      objectReference: {fileID: 0}
     - target: {fileID: 6465494828821481839, guid: b75bdf56665e35742b6b5df786a3ed8c, type: 3}
       propertyPath: hotdogPrefab
       value: 
@@ -3516,10 +3485,7 @@ PrefabInstance:
     - {fileID: 6465494828821481839, guid: b75bdf56665e35742b6b5df786a3ed8c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 547951564164393908, guid: b75bdf56665e35742b6b5df786a3ed8c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1499634306}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b75bdf56665e35742b6b5df786a3ed8c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
