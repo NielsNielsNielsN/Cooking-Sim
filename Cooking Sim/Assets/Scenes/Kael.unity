@@ -3722,6 +3722,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a71e6424406627d4dbfe5fdf29f192ed, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 309ded73439bc8c4bb4c4abc5dd847cf, type: 2}
     - target: {fileID: 919132149155446097, guid: a71e6424406627d4dbfe5fdf29f192ed, type: 3}
       propertyPath: m_Name
       value: Door Frame
@@ -5764,7 +5768,7 @@ PrefabInstance:
     - target: {fileID: 2931989718248081874, guid: d51fd2a4c0e5abc43b504e9e7b7bd36b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: -876546973899608171, guid: 2896f1a414fbd204782a4c21cb15760d, type: 3}
+      objectReference: {fileID: 2100000, guid: 309ded73439bc8c4bb4c4abc5dd847cf, type: 2}
     - target: {fileID: 3724610403039832071, guid: d51fd2a4c0e5abc43b504e9e7b7bd36b, type: 3}
       propertyPath: m_Name
       value: Wall (Yellow)
