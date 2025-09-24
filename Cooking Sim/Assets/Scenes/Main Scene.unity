@@ -14654,7 +14654,7 @@ GameObject:
   - component: {fileID: 1070895734}
   - component: {fileID: 1070895739}
   m_Layer: 0
-  m_Name: Cube (3)
+  m_Name: Coolingcell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14782,7 +14782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe31252c334c8774e8c0135beb68ea95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  promptMessage: Press E to interact
+  promptMessage: Press E to grab supplies
 --- !u!1001 &1072953673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23838,15 +23838,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730537508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0115}
-  m_LocalScale: {x: 8.790656, y: 2.3288133, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.01298}
+  m_LocalScale: {x: 8.790656, y: 15.581159, z: -4.5338}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1531627961}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -73, y: 1116}
+  m_AnchoredPosition: {x: -40, y: 806}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1732261162
@@ -27683,7 +27683,7 @@ Transform:
   m_GameObject: {fileID: 2002662646}
   serializedVersion: 2
   m_LocalRotation: {x: 0.10809555, y: -0.31714863, z: -0.3039632, w: 0.89181757}
-  m_LocalPosition: {x: 0.46, y: 2.26, z: 10.41}
+  m_LocalPosition: {x: 0.857, y: 1.912, z: 10.791}
   m_LocalScale: {x: 0.02564467, y: 0.4232392, z: 0.40718886}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27705,8 +27705,8 @@ MonoBehaviour:
   minItems: 1
   maxItems: 6
   orderScreenText: {fileID: 1730537509}
-  activeOrders: 0
   maxOrders: 5
+  activeOrders: 0
 --- !u!1 &2004543185
 GameObject:
   m_ObjectHideFlags: 0
