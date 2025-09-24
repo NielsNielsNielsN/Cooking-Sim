@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 public class CustomerSpawner : MonoBehaviour
@@ -15,21 +16,37 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeField] private List<Transform> pathToPickup;
     [SerializeField] private List<Transform> pathToExit;
 
-    private float spawnDelay = 1f;
-    private float timer = 0f;
-
-    private void Update()
+    private void Start()
     {
-        timer += Time.deltaTime;
-        if (timer >= spawnDelay)
+        // Spawn 2 customers with a delay
+        StartCoroutine(SpawnInitialCustomers());
+
+        // Start the random spawn loop
+        StartCoroutine(SpawnLoop());
+    }
+
+    private IEnumerator SpawnInitialCustomers()
+    {
+        TrySpawnCustomer();
+        yield return new WaitForSeconds(1f);
+        TrySpawnCustomer();
+    }
+
+    private IEnumerator SpawnLoop()
+    {
+        while (true)
         {
-            timer = 0f;
+            float waitTime = Random.Range(20f, 50f);
+            yield return new WaitForSeconds(waitTime);
             TrySpawnCustomer();
         }
     }
 
     private void TrySpawnCustomer()
     {
+        // Limit to max 5 active orders
+        if (orderSystem.activeOrders >= orderSystem.maxOrders) return;
+
         foreach (var screen in orderScreenPoints)
         {
             if (!screen.isOccupied)
@@ -51,7 +68,6 @@ public class CustomerSpawner : MonoBehaviour
         c.pickupPoint = pickupPoint;
         c.exitPoint = exitPoint;
 
-        // Assign paths
         c.pathToOrderScreen = pathToOrderScreen;
         c.pathToPickup = pathToPickup;
         c.pathToExit = pathToExit;
