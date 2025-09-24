@@ -11,15 +11,24 @@ public class OrderSystem : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI orderScreenText;
 
+    public int maxOrders = 5;
+    public int activeOrders = 0;
+
     private int customerNumber = 1;
 
-    public int activeOrders = 0;           // NEW
-    public int maxOrders = 5;              // NEW
+    private List<string> activeOrderList = new List<string>();
+    private Queue<Customer> customerQueue = new Queue<Customer>();
 
-    public void GenerateOrder()
+    private void Update()
     {
-        if (activeOrders >= maxOrders) return; // safety
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            CompleteNextOrder();
+        }
+    }
 
+    public string GenerateOrder()
+    {
         int itemCount = Random.Range(minItems, maxItems + 1);
         List<string> order = new List<string>();
 
@@ -30,17 +39,36 @@ public class OrderSystem : MonoBehaviour
         }
 
         string orderString = $"Customer {customerNumber}:\n - " + string.Join("\n - ", order);
-        Debug.Log(orderString);
 
-        orderScreenText.text += (orderScreenText.text.Length > 0 ? "\n\n" : "") + orderString;
+        activeOrderList.Add(orderString);
+        activeOrders++;
+        RefreshOrderScreen();
 
         customerNumber++;
-        activeOrders++; // increase active orders
+        return orderString;
     }
 
-    public void CompleteOrder()
+    public void RegisterCustomerOrder(string order, Customer customer)
     {
-        if (activeOrders > 0)
-            activeOrders--; // decrease when customer leaves pickup
+        customerQueue.Enqueue(customer);
+    }
+
+    private void CompleteNextOrder()
+    {
+        if (activeOrderList.Count == 0 || customerQueue.Count == 0) return;
+
+        string firstOrder = activeOrderList[0];
+        activeOrderList.RemoveAt(0);
+        activeOrders--;
+
+        Customer c = customerQueue.Dequeue();
+        c.CompleteOrder();
+
+        RefreshOrderScreen();
+    }
+
+    private void RefreshOrderScreen()
+    {
+        orderScreenText.text = string.Join("\n\n", activeOrderList);
     }
 }

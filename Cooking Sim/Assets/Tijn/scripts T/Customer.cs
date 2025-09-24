@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -15,6 +15,10 @@ public class Customer : MonoBehaviour
     [HideInInspector] public List<Transform> pathToExit;
 
     private float moveSpeed = 2f;
+    private string myOrder;
+    private Transform myWaitingSpot;
+
+    private bool orderCompleted = false;
 
     private void Start()
     {
@@ -23,48 +27,60 @@ public class Customer : MonoBehaviour
 
     private IEnumerator CustomerRoutine()
     {
-        // Step 1: Walk through path to order screen
+        // Step 1: Walk to order screen
         orderScreenPoint.isOccupied = true;
         yield return FollowPath(pathToOrderScreen);
         yield return MoveTo(orderScreenPoint.transform.position);
 
-        // Step 2: Wait 10 seconds at order screen
-        yield return new WaitForSeconds(10f);
-
-        // Generate order
-        orderSystem.GenerateOrder();
+        // Step 2: Place order
+        myOrder = orderSystem.GenerateOrder();
+        orderSystem.RegisterCustomerOrder(myOrder, this);
         orderScreenPoint.isOccupied = false;
 
-        // Step 3: Find an open waiting spot
-        Transform freeSpot = FindFreeWaitingSpot();
-        if (freeSpot != null)
+        // Step 3: Go to a free waiting spot
+        myWaitingSpot = GetFreeWaitingSpot();
+        if (myWaitingSpot != null)
         {
-            WaitingSpot ws = freeSpot.GetComponent<WaitingSpot>();
-            ws.isOccupied = true;
-            yield return MoveTo(freeSpot.position);
-
-            // Fake wait for order ready
-            yield return new WaitForSeconds(5f);
-            ws.isOccupied = false;
+            yield return MoveTo(myWaitingSpot.position);
         }
 
-        // Step 4: Walk through path to pickup
+        // Step 4: Wait until order is completed
+        while (!orderCompleted)
+        {
+            yield return null;
+        }
+
+        // Step 5: Walk to pickup
         yield return FollowPath(pathToPickup);
         yield return MoveTo(pickupPoint.position);
 
-        // Step 5: Walk through path to exit
+        // Step 6: Walk to exit
         yield return FollowPath(pathToExit);
         yield return MoveTo(exitPoint.position);
 
         Destroy(gameObject);
     }
 
-    private Transform FindFreeWaitingSpot()
+    public void CompleteOrder()
     {
-        foreach (Transform spot in waitingSpots)
+        orderCompleted = true;
+        if (myWaitingSpot != null)
         {
-            WaitingSpot ws = spot.GetComponent<WaitingSpot>();
-            if (!ws.isOccupied) return spot;
+            WaitingSpots ws = myWaitingSpot.GetComponent<WaitingSpots>();
+            if (ws != null) ws.isOccupied = false; // free the spot
+        }
+    }
+
+    private Transform GetFreeWaitingSpot()
+    {
+        foreach (var spot in waitingSpots)
+        {
+            WaitingSpots ws = spot.GetComponent<WaitingSpots>();
+            if (ws != null && !ws.isOccupied)
+            {
+                ws.isOccupied = true;
+                return spot;
+            }
         }
         return null;
     }
