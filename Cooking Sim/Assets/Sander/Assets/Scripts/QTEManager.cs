@@ -7,27 +7,20 @@ public class QTEManager : MonoBehaviour
 {
     public static QTEManager Instance { get; private set; }
 
-    [Header("UI Prefab")]
     public GameObject qteUIPrefab;
 
     private QTEUI currentUI;
 
     private void Awake()
     {
-        if (Instance != null && Instance != this) Destroy(this);
         Instance = this;
     }
 
-    /// <summary>
-    /// Runs a QTE event. Spawns UI, waits for input or timeout, then calls callback.
-    /// </summary>
     public IEnumerator RunQTE(float window, Action<bool> callback)
     {
-        // choose random key
         KeyCode[] keys = { KeyCode.Space, KeyCode.F };
         KeyCode chosen = keys[UnityEngine.Random.Range(0, keys.Length)];
 
-        // spawn UI
         if (qteUIPrefab)
         {
             GameObject uiObj = Instantiate(qteUIPrefab, transform);

@@ -3,17 +3,11 @@ using UnityEngine.InputSystem;
 
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] float walkspeed = 10f;
+    public float walkspeed;
 
-    Vector2 moveInput;
-    Rigidbody myRigidbody;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        myRigidbody = GetComponent<Rigidbody>();
-    }
+    public Vector2 moveInput;
+    public Rigidbody myRigidbody;
 
-    // Update is called once per frame
     void Update()
     {
         Run();

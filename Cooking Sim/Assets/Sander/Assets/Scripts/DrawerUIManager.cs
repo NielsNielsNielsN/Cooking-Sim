@@ -5,17 +5,14 @@ public class DrawerUIManager : MonoBehaviour
 {
     public static DrawerUIManager Instance;
 
-    [Header("UI References")]
-    public GameObject stockPanel;        // Parent panel (hidden by default)
-    public TextMeshProUGUI stockText;    // TMP Text for stock
+    public GameObject stockPanel;
+    public TextMeshProUGUI stockText;
 
     private void Awake()
     {
         Instance = this;
 
-        // Hide panel at start
-        if (stockPanel != null)
-            stockPanel.SetActive(false);
+        stockPanel.SetActive(false);
     }
 
     public void ShowStock(Drawer drawer)
@@ -28,7 +25,6 @@ public class DrawerUIManager : MonoBehaviour
 
     public void HideStock()
     {
-        if (stockPanel != null)
-            stockPanel.SetActive(false);
+        stockPanel.SetActive(false);
     }
 }
