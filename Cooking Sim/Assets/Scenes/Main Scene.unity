@@ -2360,6 +2360,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 889469753683027425, guid: 1c06d35a23bf27a43a4806c447e5ad45, type: 3}
+      propertyPath: promptMessage
+      value: Press E to grab hotdog
+      objectReference: {fileID: 0}
     - target: {fileID: 1958890212941430557, guid: 1c06d35a23bf27a43a4806c447e5ad45, type: 3}
       propertyPath: foodPrefab
       value: 
@@ -10719,6 +10723,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 889469753683027425, guid: 1c06d35a23bf27a43a4806c447e5ad45, type: 3}
+      propertyPath: promptMessage
+      value: Press E to grab fries
+      objectReference: {fileID: 0}
     - target: {fileID: 1958890212941430557, guid: 1c06d35a23bf27a43a4806c447e5ad45, type: 3}
       propertyPath: foodPrefab
       value: 
