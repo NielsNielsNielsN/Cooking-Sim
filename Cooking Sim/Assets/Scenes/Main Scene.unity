@@ -9031,72 +9031,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28013b4ce412b9e4993bf38305f224a3, type: 3}
---- !u!1001 &627949026
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 70ce37806c344fc4db0d6f667f652640, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.216
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 70ce37806c344fc4db0d6f667f652640, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 70ce37806c344fc4db0d6f667f652640, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 17.175
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 70ce37806c344fc4db0d6f667f652640, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 70ce37806c344fc4db0d6f667f652640, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 70ce37806c344fc4db0d6f667f652640, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 70ce37806c344fc4db0d6f667f652640, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 70ce37806c344fc4db0d6f667f652640, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 70ce37806c344fc4db0d6f667f652640, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 70ce37806c344fc4db0d6f667f652640, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 70ce37806c344fc4db0d6f667f652640, type: 3}
-      propertyPath: m_Name
-      value: Cooking Sim ThrashBin
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 70ce37806c344fc4db0d6f667f652640, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 851878306}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 70ce37806c344fc4db0d6f667f652640, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 851878305}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 70ce37806c344fc4db0d6f667f652640, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 851878310}
-  m_SourcePrefab: {fileID: 100100000, guid: 70ce37806c344fc4db0d6f667f652640, type: 3}
 --- !u!4 &628193837 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5587402508482831052, guid: 28013b4ce412b9e4993bf38305f224a3, type: 3}
@@ -11988,58 +11922,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28013b4ce412b9e4993bf38305f224a3, type: 3}
---- !u!1 &851878304 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 70ce37806c344fc4db0d6f667f652640, type: 3}
-  m_PrefabInstance: {fileID: 627949026}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &851878305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 851878304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77daf157a21dfbb4e9ccb4b1839dfec2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TrashBin
-  promptMessage: Press E to throw away
---- !u!65 &851878306
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 851878304}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.43916625, y: 0.8483891, z: 0.5443571}
-  m_Center: {x: -0.023980409, y: 0.42417392, z: -1.03307e-16}
---- !u!114 &851878310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 851878304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe31252c334c8774e8c0135beb68ea95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  promptMessage: Press E to throw away
 --- !u!1 &852012369
 GameObject:
   m_ObjectHideFlags: 0
@@ -29843,6 +29725,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28013b4ce412b9e4993bf38305f224a3, type: 3}
+--- !u!1001 &6796019912222984822
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1251706915645277500, guid: 36775cd69030fb647906871b49b82df5, type: 3}
+      propertyPath: m_Name
+      value: Cooking Sim ThrashBin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879448424154111878, guid: 36775cd69030fb647906871b49b82df5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.216
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879448424154111878, guid: 36775cd69030fb647906871b49b82df5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879448424154111878, guid: 36775cd69030fb647906871b49b82df5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 17.175
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879448424154111878, guid: 36775cd69030fb647906871b49b82df5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879448424154111878, guid: 36775cd69030fb647906871b49b82df5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879448424154111878, guid: 36775cd69030fb647906871b49b82df5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879448424154111878, guid: 36775cd69030fb647906871b49b82df5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879448424154111878, guid: 36775cd69030fb647906871b49b82df5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879448424154111878, guid: 36775cd69030fb647906871b49b82df5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 1879448424154111878, guid: 36775cd69030fb647906871b49b82df5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 36775cd69030fb647906871b49b82df5, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -29880,7 +29819,7 @@ SceneRoots:
   - {fileID: 100892489}
   - {fileID: 294343168}
   - {fileID: 1481106555}
-  - {fileID: 627949026}
+  - {fileID: 6796019912222984822}
   - {fileID: 1309040879}
   - {fileID: 18566200}
   - {fileID: 699276400}
