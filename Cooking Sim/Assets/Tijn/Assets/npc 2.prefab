@@ -131,3 +131,8 @@ MonoBehaviour:
   waitingSpots: []
   pickupPoint: {fileID: 0}
   exitPoint: {fileID: 0}
+  entryWaypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}

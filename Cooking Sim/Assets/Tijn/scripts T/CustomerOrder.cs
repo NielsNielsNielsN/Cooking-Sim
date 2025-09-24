@@ -9,21 +9,17 @@ public class OrderSystem : MonoBehaviour
     [SerializeField] private int minItems = 1;
     [SerializeField] private int maxItems = 6;
 
-    [SerializeField] private TextMeshProUGUI orderScreenText; // in-world screen text
+    [SerializeField] private TextMeshProUGUI orderScreenText;
 
-    private int customerNumber = 1; // keep track of how many customers ordered
+    private int customerNumber = 1;
 
-    private void Update()
-    {
-        // Press O to generate a new order
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            GenerateOrder();
-        }
-    }
+    public int activeOrders = 0;           // NEW
+    public int maxOrders = 5;              // NEW
 
     public void GenerateOrder()
     {
+        if (activeOrders >= maxOrders) return; // safety
+
         int itemCount = Random.Range(minItems, maxItems + 1);
         List<string> order = new List<string>();
 
@@ -34,12 +30,17 @@ public class OrderSystem : MonoBehaviour
         }
 
         string orderString = $"Customer {customerNumber}:\n - " + string.Join("\n - ", order);
-
         Debug.Log(orderString);
 
-        // Add this order to the existing text (stacking orders)
         orderScreenText.text += (orderScreenText.text.Length > 0 ? "\n\n" : "") + orderString;
 
         customerNumber++;
+        activeOrders++; // increase active orders
+    }
+
+    public void CompleteOrder()
+    {
+        if (activeOrders > 0)
+            activeOrders--; // decrease when customer leaves pickup
     }
 }

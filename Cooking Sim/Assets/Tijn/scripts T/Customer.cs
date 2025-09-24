@@ -10,9 +10,9 @@ public class Customer : MonoBehaviour
     [HideInInspector] public Transform pickupPoint;
     [HideInInspector] public Transform exitPoint;
 
-    [HideInInspector] public List<Transform> pathToOrderScreen;  // NEW
-    [HideInInspector] public List<Transform> pathToPickup;       // NEW
-    [HideInInspector] public List<Transform> pathToExit;         // NEW
+    [HideInInspector] public List<Transform> pathToOrderScreen;
+    [HideInInspector] public List<Transform> pathToPickup;
+    [HideInInspector] public List<Transform> pathToExit;
 
     private float moveSpeed = 2f;
 
@@ -35,12 +35,18 @@ public class Customer : MonoBehaviour
         orderSystem.GenerateOrder();
         orderScreenPoint.isOccupied = false;
 
-        // Step 3: Go to waiting spot
-        Transform randomSpot = waitingSpots[Random.Range(0, waitingSpots.Length)];
-        yield return MoveTo(randomSpot.position);
+        // Step 3: Find an open waiting spot
+        Transform freeSpot = FindFreeWaitingSpot();
+        if (freeSpot != null)
+        {
+            WaitingSpot ws = freeSpot.GetComponent<WaitingSpot>();
+            ws.isOccupied = true;
+            yield return MoveTo(freeSpot.position);
 
-        // Fake wait for order ready
-        yield return new WaitForSeconds(5f);
+            // Fake wait for order ready
+            yield return new WaitForSeconds(5f);
+            ws.isOccupied = false;
+        }
 
         // Step 4: Walk through path to pickup
         yield return FollowPath(pathToPickup);
@@ -51,6 +57,16 @@ public class Customer : MonoBehaviour
         yield return MoveTo(exitPoint.position);
 
         Destroy(gameObject);
+    }
+
+    private Transform FindFreeWaitingSpot()
+    {
+        foreach (Transform spot in waitingSpots)
+        {
+            WaitingSpot ws = spot.GetComponent<WaitingSpot>();
+            if (!ws.isOccupied) return spot;
+        }
+        return null;
     }
 
     private IEnumerator MoveTo(Vector3 targetPos)
