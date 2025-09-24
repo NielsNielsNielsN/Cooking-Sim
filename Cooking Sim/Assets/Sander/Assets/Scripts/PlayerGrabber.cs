@@ -1,5 +1,7 @@
-using UnityEngine;
 using TMPro;
+using Unity.AppUI.UI;
+using UnityEngine;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class PlayerGrabber : MonoBehaviour
 {
@@ -14,6 +16,8 @@ public class PlayerGrabber : MonoBehaviour
     public GameObject heldObject;
     private FoodItem heldFood;
     private FoodBag heldBag;
+    private Tray hoveredTray;
+    private Tray heldTray;
 
     private Drawer hoveredDrawer;
     private CoolingCell hoveredCell;
@@ -21,6 +25,7 @@ public class PlayerGrabber : MonoBehaviour
     private FoodItem hoveredFoodItem;
     private FoodBag hoveredBag;
     private TrashBin hoveredTrashBin;
+    private Counter hoveredCounter;
     private Interactable lastInteractable;
 
     public CoolingCell OpenedCoolingCell { get; set; }
@@ -66,17 +71,14 @@ public class PlayerGrabber : MonoBehaviour
             hoveredFoodItem = hit.collider.GetComponent<FoodItem>();
             hoveredBag = hit.collider.GetComponent<FoodBag>();
             hoveredTrashBin = hit.collider.GetComponent<TrashBin>();
+            hoveredTray = hit.collider.GetComponent<Tray>();
+            hoveredCounter = hit.collider.GetComponent<Counter>();
 
             Interactable interactable = hit.collider.GetComponent<Interactable>();
-            if (interactable != lastInteractable)
-            {
-                lastInteractable = interactable;
-            }
+            if (interactable != lastInteractable) lastInteractable = interactable;
 
-            if (interactionText)
-                interactionText.text = interactable ? interactable.promptMessage : "";
+            if (interactionText) interactionText.text = interactable ? interactable.promptMessage : "";
 
-            // Drawer stock UI
             if (hoveredDrawer != null && DrawerUIManager.Instance != null)
                 DrawerUIManager.Instance.ShowStock(hoveredDrawer);
             else if (DrawerUIManager.Instance != null)
@@ -90,19 +92,18 @@ public class PlayerGrabber : MonoBehaviour
             hoveredFoodItem = null;
             hoveredBag = null;
             hoveredTrashBin = null;
+            hoveredTray = null;
+            hoveredCounter = null;
 
             lastInteractable = null;
-
             if (interactionText) interactionText.text = "";
 
-            if (DrawerUIManager.Instance != null)
-                DrawerUIManager.Instance.HideStock();
+            if (DrawerUIManager.Instance != null) DrawerUIManager.Instance.HideStock();
         }
     }
 
     private void TryPickUp()
     {
-        // Grab from drawer
         if (hoveredDrawer != null)
         {
             GameObject instance = hoveredDrawer.TakeOne();
@@ -110,46 +111,46 @@ public class PlayerGrabber : MonoBehaviour
             return;
         }
 
-        // Open CoolingCell UI
         if (hoveredCell != null)
         {
             hoveredCell.OpenMenu(this);
             return;
         }
 
-        // Grab raw food on ground
         if (hoveredFoodItem != null)
         {
             Grab(hoveredFoodItem.gameObject);
             return;
         }
 
-        // Grab a bag on ground
         if (hoveredBag != null)
         {
             Grab(hoveredBag.gameObject);
             return;
         }
 
-        // Remove from cooking station
         if (hoveredStation != null)
         {
             FoodItem removed = hoveredStation.RemoveFood();
             if (removed != null) Grab(removed.gameObject);
             return;
         }
+
+        if (hoveredTray != null)
+        {
+            Grab(hoveredTray.gameObject);
+            return;
+        }
     }
 
     private void TryPlace()
     {
-        // TrashBin interaction
         if (hoveredTrashBin != null)
         {
             hoveredTrashBin.Interact(this);
             return;
         }
 
-        // Place in cooking station
         if (hoveredStation != null && heldFood != null && hoveredStation.CanAccept(heldFood.foodType))
         {
             hoveredStation.PlaceFood(heldFood);
@@ -157,26 +158,30 @@ public class PlayerGrabber : MonoBehaviour
             return;
         }
 
-        // Refill drawer
         if (hoveredDrawer != null && heldBag != null)
         {
             if (hoveredDrawer.drawerFoodType == heldBag.bagType)
             {
                 hoveredDrawer.Refill(heldBag);
-
-                // Destroy the bag after refill
                 Destroy(heldBag.gameObject);
-
                 ClearHeld();
-            }
-            else
-            {
-                Debug.Log("Cannot refill this drawer with this bag type.");
             }
             return;
         }
 
-        // E does nothing if not looking at anything
+        if (heldTray != null && hoveredCounter != null)
+        {
+            hoveredCounter.AcceptTray(heldTray);
+            ClearHeld();
+            return;
+        }
+
+        if (hoveredTray != null && heldFood != null)
+        {
+            hoveredTray.AddFood(heldFood);
+            ClearHeld();
+            return;
+        }
     }
 
     public void Grab(GameObject obj)
@@ -184,6 +189,7 @@ public class PlayerGrabber : MonoBehaviour
         heldObject = obj;
         heldFood = obj.GetComponent<FoodItem>();
         heldBag = obj.GetComponent<FoodBag>();
+        heldTray = obj.GetComponent<Tray>();
 
         var rb = heldObject.GetComponent<Rigidbody>();
         if (rb) { rb.isKinematic = true; rb.detectCollisions = false; }
@@ -218,6 +224,7 @@ public class PlayerGrabber : MonoBehaviour
         heldObject = null;
         heldFood = null;
         heldBag = null;
+        heldTray = null;
     }
 
     #region CoolingCell-compatible UI Script Control
@@ -247,6 +254,7 @@ public class PlayerGrabber : MonoBehaviour
             heldObject = null;
             heldFood = null;
             heldBag = null;
+            heldTray = null;
         }
     }
     #endregion
