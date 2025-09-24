@@ -3,14 +3,12 @@ using TMPro;
 
 public class PlayerGrabber : MonoBehaviour
 {
-    [Header("General Settings")]
     public Camera playerCamera;
-    public float interactDistance = 2.5f;
+    public float interactDistance;
     public Transform holdParent;
-    public Vector3 holdLocalPosition = new Vector3(0.4f, -0.3f, 0.9f);
+    public Vector3 holdLocalPosition;
     public TextMeshProUGUI interactionText;
 
-    [Header("Scripts to disable during UI")]
     public MonoBehaviour[] scriptsToDisable;
 
     public GameObject heldObject;
@@ -29,7 +27,6 @@ public class PlayerGrabber : MonoBehaviour
 
     private void Start()
     {
-        // Auto-find PlayerLook on child if scriptsToDisable empty
         if (scriptsToDisable == null || scriptsToDisable.Length == 0)
         {
             PlayerLook look = GetComponentInChildren<PlayerLook>();
@@ -73,8 +70,6 @@ public class PlayerGrabber : MonoBehaviour
             Interactable interactable = hit.collider.GetComponent<Interactable>();
             if (interactable != lastInteractable)
             {
-                if (lastInteractable) lastInteractable.Highlight(false);
-                if (interactable) interactable.Highlight(true);
                 lastInteractable = interactable;
             }
 
@@ -96,7 +91,6 @@ public class PlayerGrabber : MonoBehaviour
             hoveredBag = null;
             hoveredTrashBin = null;
 
-            if (lastInteractable) lastInteractable.Highlight(false);
             lastInteractable = null;
 
             if (interactionText) interactionText.text = "";

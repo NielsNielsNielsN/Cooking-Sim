@@ -12,12 +12,7 @@ public class FoodItem : MonoBehaviour
     public Material cookedMaterial;
     public Material burnedMaterial;
 
-    private MeshRenderer meshRenderer;
-
-    private void Awake()
-    {
-        meshRenderer = GetComponent<MeshRenderer>();
-    }
+    [SerializeField] private MeshRenderer meshRenderer;
 
     private void OnEnable()
     {
@@ -26,7 +21,6 @@ public class FoodItem : MonoBehaviour
 
     private void OnValidate()
     {
-        if (meshRenderer == null) meshRenderer = GetComponent<MeshRenderer>();
         ApplyCurrentMaterial();
     }
 
@@ -38,8 +32,6 @@ public class FoodItem : MonoBehaviour
 
     private void ApplyCurrentMaterial()
     {
-        if (!meshRenderer) return;
-
         Material mat = null;
         switch (state)
         {
@@ -48,7 +40,6 @@ public class FoodItem : MonoBehaviour
             case CookState.Burned: mat = burnedMaterial; break;
         }
 
-        if (mat != null)
-            meshRenderer.material = mat; // force unique instance material
+        meshRenderer.material = mat;
     }
 }

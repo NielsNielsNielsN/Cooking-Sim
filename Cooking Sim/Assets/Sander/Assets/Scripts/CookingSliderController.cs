@@ -10,6 +10,4 @@ public class CookingSliderController : MonoBehaviour
     {
         slider = GetComponentInChildren<Slider>();
     }
-
-    // The CookStation directly sets slider.value, so we don't need logic here.
 }

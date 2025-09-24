@@ -11,7 +11,6 @@ public class BillboardUI : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (cam == null) return;
         transform.forward = cam.transform.forward;
     }
 }
