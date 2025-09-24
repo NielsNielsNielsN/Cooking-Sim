@@ -3,14 +3,12 @@ using TMPro;
 
 public class Drawer : MonoBehaviour
 {
-    public FoodType drawerFoodType;     // Hotdog or Fries
-    public int maxStock = 10;
-    public int currentStock = 5;
+    public FoodType drawerFoodType;
+    public int maxStock;
+    public int currentStock;
 
-    [Header("Food Prefab")]
-    public GameObject foodPrefab;       // Raw food prefab to spawn
+    public GameObject foodPrefab;
 
-    // Take one piece of food
     public GameObject TakeOne()
     {
         if (currentStock <= 0 || foodPrefab == null) return null;
@@ -20,14 +18,10 @@ public class Drawer : MonoBehaviour
         return Instantiate(foodPrefab);
     }
 
-    // Refill drawer with a bag
     public void Refill(FoodBag bag)
     {
-        if (bag == null) return;
-
         if (bag.bagType != drawerFoodType)
         {
-            Debug.Log("Cannot refill this drawer with this bag type.");
             return;
         }
 
@@ -37,7 +31,6 @@ public class Drawer : MonoBehaviour
         UpdateUI();
     }
 
-    // Update the DrawerUIManager
     private void UpdateUI()
     {
         if (DrawerUIManager.Instance != null)

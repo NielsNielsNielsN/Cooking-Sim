@@ -7,9 +7,6 @@ public class UIFollower : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (target != null)
-        {
-            transform.position = target.position + offset;
-        }
+        transform.position = target.position + offset;
     }
 }

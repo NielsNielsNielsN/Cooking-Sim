@@ -2,22 +2,18 @@ using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
-    [SerializeField] float minViewDistance = 25f;
-    [SerializeField] Transform playerBody;
+    public float minViewDistance;
+    public Transform playerBody;
 
-    public float mouseSensitivity = 100f;
+    public float mouseSensitivity;
 
-    float xRotation = 0f;
+    public float xRotation;
 
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
     void Update()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
@@ -27,6 +23,6 @@ public class PlayerLook : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, minViewDistance);
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-        playerBody.Rotate(Vector3.up * mouseX); 
-    } 
+        playerBody.Rotate(Vector3.up * mouseX);
+    }
 }

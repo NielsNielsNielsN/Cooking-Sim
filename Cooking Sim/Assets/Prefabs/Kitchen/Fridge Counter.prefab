@@ -59,5 +59,69 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4bff0698eddd36a46843b6016835b5e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8026908744034453056}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4bff0698eddd36a46843b6016835b5e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1958890212941430557}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4bff0698eddd36a46843b6016835b5e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 889469753683027425}
   m_SourcePrefab: {fileID: 100100000, guid: 4bff0698eddd36a46843b6016835b5e1, type: 3}
+--- !u!1 &3690127637971121850 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4bff0698eddd36a46843b6016835b5e1, type: 3}
+  m_PrefabInstance: {fileID: 4608482423679978475}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &8026908744034453056
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3690127637971121850}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0709398, y: 1.0000458, z: 1.0000458}
+  m_Center: {x: 0.03544703, y: 0.5, z: -0.00000023841858}
+--- !u!114 &1958890212941430557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3690127637971121850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48be8c53a3682084c8cadd5c6be26ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Drawer
+  drawerFoodType: 0
+  maxStock: 10
+  currentStock: 5
+  foodPrefab: {fileID: 0}
+--- !u!114 &889469753683027425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3690127637971121850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe31252c334c8774e8c0135beb68ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  promptMessage: Press E to interact
