@@ -140,6 +140,13 @@ public class PlayerGrabber : MonoBehaviour
             Grab(hoveredTray.gameObject);
             return;
         }
+
+        if(hoveredCounter != null)
+        {
+            Tray takenTray = hoveredCounter.TakeTray();
+            if (takenTray != null) Grab(takenTray.gameObject);
+            return;
+        }
     }
 
     private void TryPlace()
