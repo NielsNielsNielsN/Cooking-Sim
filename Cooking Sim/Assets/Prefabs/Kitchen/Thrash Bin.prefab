@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 70ce37806c344fc4db0d6f667f652640, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.216
+      value: 7.948983
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 70ce37806c344fc4db0d6f667f652640, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 70ce37806c344fc4db0d6f667f652640, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 17.175
+      value: -0.07704806
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 70ce37806c344fc4db0d6f667f652640, type: 3}
       propertyPath: m_LocalRotation.w
@@ -51,10 +51,10 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 70ce37806c344fc4db0d6f667f652640, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: ff464d04b7fc73b4281bbdac9926e9e2, type: 2}
+      objectReference: {fileID: 2100000, guid: f29ff1e7bbed953468cb0991e2e8ce00, type: 2}
     - target: {fileID: 919132149155446097, guid: 70ce37806c344fc4db0d6f667f652640, type: 3}
       propertyPath: m_Name
-      value: Cooking Sim ThrashBin
+      value: Thrash Bin
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
