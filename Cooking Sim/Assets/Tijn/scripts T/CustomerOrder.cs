@@ -9,7 +9,9 @@ public class OrderSystem : MonoBehaviour
     [SerializeField] private int minItems = 1;
     [SerializeField] private int maxItems = 6;
 
-    [SerializeField] private TextMeshProUGUI orderScreenText;
+    [Header("UI")]
+    [SerializeField] private GameObject ordersMenu;      // Panel that pops up with Tab
+    [SerializeField] private TextMeshProUGUI ordersText; // Text inside the panel
 
     public int maxOrders = 5;
     public int activeOrders = 0;
@@ -21,6 +23,13 @@ public class OrderSystem : MonoBehaviour
 
     private void Update()
     {
+        // Toggle UI menu with Tab
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            ordersMenu.SetActive(!ordersMenu.activeSelf);
+        }
+
+        // For testing: complete next order with P
         if (Input.GetKeyDown(KeyCode.P))
         {
             CompleteNextOrder();
@@ -42,7 +51,7 @@ public class OrderSystem : MonoBehaviour
 
         activeOrderList.Add(orderString);
         activeOrders++;
-        RefreshOrderScreen();
+        RefreshOrdersUI();
 
         customerNumber++;
         return orderString;
@@ -64,11 +73,11 @@ public class OrderSystem : MonoBehaviour
         Customer c = customerQueue.Dequeue();
         c.CompleteOrder();
 
-        RefreshOrderScreen();
+        RefreshOrdersUI();
     }
 
-    private void RefreshOrderScreen()
+    private void RefreshOrdersUI()
     {
-        orderScreenText.text = string.Join("\n\n", activeOrderList);
+        ordersText.text = string.Join("\n\n", activeOrderList);
     }
 }
