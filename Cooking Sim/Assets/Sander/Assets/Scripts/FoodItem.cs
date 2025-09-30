@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum CookState { Raw, Cooked, Burned }
+public enum CookState { Raw, Cooked, Burned, Other }
 
 [RequireComponent(typeof(MeshRenderer))]
 public class FoodItem : MonoBehaviour
@@ -32,6 +32,7 @@ public class FoodItem : MonoBehaviour
 
     private void ApplyCurrentMaterial()
     {
+        if (CookState.Other == state) return;
         Material mat = null;
         switch (state)
         {

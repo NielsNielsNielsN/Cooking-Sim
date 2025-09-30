@@ -137,14 +137,20 @@ public class PlayerGrabber : MonoBehaviour
 
         if (hoveredTray != null)
         {
-            Grab(hoveredTray.gameObject);
+            if (heldObject == null)
+            {
+                Grab(hoveredTray.gameObject);
+            }
             return;
         }
 
-        if(hoveredCounter != null)
+        if (hoveredCounter != null)
         {
-            Tray takenTray = hoveredCounter.TakeTray();
-            if (takenTray != null) Grab(takenTray.gameObject);
+            if (heldObject == null)
+            {
+                Tray takenTray = hoveredCounter.TakeTray();
+                if (takenTray != null) Grab(takenTray.gameObject);
+            }
             return;
         }
     }
@@ -233,7 +239,6 @@ public class PlayerGrabber : MonoBehaviour
         heldTray = null;
     }
 
-    #region CoolingCell-compatible UI Script Control
     public void DisableScripts()
     {
         if (scriptsToDisable == null) return;
@@ -263,5 +268,4 @@ public class PlayerGrabber : MonoBehaviour
             heldTray = null;
         }
     }
-    #endregion
 }
