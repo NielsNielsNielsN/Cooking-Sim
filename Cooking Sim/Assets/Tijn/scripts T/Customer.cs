@@ -32,29 +32,33 @@ public class Customer : MonoBehaviour
         yield return FollowPath(pathToOrderScreen);
         yield return MoveTo(orderScreenPoint.transform.position);
 
-        // Step 2: Place order
+        // Step 2: Wait 10–30 seconds before ordering
+        float waitTime = Random.Range(10f, 30f);
+        yield return new WaitForSeconds(waitTime);
+
+        // Step 3: Place order
         myOrder = orderSystem.GenerateOrder();
         orderSystem.RegisterCustomerOrder(myOrder, this);
         orderScreenPoint.isOccupied = false;
 
-        // Step 3: Go to a free waiting spot
+        // Step 4: Go to a free waiting spot
         myWaitingSpot = GetFreeWaitingSpot();
         if (myWaitingSpot != null)
         {
             yield return MoveTo(myWaitingSpot.position);
         }
 
-        // Step 4: Wait until order is completed
+        // Step 5: Wait until order is completed
         while (!orderCompleted)
         {
             yield return null;
         }
 
-        // Step 5: Walk to pickup
+        // Step 6: Walk to pickup
         yield return FollowPath(pathToPickup);
         yield return MoveTo(pickupPoint.position);
 
-        // Step 6: Walk to exit
+        // Step 7: Walk to exit
         yield return FollowPath(pathToExit);
         yield return MoveTo(exitPoint.position);
 
