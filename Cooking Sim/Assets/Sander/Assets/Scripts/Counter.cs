@@ -10,4 +10,16 @@ public class Counter : MonoBehaviour
         tray.transform.localPosition = Vector3.zero;
         tray.transform.localRotation = Quaternion.identity;
     }
+
+    public Tray TakeTray()
+    {
+        if (traySpot.childCount == 0) return null;
+        Tray tray = traySpot.GetChild(0).GetComponent<Tray>();
+        if (tray != null)
+        {
+            tray.transform.SetParent(null);
+            return tray;
+        }
+        return null;
+    }
 }
