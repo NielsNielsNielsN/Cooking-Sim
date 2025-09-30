@@ -14,27 +14,27 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3cc0fdd551327a6408fd1817e2a51a41, type: 2}
     - target: {fileID: 4022561613832009303, guid: 115df68e4c15f9a40b32d0c56a1262ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3.1925545
       objectReference: {fileID: 0}
     - target: {fileID: 4022561613832009303, guid: 115df68e4c15f9a40b32d0c56a1262ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.07831645
       objectReference: {fileID: 0}
     - target: {fileID: 4022561613832009303, guid: 115df68e4c15f9a40b32d0c56a1262ef, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.86
+      value: 0.082139015
       objectReference: {fileID: 0}
     - target: {fileID: 4022561613832009303, guid: 115df68e4c15f9a40b32d0c56a1262ef, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071074
       objectReference: {fileID: 0}
     - target: {fileID: 4022561613832009303, guid: 115df68e4c15f9a40b32d0c56a1262ef, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4022561613832009303, guid: 115df68e4c15f9a40b32d0c56a1262ef, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.70710623
       objectReference: {fileID: 0}
     - target: {fileID: 4022561613832009303, guid: 115df68e4c15f9a40b32d0c56a1262ef, type: 3}
       propertyPath: m_LocalRotation.z
@@ -46,7 +46,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4022561613832009303, guid: 115df68e4c15f9a40b32d0c56a1262ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4022561613832009303, guid: 115df68e4c15f9a40b32d0c56a1262ef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -54,7 +54,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4366471651897142509, guid: 115df68e4c15f9a40b32d0c56a1262ef, type: 3}
       propertyPath: m_Name
-      value: Window (1) Variant
+      value: Window Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 4366471651897142509, guid: 115df68e4c15f9a40b32d0c56a1262ef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5810403119704085758, guid: 115df68e4c15f9a40b32d0c56a1262ef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
