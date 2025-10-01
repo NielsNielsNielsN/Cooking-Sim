@@ -10,26 +10,27 @@ public class OrderSystem : MonoBehaviour
     [SerializeField] private int maxItems = 6;
 
     [Header("UI")]
-    [SerializeField] private GameObject ordersMenu;      // Panel that pops up with Tab
-    [SerializeField] private TextMeshProUGUI ordersText; // Text inside the panel
+    [SerializeField] private GameObject ordersMenu;     // The UI panel that toggles with Tab
+    [SerializeField] private Transform ordersContainer; // Parent for all order cards
+    [SerializeField] private GameObject orderCardPrefab; // Prefab for a single order card
 
     public int maxOrders = 5;
     public int activeOrders = 0;
 
     private int customerNumber = 1;
 
-    private List<string> activeOrderList = new List<string>();
+    private List<GameObject> activeOrderCards = new List<GameObject>();
     private Queue<Customer> customerQueue = new Queue<Customer>();
 
     private void Update()
     {
-        // Toggle UI menu with Tab
+        // Toggle orders menu
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             ordersMenu.SetActive(!ordersMenu.activeSelf);
         }
 
-        // For testing: complete next order with P
+        // Complete next order with P (for testing)
         if (Input.GetKeyDown(KeyCode.P))
         {
             CompleteNextOrder();
@@ -38,6 +39,9 @@ public class OrderSystem : MonoBehaviour
 
     public string GenerateOrder()
     {
+        // Limit to max active orders
+        if (activeOrders >= maxOrders) return null;
+
         int itemCount = Random.Range(minItems, maxItems + 1);
         List<string> order = new List<string>();
 
@@ -49,9 +53,13 @@ public class OrderSystem : MonoBehaviour
 
         string orderString = $"Customer {customerNumber}:\n - " + string.Join("\n - ", order);
 
-        activeOrderList.Add(orderString);
+        // Create UI card
+        GameObject newCard = Instantiate(orderCardPrefab, ordersContainer);
+        TextMeshProUGUI textComponent = newCard.GetComponentInChildren<TextMeshProUGUI>();
+        textComponent.text = orderString;
+
+        activeOrderCards.Add(newCard);
         activeOrders++;
-        RefreshOrdersUI();
 
         customerNumber++;
         return orderString;
@@ -64,20 +72,16 @@ public class OrderSystem : MonoBehaviour
 
     private void CompleteNextOrder()
     {
-        if (activeOrderList.Count == 0 || customerQueue.Count == 0) return;
+        if (activeOrderCards.Count == 0 || customerQueue.Count == 0) return;
 
-        string firstOrder = activeOrderList[0];
-        activeOrderList.RemoveAt(0);
+        // Remove first order card
+        GameObject firstCard = activeOrderCards[0];
+        Destroy(firstCard);
+        activeOrderCards.RemoveAt(0);
         activeOrders--;
 
+        // Notify customer
         Customer c = customerQueue.Dequeue();
         c.CompleteOrder();
-
-        RefreshOrdersUI();
-    }
-
-    private void RefreshOrdersUI()
-    {
-        ordersText.text = string.Join("\n\n", activeOrderList);
     }
 }
