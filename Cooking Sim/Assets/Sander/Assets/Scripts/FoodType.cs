@@ -1,5 +1,10 @@
 public enum FoodType
 {
     Hotdog,
-    Fries
+    Fries,
+    Can,
+    Milkshake,
+    Chips,
+    Popcorn,
+    Other
 }
