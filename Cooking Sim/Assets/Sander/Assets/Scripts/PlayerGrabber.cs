@@ -190,8 +190,10 @@ public class PlayerGrabber : MonoBehaviour
 
         if (hoveredTray != null && heldFood != null)
         {
-            hoveredTray.AddFood(heldFood);
-            ClearHeld();
+            if (hoveredTray.AddFood(heldFood))
+            {
+                ClearHeld();
+            }
             return;
         }
     }
