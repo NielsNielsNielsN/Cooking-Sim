@@ -10,7 +10,7 @@ public class Tray : MonoBehaviour
     public Transform[] drinkPositions = new Transform[2];
 
     private Dictionary<FoodType, Transform[]> foodPositions;
-    private Dictionary<FoodType, int> counts = new Dictionary<FoodType, int>();
+    public Dictionary<FoodType, int> counts = new Dictionary<FoodType, int>();
 
     public List<FoodItem> foods = new List<FoodItem>();
 
@@ -28,10 +28,11 @@ public class Tray : MonoBehaviour
         counts[FoodType.Can] = 0;
     }
 
-    public void AddFood(FoodItem food)
+    public bool AddFood(FoodItem food)
     {
         int index = counts[food.foodType];
-        if (index >= 2) return;
+        if (index >= foodPositions[food.foodType].Length)
+        return false; 
 
         foods.Add(food);
         food.transform.SetParent(foodParent != null ? foodParent : transform);
@@ -42,5 +43,6 @@ public class Tray : MonoBehaviour
         food.transform.rotation = targetPos.rotation;
 
         counts[food.foodType]++;
+        return true;
     }
 }
