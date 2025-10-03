@@ -19,6 +19,7 @@ public class PlayerGrabber : MonoBehaviour
     private Tray heldTray;
 
     private Drawer hoveredDrawer;
+    private TrayDispenser hoveredTrayDispenser;
     private CoolingCell hoveredCell;
     private CookStation hoveredStation;
     private FoodItem hoveredFoodItem;
@@ -72,6 +73,8 @@ public class PlayerGrabber : MonoBehaviour
             hoveredTrashBin = hit.collider.GetComponent<TrashBin>();
             hoveredTray = hit.collider.GetComponent<Tray>();
             hoveredCounter = hit.collider.GetComponent<Counter>();
+            hoveredTrayDispenser = hit.collider.GetComponent<TrayDispenser>();
+
 
             Interactable interactable = hit.collider.GetComponent<Interactable>();
             if (interactable != lastInteractable) lastInteractable = interactable;
@@ -93,6 +96,8 @@ public class PlayerGrabber : MonoBehaviour
             hoveredTrashBin = null;
             hoveredTray = null;
             hoveredCounter = null;
+            hoveredTrayDispenser = null;
+
 
             lastInteractable = null;
             if (interactionText) interactionText.text = "";
@@ -153,6 +158,14 @@ public class PlayerGrabber : MonoBehaviour
             }
             return;
         }
+
+        if (hoveredTrayDispenser != null)
+        {
+            GameObject tray = hoveredTrayDispenser.TakeTray();
+            if (tray != null) Grab(tray);
+            return;
+        }
+
     }
 
     private void TryPlace()
@@ -190,8 +203,10 @@ public class PlayerGrabber : MonoBehaviour
 
         if (hoveredTray != null && heldFood != null)
         {
-            hoveredTray.AddFood(heldFood);
-            ClearHeld();
+            if (hoveredTray.AddFood(heldFood))
+            {
+                ClearHeld();
+            }
             return;
         }
     }

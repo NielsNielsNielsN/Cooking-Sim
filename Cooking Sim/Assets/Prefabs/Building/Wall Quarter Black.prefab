@@ -10,27 +10,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 24f6a10f2a0fca04bacc0329ad4e5ce2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.289043
+      value: -3.2925127
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24f6a10f2a0fca04bacc0329ad4e5ce2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.07831454
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24f6a10f2a0fca04bacc0329ad4e5ce2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.6351714
+      value: -2.91786
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24f6a10f2a0fca04bacc0329ad4e5ce2, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071076
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24f6a10f2a0fca04bacc0329ad4e5ce2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24f6a10f2a0fca04bacc0329ad4e5ce2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.70710605
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24f6a10f2a0fca04bacc0329ad4e5ce2, type: 3}
       propertyPath: m_LocalRotation.z
@@ -42,7 +42,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24f6a10f2a0fca04bacc0329ad4e5ce2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 24f6a10f2a0fca04bacc0329ad4e5ce2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -54,7 +54,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3cc0fdd551327a6408fd1817e2a51a41, type: 2}
     - target: {fileID: 919132149155446097, guid: 24f6a10f2a0fca04bacc0329ad4e5ce2, type: 3}
       propertyPath: m_Name
-      value: Wall Quarter
+      value: Wall Quarter Black
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 24f6a10f2a0fca04bacc0329ad4e5ce2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
