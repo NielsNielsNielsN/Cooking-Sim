@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8568877304503402916}
   - component: {fileID: 8814370079637394214}
   - component: {fileID: -8357623652505467014}
+  - component: {fileID: 4791701925581916044}
+  - component: {fileID: 5486911299237764658}
   m_Layer: 0
   m_Name: Raw Fries
   m_TagString: Untagged
@@ -30,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.2, y: 0, z: 0.3}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -139,3 +141,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.1731654, y: 0.048642907, z: 0.10204745}
   m_Center: {x: -0.008896884, y: 0.025991391, z: 0.003866896}
+--- !u!114 &4791701925581916044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030709219860033068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf566e309eac7c6488dfeb039ffdbc19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoodItem
+  foodType: 1
+  state: 0
+  rawMaterial: {fileID: 2100000, guid: 29cb8fa97311c534ab1f8a65de0bad5b, type: 2}
+  cookedMaterial: {fileID: 2100000, guid: 2c385c0f4991b314eb00e64a06d47627, type: 2}
+  burnedMaterial: {fileID: 2100000, guid: fd9196eb3ce813f4ca1633d3237c46bf, type: 2}
+  meshRenderer: {fileID: 8568877304503402916}
+--- !u!114 &5486911299237764658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030709219860033068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe31252c334c8774e8c0135beb68ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  promptMessage: Press E to pick up

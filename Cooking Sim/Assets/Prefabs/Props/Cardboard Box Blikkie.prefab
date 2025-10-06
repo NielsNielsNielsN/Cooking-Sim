@@ -66,6 +66,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f219acd665f122042a6c540f1d04d8ba, type: 3}
       insertIndex: -1
       addedObject: {fileID: -1401634467146492560}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f219acd665f122042a6c540f1d04d8ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6211217250524916212}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f219acd665f122042a6c540f1d04d8ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8722169926388318113}
   m_SourcePrefab: {fileID: 100100000, guid: f219acd665f122042a6c540f1d04d8ba, type: 3}
 --- !u!1 &7028664186628924737 stripped
 GameObject:
@@ -120,3 +126,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6000183, y: 0.4000183, z: 0.6000183}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-6211217250524916212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7028664186628924737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a150dd463f3374b9b4587e813ce14c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoodBag
+  bagType: 2
+  refillAmount: 50
+--- !u!114 &-8722169926388318113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7028664186628924737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe31252c334c8774e8c0135beb68ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  promptMessage: Press E to pick up

@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1048022364583028439}
   - component: {fileID: 4994851371642356823}
   - component: {fileID: -7466902404281265733}
+  - component: {fileID: 4229407594636303035}
+  - component: {fileID: -2241934841505068570}
   m_Layer: 0
   m_Name: Still Walking
   m_TagString: Untagged
@@ -30,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -139,3 +141,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.14979704, y: 0.024310365, z: 0.024436332}
   m_Center: {x: -0.0027987696, y: 0.026099203, z: 0.00028676214}
+--- !u!114 &4229407594636303035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7053279956773836808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf566e309eac7c6488dfeb039ffdbc19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoodItem
+  foodType: 0
+  state: 0
+  rawMaterial: {fileID: 2100000, guid: 96c14976d321b354fbdea5856cbaa2ce, type: 2}
+  cookedMaterial: {fileID: 2100000, guid: afde13a4a3b9e934d944d1b75b6ed11e, type: 2}
+  burnedMaterial: {fileID: 2100000, guid: a68a2b96c2d22494b8a6d5ea58975446, type: 2}
+  meshRenderer: {fileID: 1048022364583028439}
+--- !u!114 &-2241934841505068570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7053279956773836808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe31252c334c8774e8c0135beb68ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  promptMessage: Press E to pick up
