@@ -6,5 +6,6 @@ public enum FoodType
     Milkshake,
     Chips,
     Popcorn,
-    Other
+    Other,
+    Bun
 }

@@ -12,7 +12,7 @@ public class Tray : MonoBehaviour
     private Dictionary<FoodType, Transform[]> foodPositions;
     public Dictionary<FoodType, int> counts = new Dictionary<FoodType, int>();
 
-    public List<FoodItem> foods = new List<FoodItem>();
+    public List<GameObject> placedObjects = new List<GameObject>();
 
     private void Awake()
     {
@@ -30,19 +30,45 @@ public class Tray : MonoBehaviour
 
     public bool AddFood(FoodItem food)
     {
-        int index = counts[food.foodType];
-        if (index >= foodPositions[food.foodType].Length)
-        return false; 
+        FoodType type = food.foodType;
+        if (!foodPositions.ContainsKey(type)) return false;
 
-        foods.Add(food);
-        food.transform.SetParent(foodParent != null ? foodParent : transform);
-        food.transform.localRotation = Quaternion.identity;
+        int index = counts[type];
+        if (index >= foodPositions[type].Length) return false;
 
-        Transform targetPos = foodPositions[food.foodType][index];
-        food.transform.position = targetPos.position;
-        food.transform.rotation = targetPos.rotation;
-
-        counts[food.foodType]++;
+        Transform target = foodPositions[type][index];
+        PlaceObject(food.gameObject, target);
+        counts[type]++;
         return true;
+    }
+
+    public bool AddBun(HotdogBun bun)
+    {
+        int index = counts[FoodType.Hotdog];
+        if (index >= hotdogPositions.Length) return false;
+
+        Transform target = hotdogPositions[index];
+        PlaceObject(bun.gameObject, target);
+        counts[FoodType.Hotdog]++;
+        return true;
+    }
+
+    public bool AddBowl(FriesBowl bowl)
+    {
+        int index = counts[FoodType.Fries];
+        if (index >= friesPositions.Length) return false;
+
+        Transform target = friesPositions[index];
+        PlaceObject(bowl.gameObject, target);
+        counts[FoodType.Fries]++;
+        return true;
+    }
+
+    private void PlaceObject(GameObject obj, Transform target)
+    {
+        placedObjects.Add(obj);
+        obj.transform.SetParent(foodParent != null ? foodParent : transform);
+        obj.transform.position = target.position;
+        obj.transform.rotation = target.rotation;
     }
 }

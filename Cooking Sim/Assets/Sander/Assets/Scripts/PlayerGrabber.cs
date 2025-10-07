@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using Unity.AppUI.UI;
 using UnityEngine;
 
@@ -20,6 +20,7 @@ public class PlayerGrabber : MonoBehaviour
 
     private Drawer hoveredDrawer;
     private TrayDispenser hoveredTrayDispenser;
+    private BowlDispenser hoveredBowlDispenser;
     private CoolingCell hoveredCell;
     private CookStation hoveredStation;
     private FoodItem hoveredFoodItem;
@@ -74,7 +75,7 @@ public class PlayerGrabber : MonoBehaviour
             hoveredTray = hit.collider.GetComponent<Tray>();
             hoveredCounter = hit.collider.GetComponent<Counter>();
             hoveredTrayDispenser = hit.collider.GetComponent<TrayDispenser>();
-
+            hoveredBowlDispenser = hit.collider.GetComponent<BowlDispenser>();
 
             Interactable interactable = hit.collider.GetComponent<Interactable>();
             if (interactable != lastInteractable) lastInteractable = interactable;
@@ -97,7 +98,7 @@ public class PlayerGrabber : MonoBehaviour
             hoveredTray = null;
             hoveredCounter = null;
             hoveredTrayDispenser = null;
-
+            hoveredBowlDispenser = null;
 
             lastInteractable = null;
             if (interactionText) interactionText.text = "";
@@ -166,6 +167,12 @@ public class PlayerGrabber : MonoBehaviour
             return;
         }
 
+        if (hoveredBowlDispenser != null)
+        {
+            GameObject bowl = hoveredBowlDispenser.TakeBowl();
+            if (bowl != null) Grab(bowl);
+            return;
+        }
     }
 
     private void TryPlace()
@@ -201,13 +208,55 @@ public class PlayerGrabber : MonoBehaviour
             return;
         }
 
-        if (hoveredTray != null && heldFood != null)
+        // 🧺 Place into Bun or Bowl
+        var hoveredBun = hoveredTray != null ? null : hoveredFoodItem?.GetComponent<HotdogBun>();
+        var hoveredBowl = hoveredTray != null ? null : hoveredFoodItem?.GetComponent<FriesBowl>();
+
+        if (hoveredBun != null && heldFood != null)
         {
-            if (hoveredTray.AddFood(heldFood))
+            if (heldFood.foodType == FoodType.Hotdog)
+            {
+                if (hoveredBun.AddFood(heldFood))
+                {
+                    ClearHeld();
+                    return;
+                }
+            }
+        }
+
+        if (hoveredBowl != null && heldFood != null)
+        {
+            if (heldFood.foodType == FoodType.Fries)
+            {
+                if (hoveredBowl.AddFood(heldFood))
+                {
+                    ClearHeld();
+                    return;
+                }
+            }
+        }
+
+        // 🍽️ Place on Tray
+        if (hoveredTray != null && heldObject != null)
+        {
+            var foodItem = heldObject.GetComponent<FoodItem>();
+            var bun = heldObject.GetComponent<HotdogBun>();
+            var bowl = heldObject.GetComponent<FriesBowl>();
+
+            bool placed = false;
+
+            if (bun != null)
+                placed = hoveredTray.AddBun(bun);
+            else if (bowl != null)
+                placed = hoveredTray.AddBowl(bowl);
+            else if (foodItem != null)
+                placed = hoveredTray.AddFood(foodItem);
+
+            if (placed)
             {
                 ClearHeld();
+                return;
             }
-            return;
         }
     }
 

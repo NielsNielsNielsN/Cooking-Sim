@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 3555071890180792974}
   - component: {fileID: -1907104579860748927}
   - component: {fileID: 7534442780902229582}
+  - component: {fileID: 4333803340850684211}
+  - component: {fileID: -1118028860092077829}
+  - component: {fileID: 2308207936708920850}
   m_Layer: 0
   m_Name: Bakkie Los
   m_TagString: Untagged
@@ -32,7 +35,8 @@ Transform:
   m_LocalPosition: {x: -0.2, y: 0, z: 0.1}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2701587638113155399}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3659148949903616838
@@ -139,3 +143,79 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.17003776, y: 0.033329103, z: 0.10476716}
   m_Center: {x: 0, y: 0.016661953, z: -0.0000000037252903}
+--- !u!114 &4333803340850684211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550385823383575727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb642f565b6e1945834251ee659836e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FriesBowl
+  foodParent: {fileID: 2622714310478752338}
+  friesPosition: {fileID: 2701587638113155399}
+--- !u!114 &-1118028860092077829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550385823383575727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe31252c334c8774e8c0135beb68ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  promptMessage: Press E to interact
+--- !u!114 &2308207936708920850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550385823383575727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf566e309eac7c6488dfeb039ffdbc19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoodItem
+  foodType: 6
+  state: 3
+  rawMaterial: {fileID: 0}
+  cookedMaterial: {fileID: 0}
+  burnedMaterial: {fileID: 0}
+  meshRenderer: {fileID: 3555071890180792974}
+--- !u!1 &8905137155663732594
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2701587638113155399}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2701587638113155399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8905137155663732594}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2622714310478752338}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

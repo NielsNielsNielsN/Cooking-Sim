@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9079173172491856320}
+  - component: {fileID: 4392881266284942773}
   m_Layer: 0
   m_Name: Hotdog
   m_TagString: Untagged
@@ -24,13 +25,21 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 603706216698183500}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.13999987, y: 0, z: 0.13300002}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.11, y: 0, z: 0.13300002}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6027182416122390901}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &4392881266284942773
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603706216698183500}
+  m_Mesh: {fileID: -8582907418661513189, guid: f4781853c96f7c7459ddfd88bc1c1f18, type: 3}
 --- !u!1 &1625822952500895709
 GameObject:
   m_ObjectHideFlags: 0
@@ -40,6 +49,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9196046202783347030}
+  - component: {fileID: 7127682688800748906}
   m_Layer: 0
   m_Name: Drink
   m_TagString: Untagged
@@ -55,13 +65,21 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625822952500895709}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: 0.08300018, y: 0, z: -0.042000175}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: -0, y: -0.35347486, z: 0, w: -0.93544406}
+  m_LocalPosition: {x: 0.143, y: 0, z: -0.211}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6027182416122390901}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 401.4, z: 0}
+--- !u!33 &7127682688800748906
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625822952500895709}
+  m_Mesh: {fileID: -7706264441290431685, guid: 84dd657a591fe1d4e983a8a91a4d6706, type: 3}
 --- !u!1 &1676353707625153315
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,6 +89,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9039973685851582561}
+  - component: {fileID: 4120775086855019889}
   m_Layer: 0
   m_Name: Hotdog
   m_TagString: Untagged
@@ -86,13 +105,21 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676353707625153315}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.013800144, y: 0, z: 0.13300002}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.11, y: 0, z: 0.017}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6027182416122390901}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &4120775086855019889
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676353707625153315}
+  m_Mesh: {fileID: -8582907418661513189, guid: f4781853c96f7c7459ddfd88bc1c1f18, type: 3}
 --- !u!1 &2943467704533923356
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +152,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.833, y: 1.05, z: 1.796506}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4843490863522092471}
@@ -214,7 +241,7 @@ MonoBehaviour:
   drinkPositions:
   - {fileID: 9196046202783347030}
   - {fileID: 5600027744959211199}
-  foods: []
+  placedObjects: []
 --- !u!114 &1939624486375644478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -285,6 +312,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4843490863522092471}
+  - component: {fileID: 1705068972608708197}
   m_Layer: 0
   m_Name: Fries
   m_TagString: Untagged
@@ -300,13 +328,21 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4138539145586862841}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.13999987, y: 0, z: -0.20700014}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.13999987, y: 0.007, z: -0.169}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6027182416122390901}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!33 &1705068972608708197
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4138539145586862841}
+  m_Mesh: {fileID: 3112082432940981728, guid: 508a645ab12bb8d45b4d78a2a108eb7e, type: 3}
 --- !u!1 &6978310171887438608
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,6 +352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7427800469663790361}
+  - component: {fileID: 4063920481900578017}
   m_Layer: 0
   m_Name: Fries
   m_TagString: Untagged
@@ -331,13 +368,21 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6978310171887438608}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.013800144, y: 0, z: -0.20700014}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.017, y: 0.006599971, z: -0.169}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6027182416122390901}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!33 &4063920481900578017
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6978310171887438608}
+  m_Mesh: {fileID: 3112082432940981728, guid: 508a645ab12bb8d45b4d78a2a108eb7e, type: 3}
 --- !u!1 &8003287047321978096
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5600027744959211199}
+  - component: {fileID: 4946898417883448543}
   m_Layer: 0
   m_Name: Drink
   m_TagString: Untagged
@@ -362,10 +408,18 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8003287047321978096}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: 0.13754845, y: 0, z: 0.101800084}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: -0.8946226, z: 0, w: 0.4468225}
+  m_LocalPosition: {x: 0.143, y: 0, z: -0.078}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6027182416122390901}
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -126.92, z: 0}
+--- !u!33 &4946898417883448543
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8003287047321978096}
+  m_Mesh: {fileID: -7706264441290431685, guid: 84dd657a591fe1d4e983a8a91a4d6706, type: 3}
