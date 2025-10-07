@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DisplayRek Blik
       objectReference: {fileID: 0}
+    - target: {fileID: 8444135641589918324, guid: 30b91559d150c9d43b53a7b45a783118, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 9218575522545398117, guid: 30b91559d150c9d43b53a7b45a783118, type: 3}
       propertyPath: m_Name
       value: Can (4)

@@ -54,11 +54,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3cc0fdd551327a6408fd1817e2a51a41, type: 2}
     - target: {fileID: 919132149155446097, guid: 105a554a631e68d45a961faa641d7207, type: 3}
       propertyPath: m_Name
-      value: Floor (24)
+      value: Floor Black
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 105a554a631e68d45a961faa641d7207, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 1
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

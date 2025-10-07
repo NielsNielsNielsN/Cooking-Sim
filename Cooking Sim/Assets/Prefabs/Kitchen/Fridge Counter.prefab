@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fridge Counter
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4bff0698eddd36a46843b6016835b5e1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -112,6 +116,7 @@ MonoBehaviour:
   maxStock: 10
   currentStock: 5
   foodPrefab: {fileID: 0}
+  physicalItems: []
 --- !u!114 &889469753683027425
 MonoBehaviour:
   m_ObjectHideFlags: 0
