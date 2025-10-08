@@ -17,8 +17,9 @@ public class Customer : MonoBehaviour
     private float moveSpeed = 2f;
     private string myOrder;
     private Transform myWaitingSpot;
-
     private bool orderCompleted = false;
+
+    private List<string> myOrderItems = new List<string>(); // store items for GameManager
 
     private void Start()
     {
@@ -39,6 +40,10 @@ public class Customer : MonoBehaviour
         // Step 3: Place order
         myOrder = orderSystem.GenerateOrder();
         orderSystem.RegisterCustomerOrder(myOrder, this);
+
+        // Parse order items for profit later
+        myOrderItems = ParseOrderItems(myOrder);
+
         orderScreenPoint.isOccupied = false;
 
         // Step 4: Go to a free waiting spot
@@ -68,10 +73,17 @@ public class Customer : MonoBehaviour
     public void CompleteOrder()
     {
         orderCompleted = true;
+
+        // Earn money for all items sold in this order
+        foreach (string item in myOrderItems)
+        {
+            GameManager.Instance.SellItem(item);
+        }
+
         if (myWaitingSpot != null)
         {
             WaitingSpots ws = myWaitingSpot.GetComponent<WaitingSpots>();
-            if (ws != null) ws.isOccupied = false; // free the spot
+            if (ws != null) ws.isOccupied = false;
         }
     }
 
@@ -104,5 +116,23 @@ public class Customer : MonoBehaviour
         {
             yield return MoveTo(point.position);
         }
+    }
+
+    // Helper function to extract items from the order text
+    private List<string> ParseOrderItems(string orderText)
+    {
+        List<string> items = new List<string>();
+        string[] lines = orderText.Split('\n');
+
+        foreach (string line in lines)
+        {
+            if (line.StartsWith(" - "))
+            {
+                string item = line.Substring(3).Trim();
+                items.Add(item);
+            }
+        }
+
+        return items;
     }
 }
