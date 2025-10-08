@@ -5501,6 +5501,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2298287372110741360}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &8839941750993754024
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 875898846536895143, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 875898846536895143, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 875898846536895143, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 875898846536895143, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 875898846536895143, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 875898846536895143, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 875898846536895143, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 875898846536895143, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 875898846536895143, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 875898846536895143, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351499798495076056, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
+      propertyPath: m_Name
+      value: Plastic Bakkie
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
 --- !u!1001 &8871752248859379180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5736,3 +5793,4 @@ SceneRoots:
   - {fileID: 6544561529060361944}
   - {fileID: 1935461874}
   - {fileID: 588166019}
+  - {fileID: 8839941750993754024}
