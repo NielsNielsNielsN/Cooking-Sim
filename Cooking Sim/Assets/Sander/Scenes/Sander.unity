@@ -2549,47 +2549,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
---- !u!114 &53034234474642926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3645723141934668842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4381cba859311994291c8de6b0d9678b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Knife
-  openBunPrefab: {fileID: 4251973644831046338, guid: 8f560d3ac83a0124eac68fa7e9cc813b, type: 3}
-  CuttingBoard: {fileID: 9067156085843799300}
---- !u!54 &544564117742864035
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3645723141934668842}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!23 &644846431685368873
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2874,10 +2833,8 @@ GameObject:
   - component: {fileID: 1177614800860281016}
   - component: {fileID: 6086758793061059112}
   - component: {fileID: 644846431685368873}
-  - component: {fileID: 544564117742864035}
   - component: {fileID: 4326370801307169200}
-  - component: {fileID: 53034234474642926}
-  - component: {fileID: 4962662748019855004}
+  - component: {fileID: 6086758793061059113}
   m_Layer: 0
   m_Name: mes
   m_TagString: Untagged
@@ -2977,7 +2934,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 2, z: 4}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &4479225757834038926
 Transform:
@@ -2992,24 +2949,11 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1177614800860281016}
   - {fileID: 1146791014824576470}
   - {fileID: 291683397}
-  - {fileID: 1177614800860281016}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &4962662748019855004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3645723141934668842}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe31252c334c8774e8c0135beb68ea95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  promptMessage: Press E to pick up knife
 --- !u!1001 &5956965044365157403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3115,6 +3059,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3645723141934668842}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &6086758793061059113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3645723141934668842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe31252c334c8774e8c0135beb68ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  promptMessage: Press E to grab knife
 --- !u!33 &6124612050467253400
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3467,6 +3424,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4094841506920824480, guid: e098109f16e9aa44497aca00d4f29f4b, type: 3}
+      propertyPath: drawerFoodType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5222686506158760201, guid: e098109f16e9aa44497aca00d4f29f4b, type: 3}
       propertyPath: m_Name
       value: Fridge
@@ -3570,10 +3531,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec122543d83824f4a95d0b8a168a9e7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CuttingBoard
-  itemPosition: {fileID: 1146791014824576470}
-  knifePosition: {fileID: 291683397}
-  currentItem: {fileID: 0}
   knifeVisual: {fileID: 3645723141934668842}
+  itemSpot: {fileID: 1146791014824576470}
+  currentItem: {fileID: 0}
+  hasKnife: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
