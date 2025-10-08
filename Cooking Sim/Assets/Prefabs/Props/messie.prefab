@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2971421391710780288}
   - component: {fileID: 1348944084242205843}
   - component: {fileID: 3318687246954889421}
+  - component: {fileID: 7668743224103515071}
   m_Layer: 0
   m_Name: messie
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.023, y: 1.064, z: 3.665}
-  m_LocalScale: {x: 0.19149, y: -0.020985698, z: 0.0076788813}
+  m_LocalScale: {x: 0.19149, y: 0.0209857, z: 0.0076788813}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -153,3 +154,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Knife
   openBunPrefab: {fileID: 4251973644831046338, guid: 8f560d3ac83a0124eac68fa7e9cc813b, type: 3}
+--- !u!114 &7668743224103515071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029443157019189513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe31252c334c8774e8c0135beb68ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  promptMessage: Press E to pick up knife

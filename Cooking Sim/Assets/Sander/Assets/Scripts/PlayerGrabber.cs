@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerGrabber : MonoBehaviour
 {
     public Camera playerCamera;
-    public float interactDistance;
+    public float interactDistance = 2.5f;
     public Transform holdParent;
-    public Vector3 holdLocalPosition;
+    public Vector3 holdLocalPosition = new Vector3(0.4f, -0.3f, 0.9f);
     public TextMeshProUGUI interactionText;
 
     public MonoBehaviour[] scriptsToDisable;
@@ -31,8 +31,8 @@ public class PlayerGrabber : MonoBehaviour
     private Interactable lastInteractable;
     private Knife hoveredKnife;
     private Knife heldKnife;
-    public GameObject knifePrefab; 
 
+    public GameObject knifePrefab; // assign the knife prefab in inspector
 
     public CoolingCell OpenedCoolingCell { get; set; }
 
@@ -85,9 +85,13 @@ public class PlayerGrabber : MonoBehaviour
             hoveredKnife = hit.collider.GetComponent<Knife>();
 
             Interactable interactable = hit.collider.GetComponent<Interactable>();
-            if (interactable != lastInteractable) lastInteractable = interactable;
+            if (interactable != lastInteractable)
+            {
+                lastInteractable = interactable;
+            }
 
-            if (interactionText) interactionText.text = interactable ? interactable.promptMessage : "";
+            if (interactionText)
+                interactionText.text = interactable ? interactable.promptMessage : "";
 
             if (hoveredDrawer != null && DrawerUIManager.Instance != null)
                 DrawerUIManager.Instance.ShowStock(hoveredDrawer);
@@ -109,7 +113,6 @@ public class PlayerGrabber : MonoBehaviour
             hoveredCuttingBoard = null;
             hoveredKnife = null;
 
-            lastInteractable = null;
             if (interactionText) interactionText.text = "";
 
             if (DrawerUIManager.Instance != null) DrawerUIManager.Instance.HideStock();
@@ -118,31 +121,36 @@ public class PlayerGrabber : MonoBehaviour
 
     private void TryPickUp()
     {
+        // Grab from drawer
         if (hoveredDrawer != null)
         {
             GameObject instance = hoveredDrawer.TakeOne();
-            if (instance != null) Grab(instance);
+            if (instance != null) { Grab(instance); }
             return;
         }
 
+        // Open CoolingCell UI
         if (hoveredCell != null)
         {
             hoveredCell.OpenMenu(this);
             return;
         }
 
+        // Grab raw food on ground
         if (hoveredFoodItem != null)
         {
             Grab(hoveredFoodItem.gameObject);
             return;
         }
 
+        // Grab a bag on ground
         if (hoveredBag != null)
         {
             Grab(hoveredBag.gameObject);
             return;
         }
 
+        // Remove from cooking station
         if (hoveredStation != null)
         {
             FoodItem removed = hoveredStation.RemoveFood();
@@ -150,12 +158,14 @@ public class PlayerGrabber : MonoBehaviour
             return;
         }
 
+        // Grab a tray that's lying in the world
         if (hoveredTray != null && heldObject == null)
         {
             Grab(hoveredTray.gameObject);
             return;
         }
 
+        // Take tray from counter
         if (hoveredCounter != null && heldObject == null)
         {
             Tray takenTray = hoveredCounter.TakeTray();
@@ -163,6 +173,7 @@ public class PlayerGrabber : MonoBehaviour
             return;
         }
 
+        // Take a tray from dispenser
         if (hoveredTrayDispenser != null)
         {
             GameObject tray = hoveredTrayDispenser.TakeTray();
@@ -170,6 +181,7 @@ public class PlayerGrabber : MonoBehaviour
             return;
         }
 
+        // Take a bowl from bowl dispenser
         if (hoveredBowlDispenser != null)
         {
             GameObject bowl = hoveredBowlDispenser.TakeBowl();
@@ -177,45 +189,45 @@ public class PlayerGrabber : MonoBehaviour
             return;
         }
 
+        // Pick up a knife object in the world
         if (hoveredKnife != null)
         {
             Grab(hoveredKnife.gameObject);
             return;
         }
 
+        // Cutting board interactions when hand is empty (pick up knife visual or pick up item)
         if (hoveredCuttingBoard != null)
         {
-            if (heldKnife != null)
+            // If board has knife visual and hand empty -> pick up knife
+            if (hoveredCuttingBoard.HasKnife() && heldObject == null)
             {
-                if (!hoveredCuttingBoard.HasKnifeVisual())
-                {
-                    heldKnife.TryCut(hoveredCuttingBoard);
-                    return;
-                }
+                hoveredCuttingBoard.SetKnife(false);
+                GameObject knifeObject = Instantiate(knifePrefab, holdParent != null ? holdParent.position : playerCamera.transform.position, holdParent != null ? holdParent.rotation : playerCamera.transform.rotation);
+                Grab(knifeObject);
+                return;
             }
-            else
+
+            // If board has an item and hand empty -> pick up the item
+            if (hoveredCuttingBoard.currentItem != null && heldObject == null)
             {
-                if (hoveredCuttingBoard.HasKnifeVisual())
-                {
-                    hoveredCuttingBoard.SetKnifeVisual(false);
-                    GameObject knifeObject = Instantiate(knifePrefab, holdParent.position, holdParent.rotation);
-                    Grab(knifeObject);
-                    return;
-                }
+                GameObject taken = hoveredCuttingBoard.TakeItem();
+                if (taken != null) { Grab(taken); }
+                return;
             }
         }
-
-
     }
 
     private void TryPlace()
     {
+        // Trash bin
         if (hoveredTrashBin != null)
         {
             hoveredTrashBin.Interact(this);
             return;
         }
 
+        // Place into cooking station
         if (hoveredStation != null && heldFood != null && hoveredStation.CanAccept(heldFood.foodType))
         {
             hoveredStation.PlaceFood(heldFood);
@@ -223,14 +235,19 @@ public class PlayerGrabber : MonoBehaviour
             return;
         }
 
-        if (hoveredDrawer != null && heldBag != null && hoveredDrawer.drawerFoodType == heldBag.bagType)
+        // Refill drawer
+        if (hoveredDrawer != null && heldBag != null)
         {
-            hoveredDrawer.Refill(heldBag);
-            Destroy(heldBag.gameObject);
-            ClearHeld();
+            if (hoveredDrawer.drawerFoodType == heldBag.bagType)
+            {
+                hoveredDrawer.Refill(heldBag);
+                Destroy(heldBag.gameObject);
+                ClearHeld();
+            }
             return;
         }
 
+        // Place tray on counter
         if (heldTray != null && hoveredCounter != null)
         {
             hoveredCounter.AcceptTray(heldTray);
@@ -238,6 +255,7 @@ public class PlayerGrabber : MonoBehaviour
             return;
         }
 
+        // Place food into bun or bowl
         var hoveredBun = hoveredTray == null ? hoveredFoodItem?.GetComponent<HotdogBun>() : null;
         var hoveredBowl = hoveredTray == null ? hoveredFoodItem?.GetComponent<FriesBowl>() : null;
 
@@ -259,6 +277,7 @@ public class PlayerGrabber : MonoBehaviour
             }
         }
 
+        // Place on tray
         if (hoveredTray != null && heldObject != null)
         {
             var bun = heldObject.GetComponent<HotdogBun>();
@@ -271,30 +290,35 @@ public class PlayerGrabber : MonoBehaviour
             if (placed) { ClearHeld(); return; }
         }
 
+        // Cutting board interactions when holding something
         if (hoveredCuttingBoard != null)
         {
+            // If holding a knife and board has an item -> cut
             if (heldKnife != null && hoveredCuttingBoard.currentItem != null)
             {
                 heldKnife.TryCut(hoveredCuttingBoard);
                 return;
             }
 
-            if (heldKnife != null && !hoveredCuttingBoard.HasKnifeVisual())
+            // If holding a knife and the knife visual is NOT active -> place knife back
+            if (heldKnife != null && !hoveredCuttingBoard.HasKnife())
             {
-                hoveredCuttingBoard.SetKnifeVisual(true);
+                hoveredCuttingBoard.SetKnife(true);
                 Destroy(heldObject);
                 ClearHeld();
                 return;
             }
 
-            if (heldObject == null && hoveredCuttingBoard.HasKnifeVisual())
+            // If hand empty and board has knife visual, pickup knife - handled in TryPickUp (kept for safety if placed here)
+            if (heldObject == null && hoveredCuttingBoard.HasKnife())
             {
-                hoveredCuttingBoard.SetKnifeVisual(false);
-                GameObject knifeObject = Instantiate(knifePrefab, holdParent.position, holdParent.rotation);
-                Grab(knifeObject);
+                hoveredCuttingBoard.SetKnife(false);
+                GameObject knifeObject2 = Instantiate(knifePrefab, holdParent != null ? holdParent.position : playerCamera.transform.position, holdParent != null ? holdParent.rotation : playerCamera.transform.rotation);
+                Grab(knifeObject2);
                 return;
             }
 
+            // Place food on the board (when holding food and there is no current item)
             if (heldObject != null && heldFood != null && hoveredCuttingBoard.currentItem == null)
             {
                 if (hoveredCuttingBoard.PlaceItem(heldObject))
@@ -304,8 +328,6 @@ public class PlayerGrabber : MonoBehaviour
                 }
             }
         }
-
-
     }
 
     public void Grab(GameObject obj)
@@ -384,6 +406,7 @@ public class PlayerGrabber : MonoBehaviour
             heldFood = null;
             heldBag = null;
             heldTray = null;
+            heldKnife = null;
         }
     }
 }

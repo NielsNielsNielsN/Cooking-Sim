@@ -6,27 +6,27 @@ public class Knife : MonoBehaviour
 
     public void TryCut(CuttingBoard board)
     {
-        if (board.currentItem == null) return;
-
-        Cuttable cuttable = board.currentItem.GetComponent<Cuttable>();
-        if (cuttable != null && !cuttable.isCut)
-        {
-            cuttable.Cut();
-            return;
-        }
+        if (board == null || board.currentItem == null) return;
 
         FoodItem food = board.currentItem.GetComponent<FoodItem>();
-        if (food != null && food.foodType == FoodType.Hotdog)
+        if (food == null || food.foodType != FoodType.ClosedBun) return;
+
+        Vector3 pos = board.currentItem.transform.position;
+        Quaternion rot = board.currentItem.transform.rotation;
+
+        GameObject oldBun = board.currentItem;
+        board.currentItem = null;
+        Destroy(oldBun);
+
+        GameObject openBun = Object.Instantiate(openBunPrefab, pos, rot);
+        openBun.transform.SetParent(board.transform);
+        board.currentItem = openBun;
+
+        Rigidbody rb = openBun.GetComponent<Rigidbody>();
+        if (rb != null)
         {
-            Vector3 pos = board.currentItem.transform.position;
-            Quaternion rot = board.currentItem.transform.rotation;
-
-            Destroy(board.currentItem);
-
-            GameObject openBun = Instantiate(openBunPrefab, pos, rot);
-            openBun.transform.localScale = Vector3.one * 2f;
-            board.currentItem = openBun;
+            rb.isKinematic = true;
+            rb.detectCollisions = false;
         }
     }
-
 }

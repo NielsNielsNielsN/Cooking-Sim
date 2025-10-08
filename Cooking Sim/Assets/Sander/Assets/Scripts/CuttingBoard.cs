@@ -2,19 +2,34 @@ using UnityEngine;
 
 public class CuttingBoard : MonoBehaviour
 {
-    public Transform itemPosition;
-    public GameObject knifeVisual; // Visual representation of the knife on the board
+
+    public GameObject knifeVisual;
+    public Transform itemSpot;
     public GameObject currentItem;
+
+    public bool hasKnife = true;
+    public bool HasKnife()
+    {
+        return hasKnife;
+    }
+
+    public void SetKnife(bool visible)
+    {
+        hasKnife = visible;
+        if (knifeVisual != null)
+            knifeVisual.SetActive(visible);
+    }
 
     public bool PlaceItem(GameObject item)
     {
         if (currentItem != null) return false;
-        currentItem = item;
-        item.transform.SetParent(transform);
-        item.transform.position = itemPosition.position;
-        item.transform.rotation = itemPosition.rotation;
 
-        var rb = item.GetComponent<Rigidbody>();
+        currentItem = item;
+        currentItem.transform.SetParent(itemSpot != null ? itemSpot : transform);
+        currentItem.transform.localPosition = Vector3.zero;
+        currentItem.transform.localRotation = Quaternion.identity;
+
+        var rb = currentItem.GetComponent<Rigidbody>();
         if (rb)
         {
             rb.isKinematic = true;
@@ -27,24 +42,18 @@ public class CuttingBoard : MonoBehaviour
     public GameObject TakeItem()
     {
         if (currentItem == null) return null;
-        GameObject item = currentItem;
-        currentItem = null;
 
-        var rb = item.GetComponent<Rigidbody>();
+        GameObject item = currentItem;
+        currentItem.transform.SetParent(null);
+
+        var rb = currentItem.GetComponent<Rigidbody>();
         if (rb)
         {
             rb.isKinematic = false;
             rb.detectCollisions = true;
         }
 
-        item.transform.SetParent(null);
+        currentItem = null;
         return item;
-    }
-
-    public bool HasKnifeVisual() => knifeVisual != null && knifeVisual.activeSelf;
-    public void SetKnifeVisual(bool state)
-    {
-        if (knifeVisual != null)
-            knifeVisual.SetActive(state);
     }
 }
