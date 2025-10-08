@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
@@ -35,7 +35,7 @@ RenderSettings:
   m_DefaultReflectionMode: 0
   m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
-  m_ReflectionIntensity: 1
+  m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
   m_UseRadianceAmbientProbe: 0
@@ -886,6 +886,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ceiling light (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6262888419337953631, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6431786129593007123, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.900011
@@ -925,6 +929,10 @@ PrefabInstance:
     - target: {fileID: 6431786129593007123, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482528218218345569, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.023
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3313,6 +3321,10 @@ PrefabInstance:
     - target: {fileID: 5911427256296449705, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
       propertyPath: m_Name
       value: ceiling light (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262888419337953631, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6431786129593007123, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6289,7 +6301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6262888419337953631, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
       propertyPath: m_Lightmapping
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6431786129593007123, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7265,6 +7277,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ceiling light (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 6262888419337953631, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6431786129593007123, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.9
@@ -7304,6 +7320,10 @@ PrefabInstance:
     - target: {fileID: 6431786129593007123, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482528218218345569, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.023
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10205,7 +10225,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 568237123583321445, guid: 3445e5b6e8b7ad643bba5bc90f3ce4dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.930023
+      value: 16.929981
       objectReference: {fileID: 0}
     - target: {fileID: 568237123583321445, guid: 3445e5b6e8b7ad643bba5bc90f3ce4dd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10213,7 +10233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 568237123583321445, guid: 3445e5b6e8b7ad643bba5bc90f3ce4dd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.3563533
+      value: -2.256403
       objectReference: {fileID: 0}
     - target: {fileID: 568237123583321445, guid: 3445e5b6e8b7ad643bba5bc90f3ce4dd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11730,7 +11750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7528321977768386318, guid: 1f37f198ad7dd9142afb11a05bb142e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.137
+      value: 2.907
       objectReference: {fileID: 0}
     - target: {fileID: 7528321977768386318, guid: 1f37f198ad7dd9142afb11a05bb142e6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12561,6 +12581,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6262888419337953631, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6431786129593007123, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.317724
@@ -12600,6 +12624,10 @@ PrefabInstance:
     - target: {fileID: 6431786129593007123, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482528218218345569, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.027
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12819,15 +12847,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 568237123583321445, guid: 3445e5b6e8b7ad643bba5bc90f3ce4dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.930023
+      value: 16.929981
       objectReference: {fileID: 0}
     - target: {fileID: 568237123583321445, guid: 3445e5b6e8b7ad643bba5bc90f3ce4dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.8999788
+      value: -0.89997876
       objectReference: {fileID: 0}
     - target: {fileID: 568237123583321445, guid: 3445e5b6e8b7ad643bba5bc90f3ce4dd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.3563533
+      value: -2.256403
       objectReference: {fileID: 0}
     - target: {fileID: 568237123583321445, guid: 3445e5b6e8b7ad643bba5bc90f3ce4dd, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19321,9 +19349,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1178318763}
     m_Modifications:
+    - target: {fileID: 5262851665734862716, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 247
+      objectReference: {fileID: 0}
     - target: {fileID: 5911427256296449705, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
       propertyPath: m_Name
       value: ceiling light (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262888419337953631, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6431786129593007123, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19364,6 +19400,10 @@ PrefabInstance:
     - target: {fileID: 6431786129593007123, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7482528218218345569, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.839
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21979,7 +22019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6262888419337953631, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
       propertyPath: m_Lightmapping
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6431786129593007123, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
       propertyPath: m_LocalPosition.x
