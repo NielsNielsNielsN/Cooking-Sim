@@ -10,31 +10,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 530a66662bd353c45b192eb0f4d939dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 13.529993
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 530a66662bd353c45b192eb0f4d939dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.89998174
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 530a66662bd353c45b192eb0f4d939dd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2
+      value: -4.7563477
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 530a66662bd353c45b192eb0f4d939dd, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.70710784
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 530a66662bd353c45b192eb0f4d939dd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 530a66662bd353c45b192eb0f4d939dd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.70710576
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 530a66662bd353c45b192eb0f4d939dd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 530a66662bd353c45b192eb0f4d939dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 442ce5146c8ee3a44b96b95245b0d4ba, type: 2}
+    - target: {fileID: -4293012782095617992, guid: 530a66662bd353c45b192eb0f4d939dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -1001281382438128537, guid: 530a66662bd353c45b192eb0f4d939dd, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -59,6 +63,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 530a66662bd353c45b192eb0f4d939dd, type: 3}
       propertyPath: m_Name
       value: sink
+      objectReference: {fileID: 0}
+    - target: {fileID: 4255186633505938192, guid: 530a66662bd353c45b192eb0f4d939dd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

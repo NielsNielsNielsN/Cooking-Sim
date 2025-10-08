@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 604506517588413807}
   - component: {fileID: 9199018228206819391}
   - component: {fileID: 6071596387756273603}
+  - component: {fileID: 3437557382065784667}
   m_Layer: 0
   m_Name: Binnenkant
   m_TagString: Untagged
@@ -122,6 +123,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3437557382065784667
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6232542768961619215}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.08199253, y: 0.1344932, z: 0.08199253}
+  m_Center: {x: 0.000090673566, y: 0.07015665, z: 0.00005688146}
 --- !u!1 &8266441736273741563
 GameObject:
   m_ObjectHideFlags: 0
@@ -133,6 +155,7 @@ GameObject:
   - component: {fileID: 296313223588894070}
   - component: {fileID: 7753777291965469981}
   - component: {fileID: 9071642347259573894}
+  - component: {fileID: 9078304702539763766}
   m_Layer: 0
   m_Name: Beker
   m_TagString: Untagged
@@ -211,3 +234,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &9078304702539763766
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8266441736273741563}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.08686335, y: 0.13740325, z: 0.08686335}
+  m_Center: {x: 0.000090673566, y: 0.068701625, z: 0.00005688146}

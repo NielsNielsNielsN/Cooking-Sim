@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 4377008502600197474}
   - component: {fileID: 296621906199208048}
   - component: {fileID: 5647471192379407345}
+  - component: {fileID: -4478673108708555649}
   m_Layer: 0
   m_Name: Can Decor
   m_TagString: Untagged
@@ -253,3 +254,24 @@ LODGroup:
     renderers:
     - renderer: {fileID: 5956731201672595320}
   m_Enabled: 1
+--- !u!65 &-4478673108708555649
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8444135641589918324}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.07232494, y: 0.1319862, z: 0.07232494}
+  m_Center: {x: 0.00000012479725, y: 0.06599055, z: 0}
