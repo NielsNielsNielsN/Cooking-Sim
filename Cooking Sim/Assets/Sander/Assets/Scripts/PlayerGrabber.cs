@@ -21,6 +21,7 @@ public class PlayerGrabber : MonoBehaviour
     private Drawer hoveredDrawer;
     private TrayDispenser hoveredTrayDispenser;
     private BowlDispenser hoveredBowlDispenser;
+    private CuttingBoard hoveredCuttingBoard;
     private CoolingCell hoveredCell;
     private CookStation hoveredStation;
     private FoodItem hoveredFoodItem;
@@ -28,6 +29,10 @@ public class PlayerGrabber : MonoBehaviour
     private TrashBin hoveredTrashBin;
     private Counter hoveredCounter;
     private Interactable lastInteractable;
+    private Knife hoveredKnife;
+    private Knife heldKnife;
+    public GameObject knifePrefab; 
+
 
     public CoolingCell OpenedCoolingCell { get; set; }
 
@@ -76,6 +81,8 @@ public class PlayerGrabber : MonoBehaviour
             hoveredCounter = hit.collider.GetComponent<Counter>();
             hoveredTrayDispenser = hit.collider.GetComponent<TrayDispenser>();
             hoveredBowlDispenser = hit.collider.GetComponent<BowlDispenser>();
+            hoveredCuttingBoard = hit.collider.GetComponent<CuttingBoard>();
+            hoveredKnife = hit.collider.GetComponent<Knife>();
 
             Interactable interactable = hit.collider.GetComponent<Interactable>();
             if (interactable != lastInteractable) lastInteractable = interactable;
@@ -99,6 +106,8 @@ public class PlayerGrabber : MonoBehaviour
             hoveredCounter = null;
             hoveredTrayDispenser = null;
             hoveredBowlDispenser = null;
+            hoveredCuttingBoard = null;
+            hoveredKnife = null;
 
             lastInteractable = null;
             if (interactionText) interactionText.text = "";
@@ -141,22 +150,16 @@ public class PlayerGrabber : MonoBehaviour
             return;
         }
 
-        if (hoveredTray != null)
+        if (hoveredTray != null && heldObject == null)
         {
-            if (heldObject == null)
-            {
-                Grab(hoveredTray.gameObject);
-            }
+            Grab(hoveredTray.gameObject);
             return;
         }
 
-        if (hoveredCounter != null)
+        if (hoveredCounter != null && heldObject == null)
         {
-            if (heldObject == null)
-            {
-                Tray takenTray = hoveredCounter.TakeTray();
-                if (takenTray != null) Grab(takenTray.gameObject);
-            }
+            Tray takenTray = hoveredCounter.TakeTray();
+            if (takenTray != null) Grab(takenTray.gameObject);
             return;
         }
 
@@ -173,6 +176,36 @@ public class PlayerGrabber : MonoBehaviour
             if (bowl != null) Grab(bowl);
             return;
         }
+
+        if (hoveredKnife != null)
+        {
+            Grab(hoveredKnife.gameObject);
+            return;
+        }
+
+        if (hoveredCuttingBoard != null)
+        {
+            if (heldKnife != null)
+            {
+                if (!hoveredCuttingBoard.HasKnifeVisual())
+                {
+                    heldKnife.TryCut(hoveredCuttingBoard);
+                    return;
+                }
+            }
+            else
+            {
+                if (hoveredCuttingBoard.HasKnifeVisual())
+                {
+                    hoveredCuttingBoard.SetKnifeVisual(false);
+                    GameObject knifeObject = Instantiate(knifePrefab, holdParent.position, holdParent.rotation);
+                    Grab(knifeObject);
+                    return;
+                }
+            }
+        }
+
+
     }
 
     private void TryPlace()
@@ -190,14 +223,11 @@ public class PlayerGrabber : MonoBehaviour
             return;
         }
 
-        if (hoveredDrawer != null && heldBag != null)
+        if (hoveredDrawer != null && heldBag != null && hoveredDrawer.drawerFoodType == heldBag.bagType)
         {
-            if (hoveredDrawer.drawerFoodType == heldBag.bagType)
-            {
-                hoveredDrawer.Refill(heldBag);
-                Destroy(heldBag.gameObject);
-                ClearHeld();
-            }
+            hoveredDrawer.Refill(heldBag);
+            Destroy(heldBag.gameObject);
+            ClearHeld();
             return;
         }
 
@@ -208,56 +238,74 @@ public class PlayerGrabber : MonoBehaviour
             return;
         }
 
-        // 🧺 Place into Bun or Bowl
-        var hoveredBun = hoveredTray != null ? null : hoveredFoodItem?.GetComponent<HotdogBun>();
-        var hoveredBowl = hoveredTray != null ? null : hoveredFoodItem?.GetComponent<FriesBowl>();
+        var hoveredBun = hoveredTray == null ? hoveredFoodItem?.GetComponent<HotdogBun>() : null;
+        var hoveredBowl = hoveredTray == null ? hoveredFoodItem?.GetComponent<FriesBowl>() : null;
 
-        if (hoveredBun != null && heldFood != null)
+        if (hoveredBun != null && heldFood != null && heldFood.foodType == FoodType.Hotdog)
         {
-            if (heldFood.foodType == FoodType.Hotdog)
-            {
-                if (hoveredBun.AddFood(heldFood))
-                {
-                    ClearHeld();
-                    return;
-                }
-            }
-        }
-
-        if (hoveredBowl != null && heldFood != null)
-        {
-            if (heldFood.foodType == FoodType.Fries)
-            {
-                if (hoveredBowl.AddFood(heldFood))
-                {
-                    ClearHeld();
-                    return;
-                }
-            }
-        }
-
-        // 🍽️ Place on Tray
-        if (hoveredTray != null && heldObject != null)
-        {
-            var foodItem = heldObject.GetComponent<FoodItem>();
-            var bun = heldObject.GetComponent<HotdogBun>();
-            var bowl = heldObject.GetComponent<FriesBowl>();
-
-            bool placed = false;
-
-            if (bun != null)
-                placed = hoveredTray.AddBun(bun);
-            else if (bowl != null)
-                placed = hoveredTray.AddBowl(bowl);
-            else if (foodItem != null)
-                placed = hoveredTray.AddFood(foodItem);
-
-            if (placed)
+            if (hoveredBun.AddFood(heldFood))
             {
                 ClearHeld();
                 return;
             }
         }
+
+        if (hoveredBowl != null && heldFood != null && heldFood.foodType == FoodType.Fries)
+        {
+            if (hoveredBowl.AddFood(heldFood))
+            {
+                ClearHeld();
+                return;
+            }
+        }
+
+        if (hoveredTray != null && heldObject != null)
+        {
+            var bun = heldObject.GetComponent<HotdogBun>();
+            var bowl = heldObject.GetComponent<FriesBowl>();
+            var foodItem = heldObject.GetComponent<FoodItem>();
+            bool placed = false;
+            if (bun != null) placed = hoveredTray.AddBun(bun);
+            else if (bowl != null) placed = hoveredTray.AddBowl(bowl);
+            else if (foodItem != null) placed = hoveredTray.AddFood(foodItem);
+            if (placed) { ClearHeld(); return; }
+        }
+
+        if (hoveredCuttingBoard != null)
+        {
+            if (heldKnife != null && hoveredCuttingBoard.currentItem != null)
+            {
+                heldKnife.TryCut(hoveredCuttingBoard);
+                return;
+            }
+
+            if (heldKnife != null && !hoveredCuttingBoard.HasKnifeVisual())
+            {
+                hoveredCuttingBoard.SetKnifeVisual(true);
+                Destroy(heldObject);
+                ClearHeld();
+                return;
+            }
+
+            if (heldObject == null && hoveredCuttingBoard.HasKnifeVisual())
+            {
+                hoveredCuttingBoard.SetKnifeVisual(false);
+                GameObject knifeObject = Instantiate(knifePrefab, holdParent.position, holdParent.rotation);
+                Grab(knifeObject);
+                return;
+            }
+
+            if (heldObject != null && heldFood != null && hoveredCuttingBoard.currentItem == null)
+            {
+                if (hoveredCuttingBoard.PlaceItem(heldObject))
+                {
+                    ClearHeld();
+                    return;
+                }
+            }
+        }
+
+
     }
 
     public void Grab(GameObject obj)
@@ -266,6 +314,11 @@ public class PlayerGrabber : MonoBehaviour
         heldFood = obj.GetComponent<FoodItem>();
         heldBag = obj.GetComponent<FoodBag>();
         heldTray = obj.GetComponent<Tray>();
+        heldKnife = obj.GetComponent<Knife>();
+
+        HotdogBun bun = obj.GetComponent<HotdogBun>();
+        if (bun != null)
+            obj.transform.localScale = Vector3.one * 2f;
 
         var rb = heldObject.GetComponent<Rigidbody>();
         if (rb) { rb.isKinematic = true; rb.detectCollisions = false; }
@@ -301,6 +354,7 @@ public class PlayerGrabber : MonoBehaviour
         heldFood = null;
         heldBag = null;
         heldTray = null;
+        heldKnife = null;
     }
 
     public void DisableScripts()

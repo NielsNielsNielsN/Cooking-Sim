@@ -7,5 +7,6 @@ public enum FoodType
     Chips,
     Popcorn,
     Other,
-    Bun
+    OpenBun,
+    ClosedBun
 }
