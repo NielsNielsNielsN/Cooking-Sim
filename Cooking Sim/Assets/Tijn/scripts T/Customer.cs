@@ -19,7 +19,7 @@ public class Customer : MonoBehaviour
     private Transform myWaitingSpot;
     private bool orderCompleted = false;
 
-    private List<string> myOrderItems = new List<string>(); // store items for GameManager
+    private List<string> myOrderItems = new List<string>(); // Store items for GameManager
 
     private void Start()
     {

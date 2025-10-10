@@ -48,12 +48,13 @@ public class RefillMenu : MonoBehaviour
 
     private void UpdateUI()
     {
-        moneyText.text = $"Money: ${GameManager.Instance.money:F2}";
+        moneyText.text = $"Money: ${GameManager.Instance.playerMoney:F0}";
         hotdogText.text = $"Hotdogs: {GameManager.Instance.hotdogStock}/{GameManager.Instance.maxStock}";
         friesText.text = $"Fries: {GameManager.Instance.friesStock}/{GameManager.Instance.maxStock}";
         cansText.text = $"Cans: {GameManager.Instance.cansStock}/{GameManager.Instance.maxStock}";
         milkshakeText.text = $"Milkshakes: {GameManager.Instance.milkshakeStock}/{GameManager.Instance.maxStock}";
     }
+
 
     private void BuyItem(string item, float cost)
     {

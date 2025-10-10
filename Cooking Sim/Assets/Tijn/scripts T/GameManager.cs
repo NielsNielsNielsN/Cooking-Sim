@@ -1,106 +1,146 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [Header("Player Money")]
-    public float money = 100f;
+    [Header("Money")]
+    public float playerMoney = 100f;
 
-    [Header("Stock Settings")]
-    public int maxStock = 5;
-    public int hotdogStock;
-    public int friesStock;
-    public int cansStock;
-    public int milkshakeStock;
+    [Header("Stock")]
+    public int maxStock = 20;
+    public int hotdogStock = 5;
+    public int friesStock = 5;
+    public int cansStock = 5;
+    public int milkshakeStock = 5;
+    public int restockAmount = 5; // how many units are added per restock
 
-    [Header("Item Buy Costs (for refilling stock)")]
-    public float hotdogCost = 10f;
-    public float friesCost = 8f;
-    public float cansCost = 6f;
-    public float milkshakeCost = 12f;
+    [Header("Costs (for refilling)")]
+    public float hotdogCost = 20f;
+    public float friesCost = 15f;
+    public float cansCost = 10f;
+    public float milkshakeCost = 25f;
 
-    [Header("Item Sell Prices (customer orders)")]
-    public float hotdogSellPrice = 18f;
-    public float friesSellPrice = 15f;
-    public float cansSellPrice = 10f;
+    [Header("Sell prices (when customer buys)")]
+    public float hotdogSellPrice = 15f;
+    public float friesSellPrice = 10f;
+    public float cansSellPrice = 8f;
     public float milkshakeSellPrice = 20f;
 
     private void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
 
-        // Initialize all stock to max at game start
-        hotdogStock = maxStock;
-        friesStock = maxStock;
-        cansStock = maxStock;
-        milkshakeStock = maxStock;
+        // optional: ensure stocks are within limits
+        hotdogStock = Mathf.Clamp(hotdogStock, 0, maxStock);
+        friesStock = Mathf.Clamp(friesStock, 0, maxStock);
+        cansStock = Mathf.Clamp(cansStock, 0, maxStock);
+        milkshakeStock = Mathf.Clamp(milkshakeStock, 0, maxStock);
     }
 
-    public bool CanAfford(float cost) => money >= cost;
+    // ----- Money helpers -----
+    public bool CanAfford(float cost) => playerMoney >= cost;
 
     public void SpendMoney(float amount)
     {
-        money = Mathf.Max(0, money - amount);
+        playerMoney = Mathf.Max(0f, playerMoney - amount);
     }
 
     public void AddMoney(float amount)
     {
-        money += amount;
+        playerMoney += amount;
     }
 
+    // ----- Stock helpers -----
+    // Adds restockAmount to the named item (caps at maxStock)
     public void AddStock(string item)
     {
+        if (string.IsNullOrEmpty(item)) return;
         switch (item.ToLower())
         {
             case "hotdog":
             case "hotdogs":
-                hotdogStock = Mathf.Min(maxStock, hotdogStock + 1);
+                hotdogStock = Mathf.Min(maxStock, hotdogStock + restockAmount);
                 break;
             case "fries":
-                friesStock = Mathf.Min(maxStock, friesStock + 1);
+                friesStock = Mathf.Min(maxStock, friesStock + restockAmount);
                 break;
             case "cans":
-                cansStock = Mathf.Min(maxStock, cansStock + 1);
+            case "can":
+                cansStock = Mathf.Min(maxStock, cansStock + restockAmount);
                 break;
             case "milkshake":
             case "milkshakes":
-                milkshakeStock = Mathf.Min(maxStock, milkshakeStock + 1);
+                milkshakeStock = Mathf.Min(maxStock, milkshakeStock + restockAmount);
+                break;
+            default:
+                Debug.LogWarning($"GameManager.AddStock: unknown item '{item}'");
                 break;
         }
     }
 
+    // Convenience used by UI to buy stock (spend money then add stock)
+    public bool BuyStock(string item, float cost)
+    {
+        if (!CanAfford(cost)) return false;
+        SpendMoney(cost);
+        AddStock(item);
+        return true;
+    }
+
+    // ----- Selling: called when customer order completes -----
+    // Reduces stock and gives the player money for the sold item
     public void SellItem(string item)
     {
-        float profit = 0;
+        if (string.IsNullOrEmpty(item)) return;
 
+        float earned = 0f;
         switch (item.ToLower())
         {
             case "hotdog":
             case "hotdogs":
-                profit = hotdogSellPrice;
+                if (hotdogStock <= 0) { Debug.Log("No hotdog stock to sell."); return; }
                 hotdogStock = Mathf.Max(0, hotdogStock - 1);
+                earned = hotdogSellPrice;
                 break;
+
             case "fries":
-                profit = friesSellPrice;
+                if (friesStock <= 0) { Debug.Log("No fries stock to sell."); return; }
                 friesStock = Mathf.Max(0, friesStock - 1);
+                earned = friesSellPrice;
                 break;
+
             case "cans":
-                profit = cansSellPrice;
+            case "can":
+                if (cansStock <= 0) { Debug.Log("No cans stock to sell."); return; }
                 cansStock = Mathf.Max(0, cansStock - 1);
+                earned = cansSellPrice;
                 break;
+
             case "milkshake":
             case "milkshakes":
-                profit = milkshakeSellPrice;
+                if (milkshakeStock <= 0) { Debug.Log("No milkshake stock to sell."); return; }
                 milkshakeStock = Mathf.Max(0, milkshakeStock - 1);
+                earned = milkshakeSellPrice;
                 break;
+
+            default:
+                Debug.LogWarning($"GameManager.SellItem: unknown item '{item}'");
+                return;
         }
 
-        if (profit > 0)
+        if (earned > 0f)
         {
-            money += profit;
-            Debug.Log($"Sold {item} for ${profit}. Total money: ${money}");
+            AddMoney(earned);
+            Debug.Log($"Sold {item} for ${earned:F2}. Money now: ${playerMoney:F2}");
         }
     }
 }

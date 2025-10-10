@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class CoolingCell : MonoBehaviour
@@ -10,6 +10,7 @@ public class CoolingCell : MonoBehaviour
 
     public GameObject hotdogBagPrefab;
     public GameObject friesBagPrefab;
+    public GameObject stockBoxPrefab; // box that spawns when buying stock
 
     private PlayerGrabber currentGrabber;
 
@@ -51,20 +52,43 @@ public class CoolingCell : MonoBehaviour
 
     public void SpawnHotdogBag()
     {
+        // Check if there’s enough stock
         if (currentGrabber == null || hotdogBagPrefab == null) return;
+        if (GameManager.Instance.hotdogStock <= 0)
+        {
+            Debug.Log("❌ No more hotdogs in stock!");
+            return;
+        }
 
+        // Spawn bag and reduce stock
         GameObject bag = Instantiate(hotdogBagPrefab);
         currentGrabber.Grab(bag);
+        GameManager.Instance.hotdogStock--;
         CloseMenu();
     }
 
     public void SpawnFriesBag()
     {
         if (currentGrabber == null || friesBagPrefab == null) return;
+        if (GameManager.Instance.friesStock <= 0)
+        {
+            Debug.Log("❌ No more fries in stock!");
+            return;
+        }
 
         GameObject bag = Instantiate(friesBagPrefab);
         currentGrabber.Grab(bag);
+        GameManager.Instance.friesStock--;
         CloseMenu();
+    }
+
+    // Optional: when you buy stock, spawn a box prefab (visual feedback)
+    public void ReceiveStockBox()
+    {
+        if (stockBoxPrefab != null)
+        {
+            Instantiate(stockBoxPrefab, transform.position + Vector3.up, Quaternion.identity);
+        }
     }
 
     private void Update()
