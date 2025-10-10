@@ -3,7 +3,9 @@ using UnityEngine;
 public class DoorRotator : MonoBehaviour
 {
     public Transform door;
-    public float angle;
+    public float angleX;
+    public float angleY;
+    public float angleZ;
     public float speed;
     private bool open;
     private Quaternion closedRot;
@@ -12,7 +14,7 @@ public class DoorRotator : MonoBehaviour
     void Start()
     {
         closedRot = door.localRotation;
-        openRot = closedRot * Quaternion.Euler(0, angle, 0);
+        openRot = closedRot * Quaternion.Euler(angleX, angleY, angleZ);
     }
 
     void Update()
