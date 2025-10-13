@@ -158,6 +158,8 @@ MonoBehaviour:
   rawMaterial: {fileID: 2100000, guid: 29cb8fa97311c534ab1f8a65de0bad5b, type: 2}
   cookedMaterial: {fileID: 2100000, guid: 2c385c0f4991b314eb00e64a06d47627, type: 2}
   burnedMaterial: {fileID: 2100000, guid: fd9196eb3ce813f4ca1633d3237c46bf, type: 2}
+  emptyMaterial: {fileID: 0}
+  filledMaterial: {fileID: 0}
   meshRenderer: {fileID: 8568877304503402916}
 --- !u!114 &5486911299237764658
 MonoBehaviour:
