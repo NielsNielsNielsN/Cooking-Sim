@@ -7,7 +7,8 @@ public class Tray : MonoBehaviour
 
     public Transform[] friesPositions = new Transform[2];
     public Transform[] hotdogPositions = new Transform[2];
-    public Transform[] drinkPositions = new Transform[2];
+    public Transform[] canPositions = new Transform[2];
+    public Transform[] milkshakePositions = new Transform[2];
 
     private Dictionary<FoodType, Transform[]> foodPositions;
     public Dictionary<FoodType, int> counts = new Dictionary<FoodType, int>();
@@ -20,12 +21,14 @@ public class Tray : MonoBehaviour
         {
             { FoodType.Fries, friesPositions },
             { FoodType.Hotdog, hotdogPositions },
-            { FoodType.Can, drinkPositions }
+            { FoodType.Can, canPositions },
+            { FoodType.Milkshake, milkshakePositions }
         };
 
         counts[FoodType.Fries] = 0;
         counts[FoodType.Hotdog] = 0;
         counts[FoodType.Can] = 0;
+        counts[FoodType.Milkshake] = 0;
     }
 
     public bool AddFood(FoodItem food)

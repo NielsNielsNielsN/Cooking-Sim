@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 9196046202783347030}
   - component: {fileID: 7127682688800748906}
   m_Layer: 0
-  m_Name: Drink
+  m_Name: Can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,9 +158,11 @@ Transform:
   - {fileID: 4843490863522092471}
   - {fileID: 9079173172491856320}
   - {fileID: 9196046202783347030}
+  - {fileID: 5428837316934466129}
   - {fileID: 7427800469663790361}
   - {fileID: 9039973685851582561}
   - {fileID: 5600027744959211199}
+  - {fileID: 6261072343745281530}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4552318571632455856
@@ -238,9 +240,12 @@ MonoBehaviour:
   hotdogPositions:
   - {fileID: 9079173172491856320}
   - {fileID: 9039973685851582561}
-  drinkPositions:
+  canPositions:
   - {fileID: 9196046202783347030}
   - {fileID: 5600027744959211199}
+  milkshakePositions:
+  - {fileID: 5428837316934466129}
+  - {fileID: 6261072343745281530}
   placedObjects: []
 --- !u!114 &1939624486375644478
 MonoBehaviour:
@@ -303,6 +308,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.4873223, y: 0.031554244, z: 0.5995209}
   m_Center: {x: 0, y: 0.015767975, z: 0}
+--- !u!1 &3655472148515884682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6261072343745281530}
+  m_Layer: 0
+  m_Name: Milkshake
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6261072343745281530
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3655472148515884682}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.7311156, z: 0, w: 0.68225366}
+  m_LocalPosition: {x: 0.143, y: 0, z: 0.223}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6027182416122390901}
+  m_LocalEulerAnglesHint: {x: 0, y: -93.96, z: 0}
 --- !u!1 &4138539145586862841
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,6 +419,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6978310171887438608}
   m_Mesh: {fileID: 3112082432940981728, guid: 508a645ab12bb8d45b4d78a2a108eb7e, type: 3}
+--- !u!1 &7463082746604623246
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5428837316934466129}
+  m_Layer: 0
+  m_Name: Milkshake
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5428837316934466129
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7463082746604623246}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7643027, z: 0, w: 0.6448577}
+  m_LocalPosition: {x: 0.143, y: 0, z: 0.069}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6027182416122390901}
+  m_LocalEulerAnglesHint: {x: 0, y: 99.69, z: 0}
 --- !u!1 &8003287047321978096
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,7 +461,7 @@ GameObject:
   - component: {fileID: 5600027744959211199}
   - component: {fileID: 4946898417883448543}
   m_Layer: 0
-  m_Name: Drink
+  m_Name: Can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
