@@ -6286,15 +6286,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 89b8ae8b9edf02e47987f70a4fc3e628, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -11682,7 +11682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 455111896953207366, guid: 4689bc8d825662148837c8613c75d5c3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1485500844502460633, guid: 4689bc8d825662148837c8613c75d5c3, type: 3}
       propertyPath: m_IsActive
@@ -11694,7 +11694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2486234449535807845, guid: 4689bc8d825662148837c8613c75d5c3, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2486234449535807845, guid: 4689bc8d825662148837c8613c75d5c3, type: 3}
       propertyPath: m_AnchorMin.x
@@ -11702,23 +11702,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2486234449535807845, guid: 4689bc8d825662148837c8613c75d5c3, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2486234449535807845, guid: 4689bc8d825662148837c8613c75d5c3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2486234449535807845, guid: 4689bc8d825662148837c8613c75d5c3, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2486234449535807845, guid: 4689bc8d825662148837c8613c75d5c3, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2486234449535807845, guid: 4689bc8d825662148837c8613c75d5c3, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -50
       objectReference: {fileID: 0}
     - target: {fileID: 8538036718238898380, guid: 4689bc8d825662148837c8613c75d5c3, type: 3}
       propertyPath: m_LocalScale.x
