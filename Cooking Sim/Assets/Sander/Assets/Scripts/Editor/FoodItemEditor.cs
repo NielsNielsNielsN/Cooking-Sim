@@ -9,6 +9,8 @@ public class FoodItemEditor : Editor
     SerializedProperty rawMatProp;
     SerializedProperty cookedMatProp;
     SerializedProperty burnedMatProp;
+    SerializedProperty emptyMatProp;
+    SerializedProperty filledMatProp;
     SerializedProperty meshRendererProp;
 
     private void OnEnable()
@@ -18,6 +20,8 @@ public class FoodItemEditor : Editor
         rawMatProp = serializedObject.FindProperty("rawMaterial");
         cookedMatProp = serializedObject.FindProperty("cookedMaterial");
         burnedMatProp = serializedObject.FindProperty("burnedMaterial");
+        emptyMatProp = serializedObject.FindProperty("emptyMaterial");
+        filledMatProp = serializedObject.FindProperty("filledMaterial");
         meshRendererProp = serializedObject.FindProperty("meshRenderer");
     }
 
@@ -29,11 +33,17 @@ public class FoodItemEditor : Editor
         EditorGUILayout.PropertyField(stateProp);
         EditorGUILayout.PropertyField(meshRendererProp);
 
-        if ((CookState)stateProp.enumValueIndex != CookState.Other)
+        if ((CookState)stateProp.enumValueIndex != CookState.Other && (CookState)stateProp.enumValueIndex != CookState.Filled && (CookState)stateProp.enumValueIndex != CookState.Empty)
         {
             EditorGUILayout.PropertyField(rawMatProp);
             EditorGUILayout.PropertyField(cookedMatProp);
             EditorGUILayout.PropertyField(burnedMatProp);
+        }
+
+        if ((CookState)stateProp.enumValueIndex == CookState.Filled || (CookState)stateProp.enumValueIndex == CookState.Empty)
+        {
+            EditorGUILayout.PropertyField(emptyMatProp);
+            EditorGUILayout.PropertyField(filledMatProp);
         }
 
         serializedObject.ApplyModifiedProperties();

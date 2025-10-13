@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6901272452884892250}
   - component: {fileID: 7317508575031195843}
   - component: {fileID: 1857210847427316821}
+  - component: {fileID: 1057830712132322689}
+  - component: {fileID: -7211514647606147860}
   m_Layer: 0
   m_Name: Milkshake Empty
   m_TagString: Untagged
@@ -139,3 +141,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1057830712132322689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4885459178584634170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf566e309eac7c6488dfeb039ffdbc19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoodItem
+  foodType: 3
+  state: 4
+  rawMaterial: {fileID: 2100000, guid: 18826ef5b30a1554b8762384315125e3, type: 2}
+  cookedMaterial: {fileID: 2100000, guid: 843653df88291194abd3dc66ea6a19e9, type: 2}
+  burnedMaterial: {fileID: 2100000, guid: 843653df88291194abd3dc66ea6a19e9, type: 2}
+  emptyMaterial: {fileID: 2100000, guid: 18826ef5b30a1554b8762384315125e3, type: 2}
+  filledMaterial: {fileID: 2100000, guid: 843653df88291194abd3dc66ea6a19e9, type: 2}
+  meshRenderer: {fileID: 6901272452884892250}
+--- !u!114 &-7211514647606147860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4885459178584634170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe31252c334c8774e8c0135beb68ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  promptMessage: Press E to interact

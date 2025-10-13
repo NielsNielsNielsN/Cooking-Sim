@@ -114,6 +114,8 @@ public class CookStation : MonoBehaviour
                     }
                 }
             }
+            if (elapsed >= cookingTime && currentFood != null && currentFood.state == CookState.Empty)
+                currentFood.SetState(CookState.Filled);
             if (elapsed >= cookingTime && currentFood != null && currentFood.state == CookState.Raw)
                 currentFood.SetState(CookState.Cooked);
             if (elapsed >= totalTime && currentFood != null && currentFood.state == CookState.Cooked)
@@ -126,6 +128,16 @@ public class CookStation : MonoBehaviour
     {
         if (currentFood == null) return;
         currentFood.SetState(CookState.Burned);
+        isCooking = false;
+        if (cookingRoutine != null) StopCoroutine(cookingRoutine);
+        cookingRoutine = null;
+        if (sliderInstance) Destroy(sliderInstance, 1f);
+    }
+
+    private void FillCup()
+    {
+        if (currentFood == null) return;
+        currentFood.SetState(CookState.Filled);
         isCooking = false;
         if (cookingRoutine != null) StopCoroutine(cookingRoutine);
         cookingRoutine = null;
