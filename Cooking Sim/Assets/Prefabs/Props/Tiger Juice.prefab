@@ -103,7 +103,6 @@ GameObject:
   - component: {fileID: 9139793753381345401}
   - component: {fileID: 4574179095721227625}
   - component: {fileID: -7686939108854089238}
-  - component: {fileID: 8044155409061373577}
   - component: {fileID: 7104266148498160921}
   - component: {fileID: 4700361739977992345}
   m_Layer: 0
@@ -227,19 +226,6 @@ MonoBehaviour:
   filledMaterial: {fileID: 0}
   meshRenderer: {fileID: 3499072271324373001}
 --- !u!114 &-7686939108854089238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8793416735410034306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe31252c334c8774e8c0135beb68ea95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Interactable
-  promptMessage: Press E to pick up
---- !u!114 &8044155409061373577
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

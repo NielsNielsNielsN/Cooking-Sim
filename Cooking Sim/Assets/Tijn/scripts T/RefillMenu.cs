@@ -12,13 +12,13 @@ public class RefillMenu : MonoBehaviour
     public TMP_Text hotdogText;
     public TMP_Text friesText;
     public TMP_Text cansText;
-    public TMP_Text milkshakeText;
+    public TMP_Text bunsText;
 
     [Header("Buttons")]
     public Button buyHotdogButton;
     public Button buyFriesButton;
     public Button buyCansButton;
-    public Button buyMilkshakeButton;
+    public Button buyBunsButton;
     public Button closeButton;
 
     private bool isOpen = false;
@@ -30,7 +30,7 @@ public class RefillMenu : MonoBehaviour
         buyHotdogButton.onClick.AddListener(() => BuyItem("hotdogs", GameManager.Instance.hotdogCost));
         buyFriesButton.onClick.AddListener(() => BuyItem("fries", GameManager.Instance.friesCost));
         buyCansButton.onClick.AddListener(() => BuyItem("cans", GameManager.Instance.cansCost));
-        buyMilkshakeButton.onClick.AddListener(() => BuyItem("milkshake", GameManager.Instance.milkshakeCost));
+        buyBunsButton.onClick.AddListener(() => BuyItem("buns", GameManager.Instance.bunsCost));
 
         closeButton.onClick.AddListener(CloseMenu);
     }
@@ -52,7 +52,7 @@ public class RefillMenu : MonoBehaviour
         hotdogText.text = $"Hotdogs: {GameManager.Instance.hotdogStock}/{GameManager.Instance.maxStock}";
         friesText.text = $"Fries: {GameManager.Instance.friesStock}/{GameManager.Instance.maxStock}";
         cansText.text = $"Cans: {GameManager.Instance.cansStock}/{GameManager.Instance.maxStock}";
-        milkshakeText.text = $"Milkshakes: {GameManager.Instance.milkshakeStock}/{GameManager.Instance.maxStock}";
+        bunsText.text = $"Buns: {GameManager.Instance.bunsStock}/{GameManager.Instance.maxStock}";
     }
 
     private void BuyItem(string item, float cost)

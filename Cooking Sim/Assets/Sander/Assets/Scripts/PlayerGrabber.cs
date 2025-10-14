@@ -338,10 +338,6 @@ public class PlayerGrabber : MonoBehaviour
         heldTray = obj.GetComponent<Tray>();
         heldKnife = obj.GetComponent<Knife>();
 
-        HotdogBun bun = obj.GetComponent<HotdogBun>();
-        if (bun != null)
-            obj.transform.localScale = Vector3.one * 2f;
-
         var rb = heldObject.GetComponent<Rigidbody>();
         if (rb) { rb.isKinematic = true; rb.detectCollisions = false; }
 

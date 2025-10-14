@@ -6,10 +6,14 @@ public class CoolingCell : MonoBehaviour
     public GameObject menuUI;
     public Button hotdogButton;
     public Button friesButton;
+    public Button bunButton;
+    public Button cansButton;
     public Button closeButton;
 
     public GameObject hotdogBagPrefab;
     public GameObject friesBagPrefab;
+    public GameObject bunBagPrefab;
+    public GameObject cansBagPrefab;
     public GameObject stockBoxPrefab; // box that spawns when buying stock
 
     private PlayerGrabber currentGrabber;
@@ -20,6 +24,8 @@ public class CoolingCell : MonoBehaviour
 
         hotdogButton.onClick.AddListener(SpawnHotdogBag);
         friesButton.onClick.AddListener(SpawnFriesBag);
+        bunButton.onClick.AddListener(SpawnBunBag);
+        cansButton.onClick.AddListener(SpawnCanBag);
         closeButton.onClick.AddListener(CloseMenu);
     }
 
@@ -56,11 +62,9 @@ public class CoolingCell : MonoBehaviour
         if (currentGrabber == null || hotdogBagPrefab == null) return;
         if (GameManager.Instance.hotdogStock <= 0)
         {
-            Debug.Log("❌ No more hotdogs in stock!");
             return;
         }
 
-        // Spawn bag and reduce stock
         GameObject bag = Instantiate(hotdogBagPrefab);
         currentGrabber.Grab(bag);
         GameManager.Instance.hotdogStock--;
@@ -72,13 +76,42 @@ public class CoolingCell : MonoBehaviour
         if (currentGrabber == null || friesBagPrefab == null) return;
         if (GameManager.Instance.friesStock <= 0)
         {
-            Debug.Log("❌ No more fries in stock!");
             return;
         }
 
         GameObject bag = Instantiate(friesBagPrefab);
         currentGrabber.Grab(bag);
         GameManager.Instance.friesStock--;
+        CloseMenu();
+    }
+
+    public void SpawnBunBag()
+    {
+        // Check if there’s enough stock
+        if (currentGrabber == null || bunBagPrefab == null) return;
+        if (GameManager.Instance.bunsStock <= 0)
+        {
+            return;
+        }
+
+        GameObject bag = Instantiate(bunBagPrefab);
+        currentGrabber.Grab(bag);
+        GameManager.Instance.bunsStock--;
+        CloseMenu();
+    }
+
+    public void SpawnCanBag()
+    {
+        // Check if there’s enough stock
+        if (currentGrabber == null || cansBagPrefab == null) return;
+        if (GameManager.Instance.cansStock <= 0)
+        {
+            return;
+        }
+
+        GameObject bag = Instantiate(cansBagPrefab);
+        currentGrabber.Grab(bag);
+        GameManager.Instance.cansStock--;
         CloseMenu();
     }
 
