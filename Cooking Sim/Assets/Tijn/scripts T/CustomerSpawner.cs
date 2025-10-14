@@ -18,10 +18,7 @@ public class CustomerSpawner : MonoBehaviour
 
     private void Start()
     {
-        // Spawn 2 customers with a delay
         StartCoroutine(SpawnInitialCustomers());
-
-        // Start the random spawn loop
         StartCoroutine(SpawnLoop());
     }
 
@@ -45,20 +42,34 @@ public class CustomerSpawner : MonoBehaviour
     private void TrySpawnCustomer()
     {
         // Limit to max 5 active orders
-        if (orderSystem.activeOrders >= orderSystem.maxOrders) return;
+        if (orderSystem.activeOrders >= orderSystem.maxOrders)
+            return;
 
+        // Find the first truly available screen
+        OrderScreenPoint freeScreen = null;
         foreach (var screen in orderScreenPoints)
         {
             if (!screen.isOccupied)
             {
-                SpawnCustomer(screen);
-                return;
+                freeScreen = screen;
+                break;
             }
+        }
+
+        if (freeScreen != null)
+        {
+            SpawnCustomer(freeScreen);
+        }
+        else
+        {
+            Debug.Log("All order screens are occupied — waiting for a free one.");
         }
     }
 
     private void SpawnCustomer(OrderScreenPoint screen)
     {
+        if (screen == null) return;
+
         GameObject newCustomer = Instantiate(customerPrefab, transform.position, Quaternion.identity);
         Customer c = newCustomer.GetComponent<Customer>();
 
@@ -72,6 +83,6 @@ public class CustomerSpawner : MonoBehaviour
         c.pathToPickup = pathToPickup;
         c.pathToExit = pathToExit;
 
-        screen.isOccupied = true;
+        screen.isOccupied = true; // Reserve spot immediately so others can’t take it
     }
 }
