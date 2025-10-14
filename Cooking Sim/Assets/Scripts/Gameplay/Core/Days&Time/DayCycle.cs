@@ -42,6 +42,11 @@ public class DayCycleManager : MonoBehaviour
         currentTime += Time.deltaTime * timeSpeed;
         currentTime = Mathf.Min(currentTime, endTime);
 
+        if (currentDay == 8)
+        {
+            print("You Win");
+        }
+
         // Advance to next day only at 22:00
         if (Input.GetKeyDown(nextDayKey))
         {
