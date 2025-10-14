@@ -27,10 +27,10 @@ public class RefillMenu : MonoBehaviour
     {
         menuUI.SetActive(false);
 
-        buyHotdogButton.onClick.AddListener(() => BuyItem("hotdogs", GameManager.Instance.hotdogCost));
-        buyFriesButton.onClick.AddListener(() => BuyItem("fries", GameManager.Instance.friesCost));
-        buyCansButton.onClick.AddListener(() => BuyItem("cans", GameManager.Instance.cansCost));
-        buyBunsButton.onClick.AddListener(() => BuyItem("buns", GameManager.Instance.bunsCost));
+        buyHotdogButton.onClick.AddListener(() => BuyItem("hotdogs", GameManagerHelpers.Instance.hotdogCost));
+        buyFriesButton.onClick.AddListener(() => BuyItem("fries", GameManagerHelpers.Instance.friesCost));
+        buyCansButton.onClick.AddListener(() => BuyItem("cans", GameManagerHelpers.Instance.cansCost));
+        buyBunsButton.onClick.AddListener(() => BuyItem("buns", GameManagerHelpers.Instance.bunsCost));
 
         closeButton.onClick.AddListener(CloseMenu);
     }
@@ -48,25 +48,22 @@ public class RefillMenu : MonoBehaviour
 
     private void UpdateUI()
     {
-        moneyText.text = $"Money: ${GameManager.Instance.playerMoney:F0}";
-        hotdogText.text = $"Hotdogs: {GameManager.Instance.hotdogStock}/{GameManager.Instance.maxStock}";
-        friesText.text = $"Fries: {GameManager.Instance.friesStock}/{GameManager.Instance.maxStock}";
-        cansText.text = $"Cans: {GameManager.Instance.cansStock}/{GameManager.Instance.maxStock}";
-        bunsText.text = $"Buns: {GameManager.Instance.bunsStock}/{GameManager.Instance.maxStock}";
+        moneyText.text = $"Money: ${GameManagerHelpers.Instance.playerMoney:F0}";
+        hotdogText.text = $"Hotdogs: {GameManagerHelpers.Instance.hotdogStock}/{GameManagerHelpers.Instance.maxStock}";
+        friesText.text = $"Fries: {GameManagerHelpers.Instance.friesStock}/{GameManagerHelpers.Instance.maxStock}";
+        cansText.text = $"Cans: {GameManagerHelpers.Instance.cansStock}/{GameManagerHelpers.Instance.maxStock}";
+        bunsText.text = $"Buns: {GameManagerHelpers.Instance.bunsStock}/{GameManagerHelpers.Instance.maxStock}";
     }
 
     private void BuyItem(string item, float cost)
     {
-        if (!GameManager.Instance.CanAfford(cost))
+        if (!GameManagerHelpers.Instance.CanAfford(cost))
         {
             Debug.Log("Not enough money!");
             return;
         }
-
-        GameManager.Instance.SpendMoney(cost);
-
-        //  Add exactly ONE item instead of 5
-        GameManager.Instance.AddStock(item, 1);
+        GameManagerHelpers.Instance.SpendMoney(cost);
+        GameManagerHelpers.Instance.AddStock(item, 1);
 
         UpdateUI();
     }

@@ -74,7 +74,7 @@ public class CookStation : MonoBehaviour
             if (slider) slider.value = 0f;
             var follow = sliderInstance.AddComponent<UIFollower>();
             follow.target = transform;
-            follow.offset = Vector3.up * 1.2f;
+            follow.offset = Vector3.up * 1.5f;
             cookMarker = sliderInstance.transform.Find("CookMarker")?.GetComponent<RectTransform>();
             if (cookMarker != null)
             {

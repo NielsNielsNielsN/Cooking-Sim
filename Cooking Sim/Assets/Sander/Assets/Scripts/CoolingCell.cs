@@ -60,28 +60,28 @@ public class CoolingCell : MonoBehaviour
     {
         // Check if there’s enough stock
         if (currentGrabber == null || hotdogBagPrefab == null) return;
-        if (GameManager.Instance.hotdogStock <= 0)
+        if (GameManagerHelpers.Instance.hotdogStock <= 0)
         {
             return;
         }
 
         GameObject bag = Instantiate(hotdogBagPrefab);
         currentGrabber.Grab(bag);
-        GameManager.Instance.hotdogStock--;
+        GameManagerHelpers.Instance.hotdogStock--;
         CloseMenu();
     }
 
     public void SpawnFriesBag()
     {
         if (currentGrabber == null || friesBagPrefab == null) return;
-        if (GameManager.Instance.friesStock <= 0)
+        if (GameManagerHelpers.Instance.friesStock <= 0)
         {
             return;
         }
 
         GameObject bag = Instantiate(friesBagPrefab);
         currentGrabber.Grab(bag);
-        GameManager.Instance.friesStock--;
+        GameManagerHelpers.Instance.friesStock--;
         CloseMenu();
     }
 
@@ -89,14 +89,14 @@ public class CoolingCell : MonoBehaviour
     {
         // Check if there’s enough stock
         if (currentGrabber == null || bunBagPrefab == null) return;
-        if (GameManager.Instance.bunsStock <= 0)
+        if (GameManagerHelpers.Instance.bunsStock <= 0)
         {
             return;
         }
 
         GameObject bag = Instantiate(bunBagPrefab);
         currentGrabber.Grab(bag);
-        GameManager.Instance.bunsStock--;
+        GameManagerHelpers.Instance.bunsStock--;
         CloseMenu();
     }
 
@@ -104,14 +104,14 @@ public class CoolingCell : MonoBehaviour
     {
         // Check if there’s enough stock
         if (currentGrabber == null || cansBagPrefab == null) return;
-        if (GameManager.Instance.cansStock <= 0)
+        if (GameManagerHelpers.Instance.cansStock <= 0)
         {
             return;
         }
 
         GameObject bag = Instantiate(cansBagPrefab);
         currentGrabber.Grab(bag);
-        GameManager.Instance.cansStock--;
+        GameManagerHelpers.Instance.cansStock--;
         CloseMenu();
     }
 

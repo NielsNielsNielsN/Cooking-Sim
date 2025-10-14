@@ -77,7 +77,7 @@ public class Customer : MonoBehaviour
         // Earn money for all items sold in this order
         foreach (string item in myOrderItems)
         {
-            GameManager.Instance.SellItem(item);
+            GameManagerHelpers.Instance.SellItem(item);
         }
 
         if (myWaitingSpot != null)
