@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a4610751d4f354948959e5b3dbc96f2d
+guid: ac283629efc416045b9f4e53e5c098a0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 10000
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 64
+    maxTextureSize: 1024
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: QTE slider_0
+      name: QTE BAR_0
       rect:
         serializedVersion: 2
         x: 0
@@ -106,14 +106,14 @@ TextureImporter:
         height: 2048
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 489, y: 489, z: 489, w: 489}
+      border: {x: 490, y: 490, z: 490, w: 490}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7196fcbe94c906941ad43a4845f8ff9a
-      internalID: -134837813
+      spriteID: 76d3e2eed36a92541a97673c1da91fef
+      internalID: -1094192398
       vertices: []
       indices: 
       edges: []
@@ -122,7 +122,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 069df566dc518714c8ccae4c96cd6bf4
+    spriteID: 05424f04ed3d89648b982cfc9369d98b
     internalID: 0
     vertices: []
     indices: 
@@ -134,7 +134,7 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":2048.0,"y":2048.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      QTE slider_0: -134837813
+      QTE BAR_0: -1094192398
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
