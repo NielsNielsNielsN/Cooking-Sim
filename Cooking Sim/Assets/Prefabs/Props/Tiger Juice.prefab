@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: -7686939108854089238}
   - component: {fileID: 8044155409061373577}
   - component: {fileID: 7104266148498160921}
+  - component: {fileID: 4700361739977992345}
   m_Layer: 0
   m_Name: Tiger Juice
   m_TagString: Untagged
@@ -222,6 +223,8 @@ MonoBehaviour:
   rawMaterial: {fileID: 0}
   cookedMaterial: {fileID: 0}
   burnedMaterial: {fileID: 0}
+  emptyMaterial: {fileID: 0}
+  filledMaterial: {fileID: 0}
   meshRenderer: {fileID: 3499072271324373001}
 --- !u!114 &-7686939108854089238
 MonoBehaviour:
@@ -272,3 +275,30 @@ LODGroup:
     renderers:
     - renderer: {fileID: 631969424518373025}
   m_Enabled: 1
+--- !u!54 &4700361739977992345
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8793416735410034306}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
