@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEngine.Rendering.VirtualTexturing;
 
 public class RefillMenu : MonoBehaviour
 {
@@ -57,7 +55,6 @@ public class RefillMenu : MonoBehaviour
         milkshakeText.text = $"Milkshakes: {GameManager.Instance.milkshakeStock}/{GameManager.Instance.maxStock}";
     }
 
-
     private void BuyItem(string item, float cost)
     {
         if (!GameManager.Instance.CanAfford(cost))
@@ -67,7 +64,10 @@ public class RefillMenu : MonoBehaviour
         }
 
         GameManager.Instance.SpendMoney(cost);
-        GameManager.Instance.AddStock(item);
+
+        //  Add exactly ONE item instead of 5
+        GameManager.Instance.AddStock(item, 1);
+
         UpdateUI();
     }
 

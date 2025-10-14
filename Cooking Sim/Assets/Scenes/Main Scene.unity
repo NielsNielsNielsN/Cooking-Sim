@@ -7476,19 +7476,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   playerMoney: 100
   maxStock: 20
-  hotdogStock: 5
-  friesStock: 5
+  hotdogStock: 2
+  friesStock: 2
   cansStock: 5
-  milkshakeStock: 5
-  restockAmount: 5
-  hotdogCost: 20
-  friesCost: 15
-  cansCost: 10
-  milkshakeCost: 25
-  hotdogSellPrice: 15
-  friesSellPrice: 10
-  cansSellPrice: 8
-  milkshakeSellPrice: 20
+  milkshakeStock: 2
+  hotdogCost: 45
+  friesCost: 40
+  cansCost: 25
+  milkshakeCost: 35
+  hotdogSellPrice: 4
+  friesSellPrice: 3
+  cansSellPrice: 2
+  milkshakeSellPrice: 3
 --- !u!4 &366477605
 Transform:
   m_ObjectHideFlags: 0
@@ -8875,6 +8874,10 @@ PrefabInstance:
     - target: {fileID: 8138230531993919758, guid: f13d81446a923614295413a2f2b3fe7e, type: 3}
       propertyPath: m_Name
       value: StartScherm
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138230531993919758, guid: f13d81446a923614295413a2f2b3fe7e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20978,7 +20981,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1225777016
 RectTransform:
   m_ObjectHideFlags: 0
