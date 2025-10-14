@@ -4,7 +4,7 @@ using TMPro;
 
 public class OrderSystem : MonoBehaviour
 {
-    private string[] menuItems = { "Hotdog", "Milkshake", "Fries", "Popcorn", "Chips", "Drinks" };
+    private string[] menuItems = { "Hotdog", "Buns", "Fries", "Drinks" };
 
     [SerializeField] private int minItems = 1;
     [SerializeField] private int maxItems = 6;
