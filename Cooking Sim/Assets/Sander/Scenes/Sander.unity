@@ -1982,6 +1982,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!1 &1318490855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1318490857}
+  - component: {fileID: 1318490856}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1318490856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318490855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60201a31768514b4db306458f5d56117, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  playerMoney: 100
+  maxStock: 20
+  hotdogStock: 5
+  friesStock: 5
+  cansStock: 5
+  bunsStock: 5
+  hotdogCost: 20
+  friesCost: 15
+  cansCost: 10
+  bunsCost: 25
+  hotdogSellPrice: 15
+  friesSellPrice: 10
+  cansSellPrice: 8
+  bunsSellPrice: 20
+--- !u!4 &1318490857
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318490855}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.24631, y: -2.63791, z: 4.95651}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1381125918 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 624954042660999525, guid: bb6d40f932c01a14aaad834be503f5fb, type: 3}
@@ -2384,7 +2442,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 909681165}
         m_TargetAssemblyTypeName: CoolingCell, Assembly-CSharp
-        m_MethodName: SpawnFriesBag
+        m_MethodName: SpawnBunBag
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2517,7 +2575,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 909681165}
         m_TargetAssemblyTypeName: CoolingCell, Assembly-CSharp
-        m_MethodName: SpawnFriesBag
+        m_MethodName: SpawnCanBag
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5203,3 +5261,4 @@ SceneRoots:
   - {fileID: 6382217494661202517}
   - {fileID: 140620367}
   - {fileID: 4479225757834038926}
+  - {fileID: 1318490857}
