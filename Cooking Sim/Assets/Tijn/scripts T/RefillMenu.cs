@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System;
 
 public class RefillMenu : MonoBehaviour
 {
@@ -23,6 +22,7 @@ public class RefillMenu : MonoBehaviour
     public Button closeButton;
 
     private bool isOpen = false;
+    private PlayerGrabber currentGrabber;
 
     private void Start()
     {
@@ -38,13 +38,13 @@ public class RefillMenu : MonoBehaviour
 
     private void Update()
     {
-        if (isOpen)
-        {
-            UpdateUI();
+        if (!isOpen) return;
 
-            if (Input.GetKeyDown(KeyCode.Escape))
-                CloseMenu();
-        }
+        UpdateUI();
+
+        // Only close when Escape or the Close button is pressed
+        if (Input.GetKeyDown(KeyCode.Escape))
+            CloseMenu();
     }
 
     private void UpdateUI()
@@ -63,16 +63,23 @@ public class RefillMenu : MonoBehaviour
             Debug.Log("Not enough money!");
             return;
         }
+
         GameManagerHelpers.Instance.SpendMoney(cost);
         GameManagerHelpers.Instance.AddStock(item, 1);
-
         UpdateUI();
+
+        // ?? DO NOT CLOSE MENU HERE — we want to stay open!
     }
 
+    // Called from PlayerGrabber
     public void OpenMenuLaptop(PlayerGrabber grabber)
     {
+        currentGrabber = grabber;
         isOpen = true;
         menuUI.SetActive(true);
+
+        currentGrabber.DisableScripts();
+
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -81,9 +88,14 @@ public class RefillMenu : MonoBehaviour
     {
         isOpen = false;
         menuUI.SetActive(false);
+
+        if (currentGrabber != null)
+        {
+            currentGrabber.EnableScripts();
+            currentGrabber = null;
+        }
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
-
-    
 }

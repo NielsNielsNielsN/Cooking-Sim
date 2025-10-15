@@ -8311,10 +8311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 7232861364881097916, guid: fc73b4aed36be6c42a1088195d79b12b, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1225777016}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc73b4aed36be6c42a1088195d79b12b, type: 3}
 --- !u!1001 &429510514
@@ -8833,7 +8830,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8138230531993919758, guid: f13d81446a923614295413a2f2b3fe7e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11442,11 +11439,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
---- !u!224 &607705299 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7232861364881097916, guid: fc73b4aed36be6c42a1088195d79b12b, type: 3}
-  m_PrefabInstance: {fileID: 406297688}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &608487010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11893,6 +11885,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoolingCellUI
       objectReference: {fileID: 0}
+    - target: {fileID: 6378534843289044095, guid: d2e4ef81f2cd4da4b85693c2972bb9ae, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7961551999820194064, guid: d2e4ef81f2cd4da4b85693c2972bb9ae, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -11935,7 +11931,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7961551999820194064, guid: d2e4ef81f2cd4da4b85693c2972bb9ae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.57351
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7961551999820194064, guid: d2e4ef81f2cd4da4b85693c2972bb9ae, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11955,11 +11951,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7961551999820194064, guid: d2e4ef81f2cd4da4b85693c2972bb9ae, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 5.0459
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7961551999820194064, guid: d2e4ef81f2cd4da4b85693c2972bb9ae, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.48
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7961551999820194064, guid: d2e4ef81f2cd4da4b85693c2972bb9ae, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -20755,7 +20751,6 @@ GameObject:
   - component: {fileID: 1225777016}
   - component: {fileID: 1225777019}
   - component: {fileID: 1225777018}
-  - component: {fileID: 1225777017}
   m_Layer: 5
   m_Name: RefillMenuUI
   m_TagString: Untagged
@@ -20770,7 +20765,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225777015}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -20785,36 +20780,13 @@ RectTransform:
   - {fileID: 1918351069}
   - {fileID: 1056805204}
   - {fileID: 2014335671}
-  m_Father: {fileID: 607705299}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 960, y: 540}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1225777017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1225777015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb25e568989e9b7458623ad4829719ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RefillMenu
-  menuUI: {fileID: 1225777015}
-  moneyText: {fileID: 1947365821}
-  hotdogText: {fileID: 817020799}
-  friesText: {fileID: 82584917}
-  cansText: {fileID: 178712784}
-  bunsText: {fileID: 1518587134}
-  buyHotdogButton: {fileID: 1932060741}
-  buyFriesButton: {fileID: 1919173154}
-  buyCansButton: {fileID: 1918351070}
-  buyBunsButton: {fileID: 1056805205}
-  closeButton: {fileID: 2014335672}
 --- !u!114 &1225777018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34912,6 +34884,7 @@ SceneRoots:
   - {fileID: 1901627383}
   - {fileID: 1214066683}
   - {fileID: 648631043}
+  - {fileID: 1225777016}
   - {fileID: 945175149}
   - {fileID: 406297688}
   - {fileID: 366477605}

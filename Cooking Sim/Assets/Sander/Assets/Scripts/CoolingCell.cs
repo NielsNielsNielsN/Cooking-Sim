@@ -36,7 +36,7 @@ public class CoolingCell : MonoBehaviour
 
         currentGrabber.DisableScripts();
 
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.None; 
         Cursor.visible = true;
     }
 
