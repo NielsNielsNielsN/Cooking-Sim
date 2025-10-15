@@ -41,15 +41,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 28b353fa4e8e3954482a6d6959c380ba, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 28b353fa4e8e3954482a6d6959c380ba, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 28b353fa4e8e3954482a6d6959c380ba, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 28b353fa4e8e3954482a6d6959c380ba, type: 3}
       propertyPath: m_LocalPosition.x
@@ -196,6 +196,8 @@ MonoBehaviour:
   rawMaterial: {fileID: 0}
   cookedMaterial: {fileID: 0}
   burnedMaterial: {fileID: 0}
+  emptyMaterial: {fileID: 0}
+  filledMaterial: {fileID: 0}
   meshRenderer: {fileID: 1958394357972980789}
 --- !u!114 &-5657977361154368116
 MonoBehaviour:

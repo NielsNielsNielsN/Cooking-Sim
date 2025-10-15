@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5618806292554384584}
   - component: {fileID: 6749428974899282113}
   - component: {fileID: 1795340403767138820}
+  - component: {fileID: 7933216710782333220}
   m_Layer: 0
   m_Name: Laptop
   m_TagString: Untagged
@@ -105,9 +106,22 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.23446725, y: 0.1307022, z: 0.20274091}
-  m_Center: {x: 0.042229645, y: 0.06534712, z: 0}
+  m_Center: {x: 0.04, y: 0.06534712, z: 0}
+--- !u!114 &7933216710782333220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8581721578612809348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecec4e5bf6a02784ea860f77e46af997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RefillStation
+  refillMenu: {fileID: 0}
