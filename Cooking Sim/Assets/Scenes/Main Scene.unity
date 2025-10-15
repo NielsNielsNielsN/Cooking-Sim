@@ -465,7 +465,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8581721578612809348, guid: 1c1fab0148ff27f4f97708ac8f1d4ed8, type: 3}
   m_PrefabInstance: {fileID: 224424709}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7336623
+--- !u!114 &7336628
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -474,10 +474,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 7336616}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecec4e5bf6a02784ea860f77e46af997, type: 3}
+  m_Script: {fileID: 11500000, guid: bb25e568989e9b7458623ad4829719ce, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RefillStation
-  refillMenu: {fileID: 1225777017}
+  m_EditorClassIdentifier: Assembly-CSharp::RefillMenu
+  menuUI: {fileID: 1225777015}
+  moneyText: {fileID: 1947365821}
+  hotdogText: {fileID: 817020799}
+  friesText: {fileID: 82584917}
+  cansText: {fileID: 178712784}
+  bunsText: {fileID: 1518587134}
+  buyHotdogButton: {fileID: 1932060741}
+  buyFriesButton: {fileID: 1919173154}
+  buyCansButton: {fileID: 1918351070}
+  buyBunsButton: {fileID: 1056805205}
+  closeButton: {fileID: 2014335672}
 --- !u!1001 &11305359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4753,7 +4763,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8581721578612809348, guid: 1c1fab0148ff27f4f97708ac8f1d4ed8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7336623}
+      addedObject: {fileID: 7336628}
   m_SourcePrefab: {fileID: 100100000, guid: 1c1fab0148ff27f4f97708ac8f1d4ed8, type: 3}
 --- !u!1 &225645342
 GameObject:
@@ -16683,6 +16693,7 @@ MonoBehaviour:
   maxItems: 6
   orderCardPrefab: {fileID: 8033277394207615682, guid: 9bf8796fa8866ff42a2d54b0e6ee068d, type: 3}
   ordersContainer: {fileID: 159467401}
+  cardSpacing: 250
   maxOrders: 5
   activeOrders: 0
 --- !u!4 &945175149
