@@ -85,8 +85,5 @@ public class RefillMenu : MonoBehaviour
         Cursor.visible = false;
     }
 
-    internal void OpenMenuLaptop()
-    {
-        throw new NotImplementedException();
-    }
+    
 }
