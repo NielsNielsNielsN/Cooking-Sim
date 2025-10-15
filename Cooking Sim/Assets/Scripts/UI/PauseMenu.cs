@@ -15,5 +15,13 @@ public class PauseMenu : MonoBehaviour
             visible = !visible;
             pauseCanvas.gameObject.SetActive(visible);
         }
+        if (visible == true)
+        {
+            Time.timeScale = 0;
+        }
+        if (visible == false)
+        {
+            Time.timeScale = 1;
+        }
     }
 }

@@ -525,7 +525,6 @@ GameObject:
   - component: {fileID: 2651710612986876796}
   - component: {fileID: 9002089968695629926}
   - component: {fileID: 7358286835388641768}
-  - component: {fileID: 32376496594028736}
   m_Layer: 5
   m_Name: RefillMenuUI
   m_TagString: Untagged
@@ -600,29 +599,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &32376496594028736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 664135675510177348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb25e568989e9b7458623ad4829719ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RefillMenu
-  menuUI: {fileID: 664135675510177348}
-  moneyText: {fileID: 7165812151243409076}
-  hotdogText: {fileID: 7454728627632344702}
-  friesText: {fileID: 1126545951134644478}
-  cansText: {fileID: 5713056559161051929}
-  bunsText: {fileID: 2866677938572253892}
-  buyHotdogButton: {fileID: 4642722340130287753}
-  buyFriesButton: {fileID: 5453747883515209992}
-  buyCansButton: {fileID: 337604880162777747}
-  buyBunsButton: {fileID: 8524947786171851466}
-  closeButton: {fileID: 569123655564660260}
 --- !u!1 &763631382475978457
 GameObject:
   m_ObjectHideFlags: 0

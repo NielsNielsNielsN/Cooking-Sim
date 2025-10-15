@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class GameManager : MonoBehaviour
     public float friesSellPrice = 10f;
     public float cansSellPrice = 8f;
     public float bunsSellPrice = 20f;
+
+    [SerializeField] private bool hasLost;
+    [SerializeField] private Canvas loseCanvas;
 
     private void Awake()
     {
@@ -87,6 +91,18 @@ public class GameManager : MonoBehaviour
             default:
                 Debug.LogWarning($"GameManager.AddStock: unknown item '{item}'");
                 break;
+        }
+    }
+
+    void Update()
+    {
+        if (playerMoney < 1)
+        {
+            {
+                hasLost = true;
+                print("You Lose");
+                loseCanvas.gameObject.SetActive(true);
+            }
         }
     }
 

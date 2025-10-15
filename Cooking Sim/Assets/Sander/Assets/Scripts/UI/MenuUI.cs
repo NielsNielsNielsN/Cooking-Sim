@@ -1,8 +1,12 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuUI : MonoBehaviour
 {
+    private bool visible = false;
+    [SerializeField] private Canvas pauseCanvas;
     public GameObject startMenu;
     public GameObject settingsMenu;
     public Slider masterVolumeSlider;
@@ -31,6 +35,7 @@ public class MenuUI : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        startMenu.SetActive(false);
     }
 
     public void Quit()
@@ -42,6 +47,8 @@ public class MenuUI : MonoBehaviour
     {
         startMenu.SetActive(true);
         settingsMenu.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void ShowSettingsMenu()
@@ -50,6 +57,39 @@ public class MenuUI : MonoBehaviour
         settingsMenu.SetActive(true);
     }
 
+    void Update()
+    {
+        PauseMenuOn();
+    }
+    public void Restart()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void PauseMenuOn()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            visible = !visible;
+            pauseCanvas.gameObject.SetActive(visible);
+        }
+        if (visible == true)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+    }
+
+    public void Freeze()
+    {
+        Time.timeScale = 0f;
+    }
+
+    public void Unfreeze()
+    {
+        Time.timeScale = 1f;
+    }
     public void SetVolume(float volume)
     {
         AudioListener.volume = volume;
