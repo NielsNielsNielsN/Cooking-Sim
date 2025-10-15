@@ -23,6 +23,7 @@ public class PlayerGrabber : MonoBehaviour
     private BowlDispenser hoveredBowlDispenser;
     private CuttingBoard hoveredCuttingBoard;
     private CoolingCell hoveredCell;
+    private RefillMenu hoveredLaptop;
     private CookStation hoveredStation;
     private FoodItem hoveredFoodItem;
     private FoodBag hoveredBag;
@@ -73,6 +74,7 @@ public class PlayerGrabber : MonoBehaviour
         {
             hoveredDrawer = hit.collider.GetComponent<Drawer>();
             hoveredCell = hit.collider.GetComponent<CoolingCell>();
+            hoveredLaptop = hit.collider.GetComponent<RefillMenu>();
             hoveredStation = hit.collider.GetComponent<CookStation>();
             hoveredFoodItem = hit.collider.GetComponent<FoodItem>();
             hoveredBag = hit.collider.GetComponent<FoodBag>();
@@ -102,6 +104,7 @@ public class PlayerGrabber : MonoBehaviour
         {
             hoveredDrawer = null;
             hoveredCell = null;
+            hoveredLaptop = null;
             hoveredStation = null;
             hoveredFoodItem = null;
             hoveredBag = null;
@@ -133,6 +136,12 @@ public class PlayerGrabber : MonoBehaviour
         if (hoveredCell != null)
         {
             hoveredCell.OpenMenu(this);
+            return;
+        }
+
+        if (hoveredLaptop != null)
+        {
+             hoveredLaptop.OpenMenuLaptop(this);
             return;
         }
 

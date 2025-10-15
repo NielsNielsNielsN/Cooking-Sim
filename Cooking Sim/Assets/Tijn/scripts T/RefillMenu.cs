@@ -68,7 +68,7 @@ public class RefillMenu : MonoBehaviour
         UpdateUI();
     }
 
-    public void OpenMenu()
+    public void OpenMenuLaptop(PlayerGrabber grabber)
     {
         isOpen = true;
         menuUI.SetActive(true);
