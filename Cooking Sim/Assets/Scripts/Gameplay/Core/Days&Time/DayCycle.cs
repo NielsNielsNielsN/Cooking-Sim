@@ -21,8 +21,13 @@ public class DayCycleManager : MonoBehaviour
     [Header("Input Settings")]
     [SerializeField] private KeyCode nextDayKey = KeyCode.N;
 
+    [SerializeField] private int winDay;
+    [SerializeField] private Canvas winCanvas;
+    private bool hasWon = false;
+
     private int currentDay = 1;
     private float currentTime;
+    
 
     private void Start()
     {
@@ -42,9 +47,11 @@ public class DayCycleManager : MonoBehaviour
         currentTime += Time.deltaTime * timeSpeed;
         currentTime = Mathf.Min(currentTime, endTime);
 
-        if (currentDay == 8)
+        if (currentDay == winDay)
         {
+            hasWon = true;
             print("You Win");
+            winCanvas.gameObject.SetActive (true);
         }
 
         // Advance to next day only at 22:00
@@ -79,6 +86,12 @@ public class DayCycleManager : MonoBehaviour
         currentTime = startTime;
 
         yield return StartCoroutine(Fade(0f)); // Fade back in
+        
+        if (currentDay == winDay && !hasWon)
+        {
+            hasWon = true;
+            winCanvas.gameObject.SetActive (true);
+        }
     }
 
     private IEnumerator Fade(float targetAlpha)
