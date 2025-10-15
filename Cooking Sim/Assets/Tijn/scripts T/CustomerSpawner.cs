@@ -4,7 +4,9 @@ using System.Collections.Generic;
 
 public class CustomerSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject customerPrefab;
+    [Header("Customer Prefabs")]
+    [SerializeField] private GameObject[] customerPrefabs; // ← multiple customer types
+
     [SerializeField] private OrderSystem orderSystem;
     [SerializeField] private OrderScreenPoint[] orderScreenPoints;
     [SerializeField] private Transform[] waitingSpots;
@@ -41,11 +43,9 @@ public class CustomerSpawner : MonoBehaviour
 
     private void TrySpawnCustomer()
     {
-        // Limit to max 5 active orders
         if (orderSystem.activeOrders >= orderSystem.maxOrders)
             return;
 
-        // Find first available screen
         OrderScreenPoint freeScreen = null;
         foreach (var screen in orderScreenPoints)
         {
@@ -68,9 +68,12 @@ public class CustomerSpawner : MonoBehaviour
 
     private void SpawnCustomer(OrderScreenPoint screen)
     {
-        if (screen == null) return;
+        if (screen == null || customerPrefabs.Length == 0) return;
 
-        GameObject newCustomer = Instantiate(customerPrefab, transform.position, Quaternion.identity);
+        // 🌀 Randomly choose one of the three (or however many) prefabs
+        GameObject chosenPrefab = customerPrefabs[Random.Range(0, customerPrefabs.Length)];
+
+        GameObject newCustomer = Instantiate(chosenPrefab, transform.position, Quaternion.identity);
         Customer c = newCustomer.GetComponent<Customer>();
 
         c.orderSystem = orderSystem;
@@ -85,7 +88,6 @@ public class CustomerSpawner : MonoBehaviour
 
         screen.isOccupied = true;
 
-        //  New: send customer to waiting spot after ordering
         c.OnOrderComplete += () => SendToWaitingSpot(c);
     }
 
