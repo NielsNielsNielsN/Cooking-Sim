@@ -7,7 +7,7 @@ public class CustomerSpawner : MonoBehaviour
     [Header("Customer Prefabs")]
     [SerializeField] private GameObject[] customerPrefabs; // ← multiple customer types
 
-    [SerializeField] private OrderSystem orderSystem;
+    [SerializeField] private CustomerOrder orderSystem;
     [SerializeField] private OrderScreenPoint[] orderScreenPoints;
     [SerializeField] private Transform[] waitingSpots;
     [SerializeField] private Transform pickupPoint;
