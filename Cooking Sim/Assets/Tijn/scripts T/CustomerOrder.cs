@@ -11,7 +11,8 @@ public class OrderSystem : MonoBehaviour
 
     [Header("UI References")]
     [SerializeField] private GameObject orderCardPrefab;  // The UI card prefab
-    [SerializeField] private Transform ordersContainer;   // Parent object in UI for all cards
+    [SerializeField] private RectTransform ordersContainer;   // Parent object in UI for all cards
+    [SerializeField] private float cardSpacing = 250f;    // Horizontal spacing between cards
 
     public int maxOrders = 5;
     public int activeOrders = 0;
@@ -50,6 +51,10 @@ public class OrderSystem : MonoBehaviour
         TextMeshProUGUI orderText = newCard.GetComponentInChildren<TextMeshProUGUI>();
         orderText.text = orderString;
 
+        // Position cards horizontally next to each other
+        RectTransform cardRect = newCard.GetComponent<RectTransform>();
+        cardRect.anchoredPosition = new Vector2(activeOrderCards.Count * cardSpacing, 0f);
+
         activeOrderCards.Add(newCard);
         activeOrders++;
 
@@ -72,6 +77,13 @@ public class OrderSystem : MonoBehaviour
         Destroy(firstCard);
         activeOrderCards.RemoveAt(0);
         activeOrders--;
+
+        // Shift remaining cards to fill the empty space
+        for (int i = 0; i < activeOrderCards.Count; i++)
+        {
+            RectTransform cardRect = activeOrderCards[i].GetComponent<RectTransform>();
+            cardRect.anchoredPosition = new Vector2(i * cardSpacing, 0f);
+        }
 
         // Tell the first customer to complete
         Customer c = customerQueue.Dequeue();

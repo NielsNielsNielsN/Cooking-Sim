@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -45,7 +45,7 @@ public class CustomerSpawner : MonoBehaviour
         if (orderSystem.activeOrders >= orderSystem.maxOrders)
             return;
 
-        // Find the first truly available screen
+        // Find first available screen
         OrderScreenPoint freeScreen = null;
         foreach (var screen in orderScreenPoints)
         {
@@ -62,7 +62,7 @@ public class CustomerSpawner : MonoBehaviour
         }
         else
         {
-            Debug.Log("All order screens are occupied — waiting for a free one.");
+            Debug.Log("All order screens are occupied â€” waiting for a free one.");
         }
     }
 
@@ -83,6 +83,27 @@ public class CustomerSpawner : MonoBehaviour
         c.pathToPickup = pathToPickup;
         c.pathToExit = pathToExit;
 
-        screen.isOccupied = true; // Reserve spot immediately so others can’t take it
+        screen.isOccupied = true;
+
+        //  New: send customer to waiting spot after ordering
+        c.OnOrderComplete += () => SendToWaitingSpot(c);
+    }
+
+    private void SendToWaitingSpot(Customer c)
+    {
+        if (c == null || waitingSpots.Length == 0) return;
+
+        foreach (Transform spot in waitingSpots)
+        {
+            WaitingSpot ws = spot.GetComponent<WaitingSpot>();
+            if (ws != null && !ws.isOccupied)
+            {
+                ws.isOccupied = true;
+                c.GoToWaitingSpot(spot);
+                return;
+            }
+        }
+
+        Debug.Log("No free waiting spots available!");
     }
 }

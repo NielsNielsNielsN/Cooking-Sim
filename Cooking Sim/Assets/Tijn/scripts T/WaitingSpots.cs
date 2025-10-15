@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WaitingSpots : MonoBehaviour
+public class WaitingSpot : MonoBehaviour
 {
-    [HideInInspector] public bool isOccupied = false;
+    public bool isOccupied = false;
 }

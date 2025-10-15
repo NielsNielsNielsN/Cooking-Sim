@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -21,6 +22,9 @@ public class Customer : MonoBehaviour
 
     private List<string> myOrderItems = new List<string>(); // Store items for GameManager
 
+    // Event the spawner can subscribe to (called right after placing the order)
+    public Action OnOrderComplete;
+
     private void Start()
     {
         StartCoroutine(CustomerRoutine());
@@ -29,12 +33,12 @@ public class Customer : MonoBehaviour
     private IEnumerator CustomerRoutine()
     {
         // Step 1: Walk to order screen
-        orderScreenPoint.isOccupied = true;
+        if (orderScreenPoint != null) orderScreenPoint.isOccupied = true;
         yield return FollowPath(pathToOrderScreen);
-        yield return MoveTo(orderScreenPoint.transform.position);
+        if (orderScreenPoint != null) yield return MoveTo(orderScreenPoint.transform.position);
 
         // Step 2: Wait 10–30 seconds before ordering
-        float waitTime = Random.Range(10f, 30f);
+        float waitTime = UnityEngine.Random.Range(10f, 30f);
         yield return new WaitForSeconds(waitTime);
 
         // Step 3: Place order
@@ -44,16 +48,25 @@ public class Customer : MonoBehaviour
         // Parse order items for profit later
         myOrderItems = ParseOrderItems(myOrder);
 
-        orderScreenPoint.isOccupied = false;
+        // mark order screen free immediately after placing order
+        if (orderScreenPoint != null) orderScreenPoint.isOccupied = false;
 
-        // Step 4: Go to a free waiting spot
-        myWaitingSpot = GetFreeWaitingSpot();
+        // Notify spawner (or other listeners) that the order is placed and they can assign a waiting spot
+        OnOrderComplete?.Invoke();
+
+        // If spawner assigned a waiting spot via GoToWaitingSpot, use it.
+        // Otherwise find one ourselves.
+        if (myWaitingSpot == null)
+        {
+            myWaitingSpot = GetFreeWaitingSpot();
+        }
+
         if (myWaitingSpot != null)
         {
             yield return MoveTo(myWaitingSpot.position);
         }
 
-        // Step 5: Wait until order is completed
+        // Step 5: Wait until order is completed (served)
         while (!orderCompleted)
         {
             yield return null;
@@ -61,37 +74,49 @@ public class Customer : MonoBehaviour
 
         // Step 6: Walk to pickup
         yield return FollowPath(pathToPickup);
-        yield return MoveTo(pickupPoint.position);
+        if (pickupPoint != null) yield return MoveTo(pickupPoint.position);
 
         // Step 7: Walk to exit
         yield return FollowPath(pathToExit);
-        yield return MoveTo(exitPoint.position);
+        if (exitPoint != null) yield return MoveTo(exitPoint.position);
 
         Destroy(gameObject);
     }
 
+    // Called by OrderSystem when this customer's order is ready / being completed
     public void CompleteOrder()
     {
         orderCompleted = true;
 
-        // Earn money for all items sold in this order
+        // Earn money for all items sold in this order and reduce stock
         foreach (string item in myOrderItems)
         {
-            GameManagerHelpers.Instance.SellItem(item);
+            GameManager.Instance.SellItem(item);
         }
 
+        // Free the waiting spot so others can use it
         if (myWaitingSpot != null)
         {
-            WaitingSpots ws = myWaitingSpot.GetComponent<WaitingSpots>();
+            WaitingSpot ws = myWaitingSpot.GetComponent<WaitingSpot>();
             if (ws != null) ws.isOccupied = false;
+            myWaitingSpot = null;
         }
+    }
+
+    // Called by spawner (or other systems) to assign a waiting spot externally
+    public void GoToWaitingSpot(Transform spot)
+    {
+        if (spot == null) return;
+        myWaitingSpot = spot;
     }
 
     private Transform GetFreeWaitingSpot()
     {
+        if (waitingSpots == null) return null;
+
         foreach (var spot in waitingSpots)
         {
-            WaitingSpots ws = spot.GetComponent<WaitingSpots>();
+            WaitingSpot ws = spot.GetComponent<WaitingSpot>();
             if (ws != null && !ws.isOccupied)
             {
                 ws.isOccupied = true;
@@ -112,8 +137,10 @@ public class Customer : MonoBehaviour
 
     private IEnumerator FollowPath(List<Transform> waypoints)
     {
+        if (waypoints == null) yield break;
         foreach (var point in waypoints)
         {
+            if (point == null) continue;
             yield return MoveTo(point.position);
         }
     }
@@ -122,6 +149,8 @@ public class Customer : MonoBehaviour
     private List<string> ParseOrderItems(string orderText)
     {
         List<string> items = new List<string>();
+        if (string.IsNullOrEmpty(orderText)) return items;
+
         string[] lines = orderText.Split('\n');
 
         foreach (string line in lines)
@@ -129,7 +158,8 @@ public class Customer : MonoBehaviour
             if (line.StartsWith(" - "))
             {
                 string item = line.Substring(3).Trim();
-                items.Add(item);
+                if (!string.IsNullOrEmpty(item))
+                    items.Add(item);
             }
         }
 

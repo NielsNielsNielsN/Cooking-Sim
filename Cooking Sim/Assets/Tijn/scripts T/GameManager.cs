@@ -2,6 +2,8 @@
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance { get; private set; }
+
     [Header("Money")]
     public float playerMoney = 100f;
 
@@ -26,17 +28,17 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (GameManagerHelpers.Instance == null)
-        {
-            GameManagerHelpers.Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
+        // --- Singleton setup ---
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
+            return;
         }
 
-        // Make sure stocks are within limits
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+
+        // Clamp stock values
         hotdogStock = Mathf.Clamp(hotdogStock, 0, maxStock);
         friesStock = Mathf.Clamp(friesStock, 0, maxStock);
         cansStock = Mathf.Clamp(cansStock, 0, maxStock);
@@ -57,7 +59,6 @@ public class GameManager : MonoBehaviour
     }
 
     // ----- Stock helpers -----
-    // Adds a specified number of items (default 1)
     public void AddStock(string item, int amount = 1)
     {
         if (string.IsNullOrEmpty(item)) return;
@@ -90,7 +91,6 @@ public class GameManager : MonoBehaviour
     }
 
     // ----- Selling -----
-    // Called when customer order completes
     public void SellItem(string item)
     {
         if (string.IsNullOrEmpty(item)) return;
