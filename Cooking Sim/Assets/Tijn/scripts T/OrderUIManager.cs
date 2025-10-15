@@ -4,7 +4,7 @@ public class OrderUIManager : MonoBehaviour
 {
     [Header("UI References")]
     public GameObject orderPanel; // The whole order UI panel
-    public OrderSystem orderSystem; // Reference to your existing OrderSystem
+    public CustomerOrder orderSystem; // Reference to your existing OrderSystem
 
     private bool isOpen = false;
 

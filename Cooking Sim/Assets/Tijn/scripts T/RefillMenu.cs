@@ -41,10 +41,6 @@ public class RefillMenu : MonoBehaviour
         if (!isOpen) return;
 
         UpdateUI();
-
-        // Only close when Escape or the Close button is pressed
-        if (Input.GetKeyDown(KeyCode.Escape))
-            CloseMenu();
     }
 
     private void UpdateUI()

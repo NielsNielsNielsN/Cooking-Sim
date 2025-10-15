@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class Customer : MonoBehaviour
 {
-    [HideInInspector] public OrderSystem orderSystem;
+    [HideInInspector] public CustomerOrder orderSystem;
     [HideInInspector] public OrderScreenPoint orderScreenPoint;
     [HideInInspector] public Transform[] waitingSpots;
     [HideInInspector] public Transform pickupPoint;

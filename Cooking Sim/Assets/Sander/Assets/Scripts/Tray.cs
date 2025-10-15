@@ -74,4 +74,15 @@ public class Tray : MonoBehaviour
         obj.transform.position = target.position;
         obj.transform.rotation = target.rotation;
     }
+
+    public void ClearTray()
+    {
+        foreach (GameObject obj in placedObjects)
+        {
+            if (obj != null)
+                Destroy(obj);
+        }
+        placedObjects.Clear();
+    }
+
 }
