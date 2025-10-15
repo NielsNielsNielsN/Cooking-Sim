@@ -741,16 +741,15 @@ MonoBehaviour:
   hotdogStock: 0
   friesStock: 0
   cansStock: 0
-  milkshakeStock: 0
-  restockAmount: 5
+  bunsStock: 5
   hotdogCost: 10
   friesCost: 8
   cansCost: 6
-  milkshakeCost: 12
+  bunsCost: 25
   hotdogSellPrice: 18
   friesSellPrice: 15
   cansSellPrice: 10
-  milkshakeSellPrice: 20
+  bunsSellPrice: 20
 --- !u!4 &134312092
 Transform:
   m_ObjectHideFlags: 0
@@ -2135,11 +2134,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 294343168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &430528639 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 4691158756314899099, guid: 91d0cae573a7c9c41a0b2d3ac2dc8360, type: 3}
-  m_PrefabInstance: {fileID: 1668631315}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &436444977
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5644,9 +5638,13 @@ MonoBehaviour:
   menuUI: {fileID: 1812193146}
   hotdogButton: {fileID: 1996691680}
   friesButton: {fileID: 1481901756}
+  bunButton: {fileID: 0}
+  cansButton: {fileID: 0}
   closeButton: {fileID: 1998169256}
   hotdogBagPrefab: {fileID: 1211188714035324182, guid: 0bed1d17e55cd7d4690e9266723d33e7, type: 3}
   friesBagPrefab: {fileID: 691250608496429515, guid: 7fb67816036de854b987c09d7abce388, type: 3}
+  bunBagPrefab: {fileID: 0}
+  cansBagPrefab: {fileID: 0}
   stockBoxPrefab: {fileID: 0}
 --- !u!65 &1070895735
 BoxCollider:
@@ -6238,11 +6236,11 @@ MonoBehaviour:
   hotdogText: {fileID: 18474005}
   friesText: {fileID: 184752565}
   cansText: {fileID: 1327803537}
-  milkshakeText: {fileID: 1211023649}
+  bunsText: {fileID: 0}
   buyHotdogButton: {fileID: 49355840}
   buyFriesButton: {fileID: 323127808}
   buyCansButton: {fileID: 1227790259}
-  buyMilkshakeButton: {fileID: 787350618}
+  buyBunsButton: {fileID: 0}
   closeButton: {fileID: 979424568}
 --- !u!224 &1182151988
 RectTransform:
@@ -8749,79 +8747,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 267939427}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1668631315
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1861636868842190282, guid: 91d0cae573a7c9c41a0b2d3ac2dc8360, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.6854
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861636868842190282, guid: 91d0cae573a7c9c41a0b2d3ac2dc8360, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861636868842190282, guid: 91d0cae573a7c9c41a0b2d3ac2dc8360, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 12.70694
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861636868842190282, guid: 91d0cae573a7c9c41a0b2d3ac2dc8360, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861636868842190282, guid: 91d0cae573a7c9c41a0b2d3ac2dc8360, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861636868842190282, guid: 91d0cae573a7c9c41a0b2d3ac2dc8360, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861636868842190282, guid: 91d0cae573a7c9c41a0b2d3ac2dc8360, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861636868842190282, guid: 91d0cae573a7c9c41a0b2d3ac2dc8360, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861636868842190282, guid: 91d0cae573a7c9c41a0b2d3ac2dc8360, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861636868842190282, guid: 91d0cae573a7c9c41a0b2d3ac2dc8360, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386318924233863701, guid: 91d0cae573a7c9c41a0b2d3ac2dc8360, type: 3}
-      propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386318924233863701, guid: 91d0cae573a7c9c41a0b2d3ac2dc8360, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6158334177148301568, guid: 91d0cae573a7c9c41a0b2d3ac2dc8360, type: 3}
-      propertyPath: interactionText
-      value: 
-      objectReference: {fileID: 2017504263}
-    - target: {fileID: 6158334177148301568, guid: 91d0cae573a7c9c41a0b2d3ac2dc8360, type: 3}
-      propertyPath: interactDistance
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6214549397362283307, guid: 91d0cae573a7c9c41a0b2d3ac2dc8360, type: 3}
-      propertyPath: myRigidbody
-      value: 
-      objectReference: {fileID: 430528639}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 91d0cae573a7c9c41a0b2d3ac2dc8360, type: 3}
 --- !u!1 &1674760791
 GameObject:
   m_ObjectHideFlags: 0
@@ -10492,17 +10417,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004543185}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2017504263 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 512497618429539539, guid: 6a64b7e280b7cba45b6c55f459b492b6, type: 3}
-  m_PrefabInstance: {fileID: 18566200}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &2026645753
 GameObject:
   m_ObjectHideFlags: 0
@@ -11856,7 +11770,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1668631315}
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 794108684}
