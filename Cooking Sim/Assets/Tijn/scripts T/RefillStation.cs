@@ -9,7 +9,7 @@ public class RefillStation : MonoBehaviour
     {
         if (isPlayerNearby && Input.GetKeyDown(KeyCode.E))
         {
-            refillMenu.OpenMenu();
+            refillMenu.OpenMenuLaptop();
         }
     }
 

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class RefillMenu : MonoBehaviour
 {
@@ -82,5 +83,10 @@ public class RefillMenu : MonoBehaviour
         menuUI.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+
+    internal void OpenMenuLaptop()
+    {
+        throw new NotImplementedException();
     }
 }

@@ -141,7 +141,7 @@ public class PlayerGrabber : MonoBehaviour
 
         if (hoveredLaptop != null)
         {
-             hoveredLaptop.OpenMenuLaptop(this);
+            hoveredLaptop.OpenMenuLaptop(this);
             return;
         }
 
