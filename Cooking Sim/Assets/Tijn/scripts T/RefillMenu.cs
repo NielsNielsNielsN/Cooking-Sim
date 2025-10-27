@@ -54,12 +54,6 @@ public class RefillMenu : MonoBehaviour
 
     private void BuyItem(string item, float cost)
     {
-        if (!GameManagerHelpers.Instance.CanAfford(cost))
-        {
-            Debug.Log("Not enough money!");
-            return;
-        }
-
         GameManagerHelpers.Instance.SpendMoney(cost);
         GameManagerHelpers.Instance.AddStock(item, 1);
         UpdateUI();
