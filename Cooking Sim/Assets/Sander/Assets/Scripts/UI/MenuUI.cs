@@ -69,7 +69,7 @@ public class MenuUI : MonoBehaviour
 
     public void PauseMenuOn()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             visible = !visible;
             pauseCanvas.gameObject.SetActive(visible);
