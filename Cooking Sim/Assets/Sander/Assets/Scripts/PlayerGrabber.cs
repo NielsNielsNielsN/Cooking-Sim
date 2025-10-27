@@ -61,7 +61,7 @@ public class PlayerGrabber : MonoBehaviour
                 TryPlace();
         }
 
-        if (Input.GetKeyDown(KeyCode.T))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             DropHeld();
         }

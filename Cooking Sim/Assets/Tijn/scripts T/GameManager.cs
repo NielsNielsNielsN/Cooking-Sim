@@ -102,6 +102,8 @@ public class GameManager : MonoBehaviour
                 hasLost = true;
                 print("You Lose");
                 loseCanvas.gameObject.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
     }

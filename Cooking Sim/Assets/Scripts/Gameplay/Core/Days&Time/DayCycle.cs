@@ -43,6 +43,8 @@ public class DayCycleManager : MonoBehaviour
 
     private void Update()
     {
+
+
         // Progress time
         currentTime += Time.deltaTime * timeSpeed;
         currentTime = Mathf.Min(currentTime, endTime);
