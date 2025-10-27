@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ public class MenuUI : MonoBehaviour
     public GameObject startMenu;
     public GameObject settingsMenu;
     public Slider masterVolumeSlider;
+    public AudioMixer audioMixer;
     public Toggle fullscreenToggle;
 
     void Start()
@@ -103,10 +105,10 @@ public class MenuUI : MonoBehaviour
     {
         Time.timeScale = 1f;
     }
-    public void SetVolume(float volume)
+    public void SetVolume(float value)
     {
-        AudioListener.volume = volume;
-        PlayerPrefs.SetFloat("MasterVolume", volume);
+        audioMixer.SetFloat("MasterVolume", Mathf.Log10(value) * 20);
+        PlayerPrefs.SetFloat("MasterVolume", value);
     }
 
     public void SetFullscreen(bool isFullscreen)
