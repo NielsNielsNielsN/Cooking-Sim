@@ -7814,6 +7814,18 @@ PrefabInstance:
       propertyPath: interactionText
       value: 
       objectReference: {fileID: 383295026}
+    - target: {fileID: 777079101649682179, guid: 00e7e5a246caa7749b3fd583b01ab7cc, type: 3}
+      propertyPath: m_Antialiasing
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 777079101649682179, guid: 00e7e5a246caa7749b3fd583b01ab7cc, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 777079101649682179, guid: 00e7e5a246caa7749b3fd583b01ab7cc, type: 3}
+      propertyPath: m_TaaSettings.m_FrameInfluence
+      value: 0.100000024
+      objectReference: {fileID: 0}
     - target: {fileID: 878578105692461779, guid: 00e7e5a246caa7749b3fd583b01ab7cc, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -24204,6 +24216,7 @@ MonoBehaviour:
   startMenu: {fileID: 0}
   settingsMenu: {fileID: 0}
   masterVolumeSlider: {fileID: 0}
+  audioMixer: {fileID: 0}
   fullscreenToggle: {fileID: 0}
 --- !u!1001 &1120735304
 PrefabInstance:
