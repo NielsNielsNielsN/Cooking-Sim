@@ -73,6 +73,8 @@ public class MenuUI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            PostProcessVolume ppVolume = Camera.main.gameObject.GetComponent<PostProcessVolume>();
+            ppVolume.enabled  = !ppVolume.enabled;
             visible = !visible;
             pauseCanvas.gameObject.SetActive(visible);
 
