@@ -73,12 +73,25 @@ public class MenuUI : MonoBehaviour
         {
             visible = !visible;
             pauseCanvas.gameObject.SetActive(visible);
+
+            if (visible)
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+                Freeze();
+            }
+            else
+            {
+                CursorLockModeOn();
+            }
         }
-        if (visible == true)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+    }
+
+    public void CursorLockModeOn()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Unfreeze();
     }
 
     public void Freeze()
