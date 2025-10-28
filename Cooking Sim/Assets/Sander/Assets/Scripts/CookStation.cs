@@ -19,6 +19,7 @@ public class CookStation : MonoBehaviour
     private Slider slider;
     private RectTransform cookMarker;
     private Coroutine cookingRoutine;
+    private Coroutine activeQTERoutine;
     private bool isCooking;
 
     private void OnTriggerEnter(Collider other)
@@ -50,14 +51,30 @@ public class CookStation : MonoBehaviour
     public FoodItem RemoveFood()
     {
         if (isCooking && cookingRoutine != null) StopCoroutine(cookingRoutine);
+        if (activeQTERoutine != null)
+        {
+            StopCoroutine(activeQTERoutine);
+            activeQTERoutine = null;
+            if (QTEManager.Instance != null && QTEManager.Instance.transform.childCount > 0)
+            {
+                foreach (Transform child in QTEManager.Instance.transform)
+                {
+                    Destroy(child.gameObject);
+                }
+            }
+        }
+
         isCooking = false;
+
         if (sliderInstance) Destroy(sliderInstance);
+
         FoodItem f = currentFood;
         if (f != null)
         {
             currentFood.transform.SetParent(null);
             currentFood = null;
         }
+
         return f;
     }
 
@@ -105,7 +122,8 @@ public class CookStation : MonoBehaviour
                 if (Random.value < qteChancePerSecond * Time.deltaTime)
                 {
                     bool qteSuccess = false;
-                    yield return QTEManager.Instance.RunQTE(qteWindow, (success) => qteSuccess = success);
+                    activeQTERoutine = StartCoroutine(QTEManager.Instance.RunQTE(qteWindow, (success) => qteSuccess = success));
+                    yield return activeQTERoutine;
                     qtesTriggered++;
                     if (!qteSuccess)
                     {
@@ -147,6 +165,17 @@ public class CookStation : MonoBehaviour
     private void OnDisable()
     {
         if (cookingRoutine != null) StopCoroutine(cookingRoutine);
+        if (activeQTERoutine != null)
+        {
+            StopCoroutine(activeQTERoutine);
+            activeQTERoutine = null;
+            if (QTEManager.Instance != null && QTEManager.Instance.transform.childCount > 0)
+            {
+                foreach (Transform child in QTEManager.Instance.transform)
+                {
+                    Destroy(child.gameObject);
+                }
+            }
+        }
     }
 }
-

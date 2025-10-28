@@ -13,7 +13,8 @@ public class MenuUI : MonoBehaviour
     public Slider masterVolumeSlider;
     public AudioMixer audioMixer;
     public Toggle fullscreenToggle;
-
+    public Button backButton;
+    private bool backButtonPressed;
     void Start()
     {
         Time.timeScale = 0f;
@@ -30,6 +31,8 @@ public class MenuUI : MonoBehaviour
         fullscreenToggle.onValueChanged.AddListener(SetFullscreen);
 
         ShowStartMenu();
+
+        backButton.onClick.AddListener(() => backButtonPressed = true);
     }
 
     public void Resume()
@@ -71,8 +74,9 @@ public class MenuUI : MonoBehaviour
 
     public void PauseMenuOn()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || backButtonPressed)
         {
+            backButtonPressed = false;
             visible = !visible;
             pauseCanvas.gameObject.SetActive(visible);
 
