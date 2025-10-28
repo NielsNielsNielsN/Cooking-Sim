@@ -10135,11 +10135,11 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440506529}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 7484cd18f5407144f959e82f50e320d8, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 8f25b893f908d104dbfe762779c1bced, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 680e23ca6df14db46b8784cc5479c016, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: c1a387f2caeccaa4eac2d9463838e8ec, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
@@ -28639,7 +28639,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 19c10e212c8c2e64595dc0054e9cd3d4, type: 2}
+  - {fileID: 2100000, guid: 72a0e8bd521fd954b814f366ba5e1587, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -45772,11 +45772,11 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2943670779027544976}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 7484cd18f5407144f959e82f50e320d8, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 8f25b893f908d104dbfe762779c1bced, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 680e23ca6df14db46b8784cc5479c016, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: c1a387f2caeccaa4eac2d9463838e8ec, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
@@ -45825,7 +45825,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 19c10e212c8c2e64595dc0054e9cd3d4, type: 2}
+  - {fileID: 2100000, guid: 72a0e8bd521fd954b814f366ba5e1587, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
