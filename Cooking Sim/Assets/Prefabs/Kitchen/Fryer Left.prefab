@@ -280,10 +280,155 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 99f5d905e195de34fb853d2f146db58b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7388896697465837341}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 99f5d905e195de34fb853d2f146db58b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1870170368266412036}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 99f5d905e195de34fb853d2f146db58b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2797053491456893036}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 99f5d905e195de34fb853d2f146db58b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8660705865688872475}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 99f5d905e195de34fb853d2f146db58b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2013859304969549772}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 99f5d905e195de34fb853d2f146db58b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4936748478387182128}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 99f5d905e195de34fb853d2f146db58b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5267303646744910714}
   m_SourcePrefab: {fileID: 100100000, guid: 99f5d905e195de34fb853d2f146db58b, type: 3}
 --- !u!4 &3471173321906939519 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 99f5d905e195de34fb853d2f146db58b, type: 3}
   m_PrefabInstance: {fileID: 4010082474837016980}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4280606653493230789 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 99f5d905e195de34fb853d2f146db58b, type: 3}
+  m_PrefabInstance: {fileID: 4010082474837016980}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7388896697465837341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4280606653493230789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81ba5ab2122c629499bb82ac7c054d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CookStation
+  accepts: 1
+  cookingTime: 10
+  burnAfterCooked: 4
+  cookingSliderPrefab: {fileID: 7896559731396627023, guid: a8500dbfdca6e514c85c6099ac6c927f, type: 3}
+  foodLocalPosition: {x: -0.4, y: -0.255, z: 0}
+  qteCount: 2
+  qteChancePerSecond: 0.4
+  qteWindow: 1.5
+--- !u!114 &1870170368266412036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4280606653493230789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2d5d8be4cc0edd4bb833e77da99bf5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fryer
+  station: {fileID: 7388896697465837341}
+--- !u!114 &2797053491456893036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4280606653493230789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe31252c334c8774e8c0135beb68ea95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactable
+  promptMessage: Press E to insert fries
+--- !u!65 &8660705865688872475
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4280606653493230789}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.88070816, y: 0.3074683, z: 0.23929313}
+  m_Center: {x: -0.3017801, y: -0.12105479, z: 0.00000035762787}
+--- !u!95 &2013859304969549772
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4280606653493230789}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b083472a2be3d2d40be5cdf50fdf1044, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4936748478387182128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4280606653493230789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b5ad5e32b06f8d4dafcdd0ff5f635a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FryerAnimation
+  basketAnimator: {fileID: 2013859304969549772}
+  basketTransform: {fileID: 3471173321906939519}
+  targetFryPrefab: {fileID: 1030709219860033068, guid: bc90dcf2d4482774397184eb97a0b667, type: 3}
+--- !u!114 &5267303646744910714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4280606653493230789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0981432742a27141b01eec123dfc343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FryDectector
+  fryerController: {fileID: 4936748478387182128}
+  targetFryPrefab: {fileID: 1030709219860033068, guid: bc90dcf2d4482774397184eb97a0b667, type: 3}
+  basketTransform: {fileID: 3471173321906939519}
