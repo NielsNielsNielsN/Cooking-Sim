@@ -7448,6 +7448,8 @@ MonoBehaviour:
   friesSellPrice: 3
   cansSellPrice: 2
   bunsSellPrice: 20
+  hasLost: 0
+  loseCanvas: {fileID: 0}
 --- !u!4 &366477605
 Transform:
   m_ObjectHideFlags: 0
@@ -16693,6 +16695,7 @@ MonoBehaviour:
   cardSpacing: 250
   maxOrders: 5
   activeOrders: 0
+  tray: {fileID: 0}
 --- !u!4 &945175149
 Transform:
   m_ObjectHideFlags: 0
@@ -31013,7 +31016,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e08cd6622f2de347bab29119d4363a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CustomerSpawner
-  customerPrefab: {fileID: 6800306841728325597, guid: 602b579814ef1b84d84faa24bfa5fffa, type: 3}
+  customerPrefabs:
+  - {fileID: 3900624896028478864, guid: 0c3b5adb9e897d94dbae9b52face7cf3, type: 3}
   orderSystem: {fileID: 945175148}
   orderScreenPoints:
   - {fileID: 691638349}
