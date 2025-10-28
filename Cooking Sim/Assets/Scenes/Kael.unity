@@ -23586,7 +23586,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 206085758957114452, guid: f247cef39affb3549b2e000a0cbe68ff, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 573970611786617825, guid: f247cef39affb3549b2e000a0cbe68ff, type: 3}
       propertyPath: m_Pivot.x
@@ -23678,11 +23678,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1840376665579523416, guid: f247cef39affb3549b2e000a0cbe68ff, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5530686658713964812, guid: f247cef39affb3549b2e000a0cbe68ff, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -42043,6 +42043,10 @@ PrefabInstance:
       propertyPath: startMenu
       value: 
       objectReference: {fileID: 2083865812}
+    - target: {fileID: 3360897518219123284, guid: 39bed2a50b8be52428f6b25f6cdf1575, type: 3}
+      propertyPath: audioMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: 75e4b6c24c79c4045ac825c9feadacdc, type: 2}
     - target: {fileID: 3360897518219123284, guid: 39bed2a50b8be52428f6b25f6cdf1575, type: 3}
       propertyPath: pauseCanvas
       value: 
