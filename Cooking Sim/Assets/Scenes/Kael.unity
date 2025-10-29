@@ -417,6 +417,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 225645343}
     m_Modifications:
+    - target: {fileID: 2423300960299040673, guid: 7798704279c726c47ae69521969b4b64, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7466979848336162590, guid: 7798704279c726c47ae69521969b4b64, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.36499
@@ -460,6 +464,10 @@ PrefabInstance:
     - target: {fileID: 8444135641589918324, guid: 7798704279c726c47ae69521969b4b64, type: 3}
       propertyPath: m_Name
       value: Can Decor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444135641589918324, guid: 7798704279c726c47ae69521969b4b64, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -756,6 +764,10 @@ PrefabInstance:
     - target: {fileID: 1211188714035324182, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
       propertyPath: m_Name
       value: Cardboard Box Decor (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211188714035324182, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1982939651903193004, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1510,7 +1522,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &52305339
 Transform:
@@ -2382,6 +2394,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 225645343}
     m_Modifications:
+    - target: {fileID: 2423300960299040673, guid: 7798704279c726c47ae69521969b4b64, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7466979848336162590, guid: 7798704279c726c47ae69521969b4b64, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.230002
@@ -2425,6 +2441,10 @@ PrefabInstance:
     - target: {fileID: 8444135641589918324, guid: 7798704279c726c47ae69521969b4b64, type: 3}
       propertyPath: m_Name
       value: Can Decor (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444135641589918324, guid: 7798704279c726c47ae69521969b4b64, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4330,6 +4350,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 225645343}
     m_Modifications:
+    - target: {fileID: 2423300960299040673, guid: 7798704279c726c47ae69521969b4b64, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7466979848336162590, guid: 7798704279c726c47ae69521969b4b64, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.345002
@@ -4373,6 +4397,10 @@ PrefabInstance:
     - target: {fileID: 8444135641589918324, guid: 7798704279c726c47ae69521969b4b64, type: 3}
       propertyPath: m_Name
       value: Can Decor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444135641589918324, guid: 7798704279c726c47ae69521969b4b64, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4647,6 +4675,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Milkshake Zonder Deksel Decor (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.13634485
@@ -4687,6 +4719,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
       objectReference: {fileID: 0}
+    - target: {fileID: 6232542768961619215, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266441736273741563, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4703,6 +4743,10 @@ PrefabInstance:
     - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_Name
       value: Milkshake Zonder Deksel Decor (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4743,6 +4787,14 @@ PrefabInstance:
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232542768961619215, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266441736273741563, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4897,6 +4949,10 @@ PrefabInstance:
     - target: {fileID: 1211188714035324182, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
       propertyPath: m_Name
       value: Cardboard Box Decor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211188714035324182, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1982939651903193004, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5153,6 +5209,10 @@ PrefabInstance:
     - target: {fileID: 1211188714035324182, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
       propertyPath: m_Name
       value: Cardboard Box Decor (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211188714035324182, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1982939651903193004, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5429,6 +5489,10 @@ PrefabInstance:
     - target: {fileID: 8581721578612809348, guid: 1c1fab0148ff27f4f97708ac8f1d4ed8, type: 3}
       propertyPath: m_Name
       value: Laptop
+      objectReference: {fileID: 0}
+    - target: {fileID: 8581721578612809348, guid: 1c1fab0148ff27f4f97708ac8f1d4ed8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1795340403767138820, guid: 1c1fab0148ff27f4f97708ac8f1d4ed8, type: 3}
@@ -5873,6 +5937,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Milkshake Zonder Deksel Decor (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.13633281
@@ -5912,6 +5980,14 @@ PrefabInstance:
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232542768961619215, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266441736273741563, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5987,6 +6063,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Milkshake Zonder Deksel Decor (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.009331353
@@ -6027,6 +6107,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
       objectReference: {fileID: 0}
+    - target: {fileID: 6232542768961619215, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266441736273741563, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6048,7 +6136,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &244817221
 Transform:
@@ -6243,6 +6331,10 @@ PrefabInstance:
     - target: {fileID: 5351499798495076056, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
       propertyPath: m_Name
       value: Plastic Bakkie (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351499798495076056, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6496,6 +6588,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nama Tama (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8468610243247391731, guid: 828d717e54ae8394181a4c0b12b3ce9b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 9137060963882539337, guid: 828d717e54ae8394181a4c0b12b3ce9b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.593288
@@ -6666,6 +6762,10 @@ PrefabInstance:
     - target: {fileID: 5351499798495076056, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
       propertyPath: m_Name
       value: Plastic Bakkie (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351499798495076056, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6900,6 +7000,10 @@ PrefabInstance:
     - target: {fileID: 5351499798495076056, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
       propertyPath: m_Name
       value: Plastic Bakkie (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351499798495076056, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7277,23 +7381,47 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1721021860}
+    m_TransformParent: {fileID: 3378677340029360787}
     m_Modifications:
+    - target: {fileID: 755311741515417974, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313927807196512596, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1819739458501644424, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_Name
       value: Bun Decor (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1819739458501644424, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6818182
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7894737
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1538461
+      objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.35773
+      value: -0.055000134
       objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.08486
+      value: 0.03763155
       objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.2055297
+      value: 0.013846251
       objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7478,6 +7606,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Milkshake Zonder Deksel Decor
       objectReference: {fileID: 0}
+    - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.13633281
@@ -7517,6 +7649,14 @@ PrefabInstance:
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232542768961619215, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266441736273741563, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7799,6 +7939,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 225645343}
     m_Modifications:
+    - target: {fileID: 535269119293017043, guid: c05b61db8ed78d541ada987ae3f45984, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3552899769294002297, guid: c05b61db8ed78d541ada987ae3f45984, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.663002
@@ -7842,6 +7986,10 @@ PrefabInstance:
     - target: {fileID: 8793416735410034306, guid: c05b61db8ed78d541ada987ae3f45984, type: 3}
       propertyPath: m_Name
       value: Tiger Juice Decor (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793416735410034306, guid: c05b61db8ed78d541ada987ae3f45984, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8019,23 +8167,47 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1721021860}
+    m_TransformParent: {fileID: 3378677340029360787}
     m_Modifications:
+    - target: {fileID: 755311741515417974, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313927807196512596, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1819739458501644424, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_Name
       value: Bun Decor
       objectReference: {fileID: 0}
+    - target: {fileID: 1819739458501644424, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6818182
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7894737
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1538461
+      objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.59883
+      value: 0.05459092
       objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.08486
+      value: 0.03763155
       objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.09193
+      value: 0.101230696
       objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8390,6 +8562,10 @@ PrefabInstance:
     - target: {fileID: 5351499798495076056, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
       propertyPath: m_Name
       value: Plastic Bakkie (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351499798495076056, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10163,7 +10339,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &435863732
 Transform:
@@ -10659,7 +10835,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &464499790
 Transform:
@@ -10800,7 +10976,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &466521296
 Transform:
@@ -11298,6 +11474,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Milkshake Zonder Deksel Decor (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.009331353
@@ -11337,6 +11517,14 @@ PrefabInstance:
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232542768961619215, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266441736273741563, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11548,6 +11736,10 @@ PrefabInstance:
     - target: {fileID: 5351499798495076056, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
       propertyPath: m_Name
       value: Plastic Bakkie (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351499798495076056, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11776,7 +11968,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &517365947
 Transform:
@@ -12199,6 +12391,10 @@ PrefabInstance:
     - target: {fileID: 1211188714035324182, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
       propertyPath: m_Name
       value: Cardboard Box Decor (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211188714035324182, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1982939651903193004, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
       propertyPath: m_LocalScale.y
@@ -12790,6 +12986,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Decor Pot (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7243081857743898214, guid: 15a4a5cf2f5f296409f26880323d6e7b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13137,6 +13337,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cardboard Box Decor (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1211188714035324182, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1982939651903193004, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.01309
@@ -13268,7 +13472,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &594145181
 Transform:
@@ -13424,6 +13628,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cardboard Box Decor (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1211188714035324182, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1982939651903193004, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.59027994
@@ -13561,9 +13769,57 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1163333648}
     m_Modifications:
+    - target: {fileID: 314821147653505382, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 325848925789059918, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 328584464449092360, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 763108047615794709, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 766415373631208960, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 811717507060710183, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1534733132526336985, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1581040394641403836, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2021842716269694081, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2177370755015309872, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 2566933409666267597, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
       propertyPath: m_Name
       value: DisplayRek Blik Filled
+      objectReference: {fileID: 0}
+    - target: {fileID: 2566933409666267597, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2790066337295985229, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 2942052294554624887, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13575,7 +13831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2942052294554624887, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.066
+      value: -2.912
       objectReference: {fileID: 0}
     - target: {fileID: 2942052294554624887, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13604,6 +13860,90 @@ PrefabInstance:
     - target: {fileID: 2942052294554624887, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3114517830922700024, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3381796838593292034, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4159772954993737315, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343502133247651831, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4495206101986655664, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4719253570597616233, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4738530514985758220, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4830105798240657633, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5224691230862301524, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5765045225439440605, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5767833618769211035, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5823343333861823667, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6020006264485001811, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6223175291760662953, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6619617515375441692, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7156860452254230369, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7550825665066613282, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7869099941094730678, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8513519935588460150, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630883958047564625, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8643198483324781380, guid: 5a23508c564f67e4fb0d11e7ee1ac93c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14617,6 +14957,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 225645343}
     m_Modifications:
+    - target: {fileID: 535269119293017043, guid: c05b61db8ed78d541ada987ae3f45984, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3552899769294002297, guid: c05b61db8ed78d541ada987ae3f45984, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.721002
@@ -14661,6 +15005,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tiger Juice Decor
       objectReference: {fileID: 0}
+    - target: {fileID: 8793416735410034306, guid: c05b61db8ed78d541ada987ae3f45984, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14682,6 +15030,10 @@ PrefabInstance:
     - target: {fileID: 8468610243247391731, guid: 828d717e54ae8394181a4c0b12b3ce9b, type: 3}
       propertyPath: m_Name
       value: Nama Tama (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468610243247391731, guid: 828d717e54ae8394181a4c0b12b3ce9b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 9137060963882539337, guid: 828d717e54ae8394181a4c0b12b3ce9b, type: 3}
       propertyPath: m_LocalScale.x
@@ -15653,6 +16005,10 @@ PrefabInstance:
     - target: {fileID: 1211188714035324182, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
       propertyPath: m_Name
       value: Cardboard Box Decor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211188714035324182, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1982939651903193004, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
       propertyPath: m_LocalScale.x
@@ -16682,6 +17038,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plastic Bakkie (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5351499798495076056, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16698,23 +17058,47 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1721021860}
+    m_TransformParent: {fileID: 3378677340029360787}
     m_Modifications:
+    - target: {fileID: 755311741515417974, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313927807196512596, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1819739458501644424, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_Name
       value: Bun Decor (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1819739458501644424, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6818182
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7894737
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1538461
+      objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.35773
+      value: -0.055000134
       objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.08486
+      value: 0.03763155
       objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.09193
+      value: 0.101230696
       objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16985,6 +17369,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Milkshake Zonder Deksel Decor (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.009332895
@@ -17024,6 +17412,14 @@ PrefabInstance:
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232542768961619215, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266441736273741563, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -17549,6 +17945,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Milkshake Zonder Deksel Decor (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.009331353
@@ -17588,6 +17988,14 @@ PrefabInstance:
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232542768961619215, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266441736273741563, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18670,7 +19078,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &827444513
 Transform:
@@ -19145,23 +19553,47 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1721021860}
+    m_TransformParent: {fileID: 3378677340029360787}
     m_Modifications:
+    - target: {fileID: 755311741515417974, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313927807196512596, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1819739458501644424, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_Name
       value: Bun Decor (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1819739458501644424, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6818182
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7894737
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1538461
+      objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.59883
+      value: 0.05459092
       objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.08486
+      value: 0.03763155
       objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.2055297
+      value: 0.013846251
       objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalRotation.w
@@ -19494,6 +19926,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Milkshake Zonder Deksel Decor (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.009331353
@@ -19533,6 +19969,14 @@ PrefabInstance:
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232542768961619215, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266441736273741563, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20093,6 +20537,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Milkshake Zonder Deksel Decor (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.0109316185
@@ -20133,6 +20581,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
       objectReference: {fileID: 0}
+    - target: {fileID: 6232542768961619215, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266441736273741563, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20149,6 +20605,10 @@ PrefabInstance:
     - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_Name
       value: Milkshake Zonder Deksel Decor (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20189,6 +20649,14 @@ PrefabInstance:
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232542768961619215, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266441736273741563, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20670,6 +21138,10 @@ PrefabInstance:
     - target: {fileID: 7243081857743898214, guid: 15a4a5cf2f5f296409f26880323d6e7b, type: 3}
       propertyPath: m_Name
       value: Decor Pot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243081857743898214, guid: 15a4a5cf2f5f296409f26880323d6e7b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21348,6 +21820,10 @@ PrefabInstance:
     - target: {fileID: 5351499798495076056, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
       propertyPath: m_Name
       value: Plastic Bakkie
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351499798495076056, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23504,6 +23980,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nama Tama (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8468610243247391731, guid: 828d717e54ae8394181a4c0b12b3ce9b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 9137060963882539337, guid: 828d717e54ae8394181a4c0b12b3ce9b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13.503249
@@ -24292,6 +24772,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Milkshake Zonder Deksel Decor (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.009332895
@@ -24331,6 +24815,14 @@ PrefabInstance:
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232542768961619215, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266441736273741563, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26623,6 +27115,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cardboard Box Decor (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1211188714035324182, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1982939651903193004, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.622066
@@ -26684,7 +27180,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1227472972
 Transform:
@@ -26992,6 +27488,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plastic Bakkie (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5351499798495076056, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27013,6 +27513,10 @@ PrefabInstance:
     - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_Name
       value: Milkshake Zonder Deksel Decor (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27053,6 +27557,14 @@ PrefabInstance:
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232542768961619215, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266441736273741563, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27122,6 +27634,10 @@ PrefabInstance:
     - target: {fileID: 7243081857743898214, guid: 15a4a5cf2f5f296409f26880323d6e7b, type: 3}
       propertyPath: m_Name
       value: Decor Pot (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243081857743898214, guid: 15a4a5cf2f5f296409f26880323d6e7b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27303,6 +27819,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Milkshake Zonder Deksel Decor (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.13633281
@@ -27342,6 +27862,14 @@ PrefabInstance:
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232542768961619215, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266441736273741563, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27624,6 +28152,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 225645343}
     m_Modifications:
+    - target: {fileID: 2423300960299040673, guid: 7798704279c726c47ae69521969b4b64, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7466979848336162590, guid: 7798704279c726c47ae69521969b4b64, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.210003
@@ -27667,6 +28199,10 @@ PrefabInstance:
     - target: {fileID: 8444135641589918324, guid: 7798704279c726c47ae69521969b4b64, type: 3}
       propertyPath: m_Name
       value: Can Decor (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444135641589918324, guid: 7798704279c726c47ae69521969b4b64, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28019,6 +28555,10 @@ PrefabInstance:
     - target: {fileID: 8468610243247391731, guid: 828d717e54ae8394181a4c0b12b3ce9b, type: 3}
       propertyPath: m_Name
       value: Nama Tama (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468610243247391731, guid: 828d717e54ae8394181a4c0b12b3ce9b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 9137060963882539337, guid: 828d717e54ae8394181a4c0b12b3ce9b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29373,6 +29913,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Milkshake Zonder Deksel Decor (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.13633245
@@ -29412,6 +29956,14 @@ PrefabInstance:
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232542768961619215, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266441736273741563, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -30432,6 +30984,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cardboard Box Decor
       objectReference: {fileID: 0}
+    - target: {fileID: 1211188714035324182, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1982939651903193004, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2383999
@@ -31135,6 +31691,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Milkshake Zonder Deksel Decor (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.009331353
@@ -31175,6 +31735,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
       objectReference: {fileID: 0}
+    - target: {fileID: 6232542768961619215, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266441736273741563, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31191,6 +31759,10 @@ PrefabInstance:
     - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_Name
       value: Milkshake Zonder Deksel Decor (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalPosition.x
@@ -31231,6 +31803,14 @@ PrefabInstance:
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232542768961619215, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266441736273741563, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32301,6 +32881,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Milkshake Zonder Deksel Decor (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.009332895
@@ -32340,6 +32924,14 @@ PrefabInstance:
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232542768961619215, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266441736273741563, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -32537,6 +33129,10 @@ PrefabInstance:
     - target: {fileID: 7243081857743898214, guid: 15a4a5cf2f5f296409f26880323d6e7b, type: 3}
       propertyPath: m_Name
       value: Decor Pot
+      objectReference: {fileID: 0}
+    - target: {fileID: 7243081857743898214, guid: 15a4a5cf2f5f296409f26880323d6e7b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33355,7 +33951,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1571340698
 Transform:
@@ -34233,7 +34829,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1601943979
 Transform:
@@ -34670,6 +35266,10 @@ PrefabInstance:
     - target: {fileID: 1211188714035324182, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
       propertyPath: m_Name
       value: Cardboard Box Decor (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211188714035324182, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1982939651903193004, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
       propertyPath: m_LocalScale.x
@@ -35531,6 +36131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Milkshake Zonder Deksel Decor (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.13927871
@@ -35570,6 +36174,14 @@ PrefabInstance:
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232542768961619215, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266441736273741563, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -35738,6 +36350,10 @@ PrefabInstance:
     - target: {fileID: 1211188714035324182, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
       propertyPath: m_Name
       value: Cardboard Box Decor (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211188714035324182, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1982939651903193004, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36126,6 +36742,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Milkshake Zonder Deksel Decor (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.009331353
@@ -36165,6 +36785,14 @@ PrefabInstance:
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232542768961619215, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266441736273741563, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -36322,6 +36950,10 @@ PrefabInstance:
     - target: {fileID: 8468610243247391731, guid: 828d717e54ae8394181a4c0b12b3ce9b, type: 3}
       propertyPath: m_Name
       value: Nama Tama
+      objectReference: {fileID: 0}
+    - target: {fileID: 8468610243247391731, guid: 828d717e54ae8394181a4c0b12b3ce9b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 9137060963882539337, guid: 828d717e54ae8394181a4c0b12b3ce9b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -36612,12 +37244,6 @@ Transform:
   - {fileID: 1930948446}
   - {fileID: 1140586868}
   - {fileID: 1188770237}
-  - {fileID: 349079984}
-  - {fileID: 845179690}
-  - {fileID: 1950293505}
-  - {fileID: 746901374}
-  - {fileID: 307606407}
-  - {fileID: 1953889213}
   m_Father: {fileID: 1741382841}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1721176768
@@ -36702,6 +37328,10 @@ PrefabInstance:
     - target: {fileID: 1211188714035324182, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
       propertyPath: m_Name
       value: Cardboard Box Decor (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211188714035324182, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 1982939651903193004, guid: aee8bd9c7df63a848b9fcda36b96d7a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38369,6 +38999,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Decor Pot (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7243081857743898214, guid: 15a4a5cf2f5f296409f26880323d6e7b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -38835,7 +39469,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1826184219
 Transform:
@@ -38968,6 +39602,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plastic Bakkie (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5351499798495076056, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -39095,6 +39733,10 @@ PrefabInstance:
     - target: {fileID: 5351499798495076056, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
       propertyPath: m_Name
       value: Plastic Bakkie
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351499798495076056, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -39940,6 +40582,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Milkshake Zonder Deksel Decor (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 35130766905605208, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.009331353
@@ -39979,6 +40625,14 @@ PrefabInstance:
     - target: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232542768961619215, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266441736273741563, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -41237,23 +41891,47 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1721021860}
+    m_TransformParent: {fileID: 3378677340029360787}
     m_Modifications:
+    - target: {fileID: 755311741515417974, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313927807196512596, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1819739458501644424, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_Name
       value: Bun Decor (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1819739458501644424, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6818182
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7894737
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1538461
+      objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.59883
+      value: 0.05459092
       objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.08486
+      value: 0.03763155
       objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.3175297
+      value: -0.07230759
       objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalRotation.w
@@ -41371,23 +42049,47 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1721021860}
+    m_TransformParent: {fileID: 3378677340029360787}
     m_Modifications:
+    - target: {fileID: 755311741515417974, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313927807196512596, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 1819739458501644424, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_Name
       value: Bun Decor (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1819739458501644424, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.6818182
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7894737
+      objectReference: {fileID: 0}
+    - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.1538461
+      objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.35773
+      value: -0.055000134
       objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.08486
+      value: 0.03763155
       objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.3175297
+      value: -0.07230759
       objectReference: {fileID: 0}
     - target: {fileID: 4196629639370985878, guid: e015f36ab7aa68a4ebefc6f800947a75, type: 3}
       propertyPath: m_LocalRotation.w
@@ -41882,6 +42584,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plastic Bakkie
       objectReference: {fileID: 0}
+    - target: {fileID: 5351499798495076056, guid: 8afaecad9430d0c45842bb2b50cc4a8c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -42048,6 +42754,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 225645343}
     m_Modifications:
+    - target: {fileID: 2423300960299040673, guid: 7798704279c726c47ae69521969b4b64, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7466979848336162590, guid: 7798704279c726c47ae69521969b4b64, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.613144
@@ -42091,6 +42801,10 @@ PrefabInstance:
     - target: {fileID: 8444135641589918324, guid: 7798704279c726c47ae69521969b4b64, type: 3}
       propertyPath: m_Name
       value: Can Decor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444135641589918324, guid: 7798704279c726c47ae69521969b4b64, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -42794,7 +43508,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2017312301
 Transform:
@@ -43207,6 +43921,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 225645343}
     m_Modifications:
+    - target: {fileID: 535269119293017043, guid: c05b61db8ed78d541ada987ae3f45984, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 3552899769294002297, guid: c05b61db8ed78d541ada987ae3f45984, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.274958
@@ -43250,6 +43968,10 @@ PrefabInstance:
     - target: {fileID: 8793416735410034306, guid: c05b61db8ed78d541ada987ae3f45984, type: 3}
       propertyPath: m_Name
       value: Tiger Juice Decor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8793416735410034306, guid: c05b61db8ed78d541ada987ae3f45984, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -44486,6 +45208,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 225645343}
     m_Modifications:
+    - target: {fileID: 2423300960299040673, guid: 7798704279c726c47ae69521969b4b64, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7466979848336162590, guid: 7798704279c726c47ae69521969b4b64, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.527256
@@ -44529,6 +45255,10 @@ PrefabInstance:
     - target: {fileID: 8444135641589918324, guid: 7798704279c726c47ae69521969b4b64, type: 3}
       propertyPath: m_Name
       value: Can Decor (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8444135641589918324, guid: 7798704279c726c47ae69521969b4b64, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -47354,7 +48084,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 332314682114618872, guid: 15afd5b64d814bb44b3521f705f571e3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 349079984}
+    - targetCorrespondingSourceObject: {fileID: 332314682114618872, guid: 15afd5b64d814bb44b3521f705f571e3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 845179690}
+    - targetCorrespondingSourceObject: {fileID: 332314682114618872, guid: 15afd5b64d814bb44b3521f705f571e3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1950293505}
+    - targetCorrespondingSourceObject: {fileID: 332314682114618872, guid: 15afd5b64d814bb44b3521f705f571e3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 746901374}
+    - targetCorrespondingSourceObject: {fileID: 332314682114618872, guid: 15afd5b64d814bb44b3521f705f571e3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 307606407}
+    - targetCorrespondingSourceObject: {fileID: 332314682114618872, guid: 15afd5b64d814bb44b3521f705f571e3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1953889213}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4713067120550503476, guid: 15afd5b64d814bb44b3521f705f571e3, type: 3}
       insertIndex: -1
@@ -47583,7 +48331,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!23 &5301201813538047038
 MeshRenderer:
@@ -47835,7 +48583,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8051679838547007034
 Transform:
