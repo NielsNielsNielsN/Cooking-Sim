@@ -62,19 +62,40 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a2f2e737cac2c843aa7af0fae9cf316, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 4429393116933598793}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a2f2e737cac2c843aa7af0fae9cf316, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 750946629058904911}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a2f2e737cac2c843aa7af0fae9cf316, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4123924419232477504}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a2f2e737cac2c843aa7af0fae9cf316, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4429393116933598793}
   m_SourcePrefab: {fileID: 100100000, guid: 1a2f2e737cac2c843aa7af0fae9cf316, type: 3}
 --- !u!1 &182679455590277762 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a2f2e737cac2c843aa7af0fae9cf316, type: 3}
   m_PrefabInstance: {fileID: 1029187065359982547}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4429393116933598793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182679455590277762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b8e9c4b62d2c714e82dc4603ec7095a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Customer
+  orderSystem: {fileID: 0}
+  orderScreenPoint: {fileID: 0}
+  waitingSpots: []
+  pickupPoint: {fileID: 0}
+  exitPoint: {fileID: 0}
+  pathToOrderScreen: []
+  pathToPickup: []
+  pathToExit: []
+  rb: {fileID: 4123924419232477504}
 --- !u!95 &750946629058904911
 Animator:
   serializedVersion: 7
@@ -124,24 +145,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4429393116933598793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 182679455590277762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b8e9c4b62d2c714e82dc4603ec7095a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Customer
-  orderSystem: {fileID: 0}
-  orderScreenPoint: {fileID: 0}
-  waitingSpots: []
-  pickupPoint: {fileID: 0}
-  exitPoint: {fileID: 0}
-  pathToOrderScreen: []
-  pathToPickup: []
-  pathToExit: []
-  rb: {fileID: 4123924419232477504}
