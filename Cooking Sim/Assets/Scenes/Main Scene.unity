@@ -6125,6 +6125,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 299239205}
+  - component: {fileID: 299239206}
   m_Layer: 0
   m_Name: Waiting Spot
   m_TagString: Untagged
@@ -6147,6 +6148,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1214066683}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &299239206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 299239204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 689938f54562ecf4ab6c5ca4a353ada7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaitingSpot
+  isOccupied: 0
 --- !u!1001 &303732721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18028,6 +18042,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1049113370}
+  - component: {fileID: 1049113371}
   m_Layer: 0
   m_Name: Waiting Spot (4)
   m_TagString: Untagged
@@ -18050,6 +18065,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1214066683}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1049113371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049113369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 689938f54562ecf4ab6c5ca4a353ada7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaitingSpot
+  isOccupied: 0
 --- !u!1 &1056805203
 GameObject:
   m_ObjectHideFlags: 0
@@ -21459,6 +21487,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1248244699}
+  - component: {fileID: 1248244700}
   m_Layer: 0
   m_Name: Waiting Spot (2)
   m_TagString: Untagged
@@ -21481,6 +21510,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1214066683}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1248244700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248244698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 689938f54562ecf4ab6c5ca4a353ada7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaitingSpot
+  isOccupied: 0
 --- !u!1001 &1248752983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25011,6 +25053,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1483198260}
+  - component: {fileID: 1483198261}
   m_Layer: 0
   m_Name: Waiting Spot (3)
   m_TagString: Untagged
@@ -25033,6 +25076,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1214066683}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1483198261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483198259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 689938f54562ecf4ab6c5ca4a353ada7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaitingSpot
+  isOccupied: 0
 --- !u!1001 &1488056997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30601,6 +30657,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1857679634}
+  - component: {fileID: 1857679635}
   m_Layer: 0
   m_Name: Waiting Spot (1)
   m_TagString: Untagged
@@ -30623,6 +30680,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1214066683}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1857679635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857679633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 689938f54562ecf4ab6c5ca4a353ada7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaitingSpot
+  isOccupied: 0
 --- !u!4 &1866364653 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 808149376649668322, guid: e5d42c6f0a2fd1e4a95b762bc4b0a553, type: 3}
