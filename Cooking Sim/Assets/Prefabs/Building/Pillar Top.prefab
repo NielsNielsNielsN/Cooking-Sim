@@ -10,31 +10,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.425295
+      value: 4.42527
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.065606
+      value: -4.9656405
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.8141346
+      value: -5.81414
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -1
+      value: 0.00000005268472
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0000017644479
+      value: 0.0000014752147
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000014752108
+      value: 0.0000021389517
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000017732377
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -46,16 +46,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: d7a93e08b24e81a4b96641bde3ef7d05, type: 2}
-    - target: {fileID: -5754084199372789682, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 3012605973260590597, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
+      objectReference: {fileID: 2100000, guid: e62aee9ae652b4d4bad54b9d6f3ecae6, type: 2}
     - target: {fileID: 919132149155446097, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
       propertyPath: m_Name
       value: Pillar Top
