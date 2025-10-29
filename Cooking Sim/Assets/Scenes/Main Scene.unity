@@ -1048,7 +1048,7 @@ GameObject:
   m_Layer: 0
   m_Name: Pickup Path (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1061,7 +1061,7 @@ Transform:
   m_GameObject: {fileID: 66104072}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.8, y: -2.57, z: 6.935}
+  m_LocalPosition: {x: -5.8, y: 0, z: 6.935}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2865,7 +2865,7 @@ GameObject:
   m_Layer: 0
   m_Name: Order Screen point (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2878,7 +2878,7 @@ Transform:
   m_GameObject: {fileID: 136956198}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.348, y: -2.7, z: 2.36}
+  m_LocalPosition: {x: -7.348, y: 0, z: 2.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3406,7 +3406,7 @@ GameObject:
   m_Layer: 0
   m_Name: Pickup Path (3)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3419,7 +3419,7 @@ Transform:
   m_GameObject: {fileID: 150969582}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.23, y: -2.57, z: 5.12}
+  m_LocalPosition: {x: -4.23, y: 0, z: 5.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3814,7 +3814,7 @@ GameObject:
   m_Layer: 0
   m_Name: Exit path (4)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3827,7 +3827,7 @@ Transform:
   m_GameObject: {fileID: 171284664}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.012, y: -2.703, z: 3.48}
+  m_LocalPosition: {x: -0.012, y: 0, z: 3.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4344,7 +4344,7 @@ GameObject:
   m_Layer: 0
   m_Name: Exit path (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4357,7 +4357,7 @@ Transform:
   m_GameObject: {fileID: 190319122}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.433, y: -2.703, z: 4.254}
+  m_LocalPosition: {x: -3.433, y: 0, z: 4.254}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5049,7 +5049,7 @@ GameObject:
   m_Layer: 0
   m_Name: pickupPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5062,7 +5062,7 @@ Transform:
   m_GameObject: {fileID: 231732809}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.967, y: -2.532, z: 0.436}
+  m_LocalPosition: {x: -3.967, y: 0, z: 0.436}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6128,7 +6128,7 @@ GameObject:
   m_Layer: 0
   m_Name: Waiting Spot
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6141,7 +6141,7 @@ Transform:
   m_GameObject: {fileID: 299239204}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.572, y: -2.428, z: 10.852}
+  m_LocalPosition: {x: -5.572, y: 0, z: 10.852}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10609,7 +10609,7 @@ GameObject:
   m_Layer: 0
   m_Name: Pickup Path
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -10622,7 +10622,7 @@ Transform:
   m_GameObject: {fileID: 551528937}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.142, y: -2.57, z: 7.979}
+  m_LocalPosition: {x: -7.142, y: 0, z: 7.979}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12479,7 +12479,7 @@ GameObject:
   m_Layer: 0
   m_Name: Order Screen point
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -12492,7 +12492,7 @@ Transform:
   m_GameObject: {fileID: 691638347}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.742, y: -2.7, z: 2.36}
+  m_LocalPosition: {x: -5.742, y: 0, z: 2.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12975,7 +12975,7 @@ GameObject:
   m_Layer: 0
   m_Name: Order screen path (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -12988,7 +12988,7 @@ Transform:
   m_GameObject: {fileID: 735689225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.72, y: -2.75, z: 6.17}
+  m_LocalPosition: {x: -6.72, y: 0, z: 6.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13385,7 +13385,7 @@ GameObject:
   m_Layer: 0
   m_Name: Exit path
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -13398,7 +13398,7 @@ Transform:
   m_GameObject: {fileID: 764326809}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.433, y: -2.703, z: 2.72}
+  m_LocalPosition: {x: -3.433, y: 0, z: 2.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13482,7 +13482,7 @@ GameObject:
   m_Layer: 0
   m_Name: Order screen path (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -13495,7 +13495,7 @@ Transform:
   m_GameObject: {fileID: 771226769}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.75, z: 6.17}
+  m_LocalPosition: {x: 0, y: 0, z: 6.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14500,7 +14500,7 @@ GameObject:
   m_Layer: 0
   m_Name: ExitPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -14513,7 +14513,7 @@ Transform:
   m_GameObject: {fileID: 818137105}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.98, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15114,7 +15114,7 @@ GameObject:
   m_Layer: 0
   m_Name: Pickup Path (5)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -15127,7 +15127,7 @@ Transform:
   m_GameObject: {fileID: 839656270}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.56, y: -2.57, z: 2.4}
+  m_LocalPosition: {x: -3.56, y: 0, z: 2.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18031,7 +18031,7 @@ GameObject:
   m_Layer: 0
   m_Name: Waiting Spot (4)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -18044,7 +18044,7 @@ Transform:
   m_GameObject: {fileID: 1049113369}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.163, y: -2.74, z: 8.076}
+  m_LocalPosition: {x: -10.163, y: 0, z: 8.076}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19489,7 +19489,7 @@ GameObject:
   m_Layer: 0
   m_Name: Pickup Path (4)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -19502,7 +19502,7 @@ Transform:
   m_GameObject: {fileID: 1136395793}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.951, y: -2.57, z: 3.83}
+  m_LocalPosition: {x: -3.951, y: 0, z: 3.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20284,7 +20284,7 @@ GameObject:
   m_Layer: 0
   m_Name: PathFinding
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -20297,7 +20297,7 @@ Transform:
   m_GameObject: {fileID: 1214066682}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.0478, y: 3.44591, z: -1.81178}
+  m_LocalPosition: {x: 8.0478, y: 0.08, z: -1.81178}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21462,7 +21462,7 @@ GameObject:
   m_Layer: 0
   m_Name: Waiting Spot (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -21475,7 +21475,7 @@ Transform:
   m_GameObject: {fileID: 1248244698}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.275, y: -2.428, z: 10.852}
+  m_LocalPosition: {x: -7.275, y: 0, z: 10.852}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23125,7 +23125,7 @@ GameObject:
   m_Layer: 0
   m_Name: Pickup Path (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -23138,7 +23138,7 @@ Transform:
   m_GameObject: {fileID: 1345713171}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.42, y: -2.57, z: 6.14}
+  m_LocalPosition: {x: -4.42, y: 0, z: 6.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23871,7 +23871,7 @@ GameObject:
   m_Layer: 0
   m_Name: Order screen path (3)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -23884,7 +23884,7 @@ Transform:
   m_GameObject: {fileID: 1412647408}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.04, y: -2.75, z: 4.171}
+  m_LocalPosition: {x: -7.04, y: 0, z: 4.171}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25014,7 +25014,7 @@ GameObject:
   m_Layer: 0
   m_Name: Waiting Spot (3)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -25027,7 +25027,7 @@ Transform:
   m_GameObject: {fileID: 1483198259}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.171, y: -2.428, z: 10.852}
+  m_LocalPosition: {x: -8.171, y: 0, z: 10.852}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27321,7 +27321,7 @@ GameObject:
   m_Layer: 0
   m_Name: Exit path (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -27334,7 +27334,7 @@ Transform:
   m_GameObject: {fileID: 1641157228}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.433, y: -2.703, z: 6.46}
+  m_LocalPosition: {x: -3.433, y: 0, z: 6.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28686,7 +28686,7 @@ GameObject:
   m_Layer: 0
   m_Name: Exit path (5)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -28699,7 +28699,7 @@ Transform:
   m_GameObject: {fileID: 1707209776}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.012, y: -2.703, z: 2.815}
+  m_LocalPosition: {x: -0.012, y: 0, z: 2.815}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29381,7 +29381,7 @@ GameObject:
   m_Layer: 0
   m_Name: Exit path (3)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -29394,7 +29394,7 @@ Transform:
   m_GameObject: {fileID: 1759438974}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.012, y: -2.703, z: 6.46}
+  m_LocalPosition: {x: -0.012, y: 0, z: 6.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30604,7 +30604,7 @@ GameObject:
   m_Layer: 0
   m_Name: Waiting Spot (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -30617,7 +30617,7 @@ Transform:
   m_GameObject: {fileID: 1857679633}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.514, y: -2.428, z: 10.852}
+  m_LocalPosition: {x: -6.514, y: 0, z: 10.852}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30840,7 +30840,7 @@ GameObject:
   m_Layer: 0
   m_Name: Order screen path
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -30853,7 +30853,7 @@ Transform:
   m_GameObject: {fileID: 1882888231}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.75, z: 11.9}
+  m_LocalPosition: {x: 0, y: 0, z: 11.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31000,7 +31000,7 @@ GameObject:
   m_Layer: 0
   m_Name: CustomerSpawner
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -31061,7 +31061,7 @@ Transform:
   m_GameObject: {fileID: 1901627381}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.21887, y: 1.11, z: 12.54038}
+  m_LocalPosition: {x: 8.21887, y: 0, z: 12.54038}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -32766,7 +32766,7 @@ GameObject:
   m_Layer: 0
   m_Name: Order Screen point (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -32779,7 +32779,7 @@ Transform:
   m_GameObject: {fileID: 1999527034}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.846, y: -2.7, z: 2.36}
+  m_LocalPosition: {x: -8.846, y: 0, z: 2.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -34449,63 +34449,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5169334898119633673}
   m_Mesh: {fileID: -192010128383193118, guid: 93374aba636a84343af8fd604c32ee43, type: 3}
---- !u!1001 &4471568405466843703
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 182679455590277762, guid: a49ff38fe05786748b7c0799a89b93c6, type: 3}
-      propertyPath: m_Name
-      value: kindklantA2
-      objectReference: {fileID: 0}
-    - target: {fileID: 703354648928991288, guid: a49ff38fe05786748b7c0799a89b93c6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 4.514878
-      objectReference: {fileID: 0}
-    - target: {fileID: 703354648928991288, guid: a49ff38fe05786748b7c0799a89b93c6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.100034714
-      objectReference: {fileID: 0}
-    - target: {fileID: 703354648928991288, guid: a49ff38fe05786748b7c0799a89b93c6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 4.257698
-      objectReference: {fileID: 0}
-    - target: {fileID: 703354648928991288, guid: a49ff38fe05786748b7c0799a89b93c6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 703354648928991288, guid: a49ff38fe05786748b7c0799a89b93c6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 703354648928991288, guid: a49ff38fe05786748b7c0799a89b93c6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 703354648928991288, guid: a49ff38fe05786748b7c0799a89b93c6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 703354648928991288, guid: a49ff38fe05786748b7c0799a89b93c6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 703354648928991288, guid: a49ff38fe05786748b7c0799a89b93c6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 703354648928991288, guid: a49ff38fe05786748b7c0799a89b93c6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a49ff38fe05786748b7c0799a89b93c6, type: 3}
 --- !u!1001 &5126368423415937472
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34658,63 +34601,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1001 &6386385643339527488
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2874792410411487670, guid: 808514096b7e9814d814b6c9c561cfe5, type: 3}
-      propertyPath: m_Name
-      value: normaleklantA2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3219652465244801804, guid: 808514096b7e9814d814b6c9c561cfe5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.7133594
-      objectReference: {fileID: 0}
-    - target: {fileID: 3219652465244801804, guid: 808514096b7e9814d814b6c9c561cfe5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.10003376
-      objectReference: {fileID: 0}
-    - target: {fileID: 3219652465244801804, guid: 808514096b7e9814d814b6c9c561cfe5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 4.4528637
-      objectReference: {fileID: 0}
-    - target: {fileID: 3219652465244801804, guid: 808514096b7e9814d814b6c9c561cfe5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3219652465244801804, guid: 808514096b7e9814d814b6c9c561cfe5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3219652465244801804, guid: 808514096b7e9814d814b6c9c561cfe5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3219652465244801804, guid: 808514096b7e9814d814b6c9c561cfe5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3219652465244801804, guid: 808514096b7e9814d814b6c9c561cfe5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3219652465244801804, guid: 808514096b7e9814d814b6c9c561cfe5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3219652465244801804, guid: 808514096b7e9814d814b6c9c561cfe5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 808514096b7e9814d814b6c9c561cfe5, type: 3}
 --- !u!1001 &6514373163432194243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35058,5 +34944,3 @@ SceneRoots:
   - {fileID: 459729309}
   - {fileID: 488534474}
   - {fileID: 830656213}
-  - {fileID: 6386385643339527488}
-  - {fileID: 4471568405466843703}

@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8fb542a76596a1d4392052b25cbcca08, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.10003245
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8fb542a76596a1d4392052b25cbcca08, type: 3}
       propertyPath: m_LocalPosition.z
@@ -89,3 +89,4 @@ MonoBehaviour:
   pathToOrderScreen: []
   pathToPickup: []
   pathToExit: []
+  rb: {fileID: 0}
