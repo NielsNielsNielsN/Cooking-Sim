@@ -63,6 +63,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8fb542a76596a1d4392052b25cbcca08, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8631162411028295785}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8fb542a76596a1d4392052b25cbcca08, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4638641010370986360}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8fb542a76596a1d4392052b25cbcca08, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3400157338613490053}
   m_SourcePrefab: {fileID: 100100000, guid: 8fb542a76596a1d4392052b25cbcca08, type: 3}
 --- !u!1 &6358971626958613714 stripped
 GameObject:
@@ -89,4 +95,53 @@ MonoBehaviour:
   pathToOrderScreen: []
   pathToPickup: []
   pathToExit: []
-  rb: {fileID: 0}
+  rb: {fileID: 4638641010370986360}
+--- !u!54 &4638641010370986360
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6358971626958613714}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!95 &-3400157338613490053
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6358971626958613714}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eafabcdc5b1262c40826f6e94512d74b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

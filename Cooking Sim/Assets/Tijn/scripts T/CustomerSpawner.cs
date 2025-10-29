@@ -101,7 +101,6 @@ public class CustomerSpawner : MonoBehaviour
             if (ws != null && !ws.isOccupied)
             {
                 ws.isOccupied = true;
-                c.GoToWaitingSpot(spot);
                 return;
             }
         }

@@ -115,6 +115,13 @@ public class Customer : MonoBehaviour
 
         while (Vector3.Distance(transform.position, targetPos) > 0.1f)
         {
+            Vector3 direction = (targetPos - transform.position).normalized;
+            if (direction != Vector3.zero)
+            {
+                Quaternion lookRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+            }
+
             transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
 
             bool isWalking = Vector3.Distance(transform.position, targetPos) > 0.1f;
@@ -124,8 +131,34 @@ public class Customer : MonoBehaviour
         }
 
         animator.SetBool("isWalking", false);
-
         transform.position = targetPos;
+
+        // 🔹 Turn 180 degrees if at a waiting spot
+        foreach (Transform spot in waitingSpots)
+        {
+            if (Vector3.Distance(targetPos, spot.position) < 0.2f)
+            {
+                StartCoroutine(Rotate180Smooth());
+                break;
+            }
+        }
+    }
+
+    private IEnumerator Rotate180Smooth()
+    {
+        Quaternion startRot = transform.rotation;
+        Quaternion endRot = startRot * Quaternion.Euler(0f, 180f, 0f);
+        float elapsed = 0f;
+        float duration = 0.5f;
+
+        while (elapsed < duration)
+        {
+            transform.rotation = Quaternion.Slerp(startRot, endRot, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.rotation = endRot;
     }
 
     private IEnumerator FollowPath(List<Transform> waypoints)
