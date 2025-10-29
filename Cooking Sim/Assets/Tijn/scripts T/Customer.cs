@@ -15,7 +15,7 @@ public class Customer : MonoBehaviour
     [HideInInspector] public List<Transform> pathToPickup;
     [HideInInspector] public List<Transform> pathToExit;
 
-    private float moveSpeed = 2f;
+    private float moveSpeed = 1f;
     private string myOrder;
     private Transform myWaitingSpot;
     private bool orderCompleted = false;
