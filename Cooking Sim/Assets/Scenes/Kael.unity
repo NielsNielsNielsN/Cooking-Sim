@@ -1594,7 +1594,7 @@ PrefabInstance:
     - target: {fileID: 2122198695473142933, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -5494728891808063101, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
+      objectReference: {fileID: -5494728891808063101, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
     - target: {fileID: 2420574032081848714, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Name
       value: Pillar Middle (11)
@@ -2100,7 +2100,7 @@ PrefabInstance:
     - target: {fileID: 3026865888299033613, guid: 1dee47a6aa3e04b449b3d25d885634d0, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 3012605973260590597, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
+      objectReference: {fileID: 3012605973260590597, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9007,6 +9007,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 893378623}
     m_Modifications:
+    - target: {fileID: 3161896862279583263, guid: 619fabdcbe424194baf41bfaf1115d58, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3161896862279583263, guid: 619fabdcbe424194baf41bfaf1115d58, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 3161896862279583263, guid: 619fabdcbe424194baf41bfaf1115d58, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 3237510783375497047, guid: 619fabdcbe424194baf41bfaf1115d58, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -9205,6 +9217,18 @@ PrefabInstance:
     - target: {fileID: 3681269664196463419, guid: 51775594d9eb8914ea06ef4c7eafd895, type: 3}
       propertyPath: m_Name
       value: Crosshair Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015012534527256221, guid: 51775594d9eb8914ea06ef4c7eafd895, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015012534527256221, guid: 51775594d9eb8914ea06ef4c7eafd895, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015012534527256221, guid: 51775594d9eb8914ea06ef4c7eafd895, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 8107923402605141317, guid: 51775594d9eb8914ea06ef4c7eafd895, type: 3}
       propertyPath: m_Pivot.x
@@ -9492,10 +9516,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -12060,7 +12084,7 @@ PrefabInstance:
     - target: {fileID: 2122198695473142933, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -5494728891808063101, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
+      objectReference: {fileID: -5494728891808063101, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
     - target: {fileID: 2420574032081848714, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Name
       value: Pillar Middle (8)
@@ -12450,7 +12474,7 @@ PrefabInstance:
     - target: {fileID: 3026865888299033613, guid: 1dee47a6aa3e04b449b3d25d885634d0, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 3012605973260590597, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
+      objectReference: {fileID: 3012605973260590597, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12472,7 +12496,7 @@ PrefabInstance:
     - target: {fileID: 2122198695473142933, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -5494728891808063101, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
+      objectReference: {fileID: -5494728891808063101, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
     - target: {fileID: 2420574032081848714, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Name
       value: Pillar Middle (4)
@@ -14621,7 +14645,7 @@ PrefabInstance:
     - target: {fileID: 2122198695473142933, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -5494728891808063101, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
+      objectReference: {fileID: -5494728891808063101, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
     - target: {fileID: 2420574032081848714, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Name
       value: Pillar Middle (7)
@@ -14771,7 +14795,7 @@ PrefabInstance:
     - target: {fileID: 2122198695473142933, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -5494728891808063101, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
+      objectReference: {fileID: -5494728891808063101, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
     - target: {fileID: 2420574032081848714, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Name
       value: Pillar Middle (9)
@@ -17596,7 +17620,7 @@ PrefabInstance:
     - target: {fileID: 3026865888299033613, guid: 1dee47a6aa3e04b449b3d25d885634d0, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 3012605973260590597, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
+      objectReference: {fileID: 3012605973260590597, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17832,7 +17856,7 @@ PrefabInstance:
     - target: {fileID: 3026865888299033613, guid: 1dee47a6aa3e04b449b3d25d885634d0, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 3012605973260590597, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
+      objectReference: {fileID: 3012605973260590597, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19570,7 +19594,7 @@ PrefabInstance:
     - target: {fileID: 2122198695473142933, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -5494728891808063101, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
+      objectReference: {fileID: -5494728891808063101, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
     - target: {fileID: 2420574032081848714, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Name
       value: Pillar Middle (14)
@@ -19988,7 +20012,7 @@ PrefabInstance:
     - target: {fileID: 2122198695473142933, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -5494728891808063101, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
+      objectReference: {fileID: -5494728891808063101, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
     - target: {fileID: 2420574032081848714, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Name
       value: Pillar Middle (10)
@@ -22401,7 +22425,7 @@ PrefabInstance:
     - target: {fileID: 3026865888299033613, guid: 1dee47a6aa3e04b449b3d25d885634d0, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 3012605973260590597, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
+      objectReference: {fileID: 3012605973260590597, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23145,6 +23169,18 @@ PrefabInstance:
     - target: {fileID: 3301607280283014662, guid: 6206ab5ada24c4541942900efc009b41, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357109080234999537, guid: 6206ab5ada24c4541942900efc009b41, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357109080234999537, guid: 6206ab5ada24c4541942900efc009b41, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 8357109080234999537, guid: 6206ab5ada24c4541942900efc009b41, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     - target: {fileID: 8728026123052614208, guid: 6206ab5ada24c4541942900efc009b41, type: 3}
       propertyPath: m_Name
@@ -23950,6 +23986,18 @@ PrefabInstance:
     - target: {fileID: 5530686658713964812, guid: f247cef39affb3549b2e000a0cbe68ff, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192583138399230112, guid: f247cef39affb3549b2e000a0cbe68ff, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192583138399230112, guid: f247cef39affb3549b2e000a0cbe68ff, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192583138399230112, guid: f247cef39affb3549b2e000a0cbe68ff, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -25256,7 +25304,7 @@ PrefabInstance:
     - target: {fileID: 3026865888299033613, guid: 1dee47a6aa3e04b449b3d25d885634d0, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 3012605973260590597, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
+      objectReference: {fileID: 3012605973260590597, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27928,7 +27976,7 @@ PrefabInstance:
     - target: {fileID: 2122198695473142933, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -5494728891808063101, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
+      objectReference: {fileID: -5494728891808063101, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
     - target: {fileID: 2420574032081848714, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Name
       value: Pillar Middle (16)
@@ -28355,7 +28403,7 @@ PrefabInstance:
     - target: {fileID: 2122198695473142933, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -5494728891808063101, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
+      objectReference: {fileID: -5494728891808063101, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
     - target: {fileID: 2420574032081848714, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Name
       value: Pillar Middle (15)
@@ -28675,7 +28723,7 @@ PrefabInstance:
     - target: {fileID: 3026865888299033613, guid: 1dee47a6aa3e04b449b3d25d885634d0, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 3012605973260590597, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
+      objectReference: {fileID: 3012605973260590597, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31214,7 +31262,7 @@ PrefabInstance:
     - target: {fileID: 3026865888299033613, guid: 1dee47a6aa3e04b449b3d25d885634d0, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 3012605973260590597, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
+      objectReference: {fileID: 3012605973260590597, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31412,7 +31460,7 @@ PrefabInstance:
     - target: {fileID: 3026865888299033613, guid: 1dee47a6aa3e04b449b3d25d885634d0, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 3012605973260590597, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
+      objectReference: {fileID: 3012605973260590597, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32953,7 +33001,7 @@ PrefabInstance:
     - target: {fileID: 3026865888299033613, guid: 1dee47a6aa3e04b449b3d25d885634d0, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 3012605973260590597, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
+      objectReference: {fileID: 3012605973260590597, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -33342,7 +33390,7 @@ PrefabInstance:
     - target: {fileID: 2122198695473142933, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -5494728891808063101, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
+      objectReference: {fileID: -5494728891808063101, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
     - target: {fileID: 2420574032081848714, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Name
       value: Pillar Middle (17)
@@ -34240,7 +34288,7 @@ PrefabInstance:
     - target: {fileID: 2122198695473142933, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -5494728891808063101, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
+      objectReference: {fileID: -5494728891808063101, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
     - target: {fileID: 2420574032081848714, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Name
       value: Pillar Middle (2)
@@ -34722,7 +34770,7 @@ PrefabInstance:
     - target: {fileID: 2122198695473142933, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -5494728891808063101, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
+      objectReference: {fileID: -5494728891808063101, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
     - target: {fileID: 2420574032081848714, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Name
       value: Pillar Middle
@@ -34850,7 +34898,7 @@ PrefabInstance:
     - target: {fileID: 2122198695473142933, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -5494728891808063101, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
+      objectReference: {fileID: -5494728891808063101, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
     - target: {fileID: 2420574032081848714, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Name
       value: Pillar Middle (5)
@@ -36056,7 +36104,7 @@ PrefabInstance:
     - target: {fileID: 2122198695473142933, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -5494728891808063101, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
+      objectReference: {fileID: -5494728891808063101, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
     - target: {fileID: 2420574032081848714, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Name
       value: Pillar Middle (1)
@@ -36179,7 +36227,7 @@ PrefabInstance:
     - target: {fileID: 2122198695473142933, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -5494728891808063101, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
+      objectReference: {fileID: -5494728891808063101, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
     - target: {fileID: 2420574032081848714, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Name
       value: Pillar Middle (12)
@@ -39284,6 +39332,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoolingCellUI
       objectReference: {fileID: 0}
+    - target: {fileID: 9085697795157469376, guid: 059745a3580d14541bc0582507d1654b, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085697795157469376, guid: 059745a3580d14541bc0582507d1654b, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 9085697795157469376, guid: 059745a3580d14541bc0582507d1654b, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -41642,10 +41702,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -42583,7 +42643,7 @@ PrefabInstance:
     - target: {fileID: 2122198695473142933, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -5494728891808063101, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
+      objectReference: {fileID: -5494728891808063101, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
     - target: {fileID: 2420574032081848714, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Name
       value: Pillar Middle (3)
@@ -43313,7 +43373,7 @@ PrefabInstance:
     - target: {fileID: 3026865888299033613, guid: 1dee47a6aa3e04b449b3d25d885634d0, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 3012605973260590597, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
+      objectReference: {fileID: 3012605973260590597, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -43427,7 +43487,7 @@ PrefabInstance:
     - target: {fileID: 2122198695473142933, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -5494728891808063101, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
+      objectReference: {fileID: -5494728891808063101, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
     - target: {fileID: 2420574032081848714, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Name
       value: Pillar Middle (13)
@@ -43611,7 +43671,7 @@ PrefabInstance:
     - target: {fileID: 3026865888299033613, guid: 1dee47a6aa3e04b449b3d25d885634d0, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 3012605973260590597, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
+      objectReference: {fileID: 3012605973260590597, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -43985,7 +44045,7 @@ PrefabInstance:
     - target: {fileID: 2122198695473142933, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: -5494728891808063101, guid: 138e757e17c0fd54686b63f1fd31842f, type: 3}
+      objectReference: {fileID: -5494728891808063101, guid: 7edd7274bb7b1d34e8366445d234d099, type: 3}
     - target: {fileID: 2420574032081848714, guid: bf60b53750d96d340bbee8b779a9e521, type: 3}
       propertyPath: m_Name
       value: Pillar Middle (6)
@@ -45751,6 +45811,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: d2ed9f20e8b05a941a41ed604624ce05, type: 3}
+    - target: {fileID: 9192583138399230112, guid: f247cef39affb3549b2e000a0cbe68ff, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192583138399230112, guid: f247cef39affb3549b2e000a0cbe68ff, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 9192583138399230112, guid: f247cef39affb3549b2e000a0cbe68ff, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
