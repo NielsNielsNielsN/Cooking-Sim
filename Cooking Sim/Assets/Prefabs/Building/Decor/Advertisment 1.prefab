@@ -165,11 +165,11 @@ VideoPlayer:
   m_DataSource: 0
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
-  m_AudioOutputMode: 2
+  m_AudioOutputMode: 1
   m_TargetAudioSources:
-  - {fileID: 0}
+  - {fileID: 4802400730551237134}
   m_DirectAudioVolumes:
-  - 0.069
+  - 0.2
   m_Url: 
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
@@ -221,11 +221,11 @@ AudioSource:
   m_GameObject: {fileID: 7364265609389282092}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 3774559855039897528, guid: 75e4b6c24c79c4045ac825c9feadacdc, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.28
   m_Pitch: 1
   Loop: 0
   Mute: 0
