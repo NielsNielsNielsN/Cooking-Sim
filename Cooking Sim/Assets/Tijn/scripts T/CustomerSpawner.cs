@@ -101,10 +101,12 @@ public class CustomerSpawner : MonoBehaviour
             if (ws != null && !ws.isOccupied)
             {
                 ws.isOccupied = true;
+                c.GoToWaitingSpot(spot); // Tell customer which spot
                 return;
             }
         }
 
-        Debug.Log("No free waiting spots available!");
+        Debug.Log("⚠️ No free waiting spots available!");
     }
+
 }

@@ -37,7 +37,7 @@ public class Customer : MonoBehaviour
 
     private void Start()
     {
-        counter = FindObjectOfType<Counter>(); // find the counter in the scene
+        counter = FindObjectOfType<Counter>();
         StartCoroutine(CustomerRoutine());
     }
 
@@ -68,14 +68,14 @@ public class Customer : MonoBehaviour
             yield return MoveTo(myWaitingSpot.position);
         }
 
-        // Start checking the counter for the correct tray
+        // Start checking for tray
         checkingForTray = true;
         StartCoroutine(CheckForTray());
 
-        // Wait until they’ve picked up their correct tray
+        // Wait until the customer gets the correct tray
         while (!orderCompleted) yield return null;
 
-        // After picking up, follow pickup and exit paths
+        // Then move to pickup point and exit
         yield return FollowPath(pathToPickup);
         if (pickupPoint != null) yield return MoveTo(pickupPoint.position);
         yield return new WaitForSeconds(2f);
@@ -93,13 +93,11 @@ public class Customer : MonoBehaviour
         {
             if (counter != null && counter.traySpot.childCount > 0)
             {
-                // Check all trays on the counter
                 foreach (Transform trayTransform in counter.traySpot)
                 {
                     Tray tray = trayTransform.GetComponent<Tray>();
                     if (tray != null && IsTrayOrderCorrect(tray))
                     {
-                        // Found the correct tray
                         checkingForTray = false;
                         yield return MoveTo(counter.traySpot.position);
 
@@ -119,7 +117,6 @@ public class Customer : MonoBehaviour
     // ✅ Tray order check
     private bool IsTrayOrderCorrect(Tray tray)
     {
-        // Make sure your Tray script has a public string orderName
         return tray.orderName == myOrder;
     }
 
@@ -128,10 +125,12 @@ public class Customer : MonoBehaviour
         orderCompleted = true;
     }
 
+    // ✅ Fixed GoToWaitingSpot (actually moves & rotates)
     public void GoToWaitingSpot(Transform spot)
     {
         if (spot == null) return;
         myWaitingSpot = spot;
+        StartCoroutine(MoveTo(spot.position));
     }
 
     private Transform GetFreeWaitingSpot()
