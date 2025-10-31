@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf566e309eac7c6488dfeb039ffdbc19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoodItem
-  foodType: 3
+  foodType: 4
   state: 4
   rawMaterial: {fileID: 2100000, guid: 18826ef5b30a1554b8762384315125e3, type: 2}
   cookedMaterial: {fileID: 2100000, guid: 843653df88291194abd3dc66ea6a19e9, type: 2}
