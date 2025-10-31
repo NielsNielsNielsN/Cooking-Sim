@@ -9,6 +9,8 @@ public class Tray : MonoBehaviour
     public Transform[] hotdogPositions = new Transform[2];
     public Transform[] canPositions = new Transform[2];
     public Transform[] milkshakePositions = new Transform[2];
+    public string orderName;
+
 
     private Dictionary<FoodType, Transform[]> foodPositions;
     public Dictionary<FoodType, int> counts = new Dictionary<FoodType, int>();

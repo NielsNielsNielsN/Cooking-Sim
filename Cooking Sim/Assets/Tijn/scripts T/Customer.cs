@@ -22,8 +22,12 @@ public class Customer : MonoBehaviour
     private bool hasRotatedAtWaitSpot = false;
 
     public Action OnOrderComplete;
-
     private Animator animator;
+
+    // Counter & tray check
+    private Counter counter;
+    private float checkInterval = 1.5f;
+    private bool checkingForTray = false;
 
     private void Awake()
     {
@@ -33,6 +37,7 @@ public class Customer : MonoBehaviour
 
     private void Start()
     {
+        counter = FindObjectOfType<Counter>(); // find the counter in the scene
         StartCoroutine(CustomerRoutine());
     }
 
@@ -40,6 +45,7 @@ public class Customer : MonoBehaviour
     {
         if (orderScreenPoint != null) orderScreenPoint.isOccupied = true;
         yield return FollowPath(pathToOrderScreen);
+
         if (orderScreenPoint != null)
         {
             yield return MoveTo(orderScreenPoint.transform.position);
@@ -54,7 +60,6 @@ public class Customer : MonoBehaviour
 
         if (orderScreenPoint != null) orderScreenPoint.isOccupied = false;
         OnOrderComplete?.Invoke();
-
         SetBestelt(false);
 
         myWaitingSpot = GetFreeWaitingSpot();
@@ -63,11 +68,16 @@ public class Customer : MonoBehaviour
             yield return MoveTo(myWaitingSpot.position);
         }
 
+        // Start checking the counter for the correct tray
+        checkingForTray = true;
+        StartCoroutine(CheckForTray());
+
+        // Wait until they’ve picked up their correct tray
         while (!orderCompleted) yield return null;
 
+        // After picking up, follow pickup and exit paths
         yield return FollowPath(pathToPickup);
         if (pickupPoint != null) yield return MoveTo(pickupPoint.position);
-
         yield return new WaitForSeconds(2f);
 
         yield return FollowPath(pathToExit);
@@ -75,6 +85,42 @@ public class Customer : MonoBehaviour
 
         ReturnWaitingSpot();
         Destroy(gameObject);
+    }
+
+    private IEnumerator CheckForTray()
+    {
+        while (checkingForTray && !orderCompleted)
+        {
+            if (counter != null && counter.traySpot.childCount > 0)
+            {
+                // Check all trays on the counter
+                foreach (Transform trayTransform in counter.traySpot)
+                {
+                    Tray tray = trayTransform.GetComponent<Tray>();
+                    if (tray != null && IsTrayOrderCorrect(tray))
+                    {
+                        // Found the correct tray
+                        checkingForTray = false;
+                        yield return MoveTo(counter.traySpot.position);
+
+                        tray.transform.SetParent(transform);
+                        tray.transform.localPosition = new Vector3(0, 1f, 0.5f);
+
+                        yield return new WaitForSeconds(1f);
+                        CompleteOrder();
+                        yield break;
+                    }
+                }
+            }
+            yield return new WaitForSeconds(checkInterval);
+        }
+    }
+
+    // ✅ Tray order check
+    private bool IsTrayOrderCorrect(Tray tray)
+    {
+        // Make sure your Tray script has a public string orderName
+        return tray.orderName == myOrder;
     }
 
     public void CompleteOrder()
