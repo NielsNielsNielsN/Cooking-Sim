@@ -5,7 +5,7 @@ using TMPro;
 public class CustomerOrder : MonoBehaviour
 {
     // Only food types customers can order (exclude Buns)
-    private FoodType[] orderableItems = { FoodType.Hotdog, FoodType.Fries, FoodType.Can, FoodType.Milkshake };
+    private FoodType[] orderableItems = { FoodType.Hotdog, FoodType.Fries, FoodType.Can, FoodType.Tigercan, FoodType.Milkshake };
 
     [SerializeField] private int minItems = 1;
     [SerializeField] private int maxItems = 6;
@@ -161,6 +161,7 @@ public class CustomerOrder : MonoBehaviour
                     break;
 
                 case FoodType.Can:
+                case FoodType.Tigercan:
                 case FoodType.Milkshake:
                     drinksPresent = true;
                     break;

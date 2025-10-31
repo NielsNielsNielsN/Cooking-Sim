@@ -120,6 +120,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676353707625153315}
   m_Mesh: {fileID: -8582907418661513189, guid: f4781853c96f7c7459ddfd88bc1c1f18, type: 3}
+--- !u!1 &2774567539381974793
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6236429317903944251}
+  - component: {fileID: 2243514583806141746}
+  m_Layer: 0
+  m_Name: 'Tigercan '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6236429317903944251
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2774567539381974793}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.35347486, z: 0, w: -0.93544406}
+  m_LocalPosition: {x: -0.124, y: 0, z: -0.211}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 6027182416122390901}
+  m_LocalEulerAnglesHint: {x: 0, y: 401.4, z: 0}
+--- !u!33 &2243514583806141746
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2774567539381974793}
+  m_Mesh: {fileID: -7706264441290431685, guid: 84dd657a591fe1d4e983a8a91a4d6706, type: 3}
 --- !u!1 &2943467704533923356
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,10 +198,12 @@ Transform:
   - {fileID: 4843490863522092471}
   - {fileID: 9079173172491856320}
   - {fileID: 9196046202783347030}
+  - {fileID: 5789903761898086855}
   - {fileID: 5428837316934466129}
   - {fileID: 7427800469663790361}
   - {fileID: 9039973685851582561}
   - {fileID: 5600027744959211199}
+  - {fileID: 6236429317903944251}
   - {fileID: 6261072343745281530}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -243,6 +285,9 @@ MonoBehaviour:
   canPositions:
   - {fileID: 9196046202783347030}
   - {fileID: 5600027744959211199}
+  tigercanPositions:
+  - {fileID: 5789903761898086855}
+  - {fileID: 6236429317903944251}
   milkshakePositions:
   - {fileID: 5428837316934466129}
   - {fileID: 6261072343745281530}
@@ -365,7 +410,7 @@ Transform:
   m_GameObject: {fileID: 4138539145586862841}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.13999987, y: 0.007, z: -0.169}
+  m_LocalPosition: {x: -0.13999987, y: 0.007, z: -0.13}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -379,6 +424,46 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4138539145586862841}
   m_Mesh: {fileID: 3112082432940981728, guid: 508a645ab12bb8d45b4d78a2a108eb7e, type: 3}
+--- !u!1 &4954449959985517844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5789903761898086855}
+  - component: {fileID: 6504684519431978098}
+  m_Layer: 0
+  m_Name: Tigercan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5789903761898086855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4954449959985517844}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.35347486, z: 0, w: -0.93544406}
+  m_LocalPosition: {x: -0.01, y: 0, z: -0.211}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 6027182416122390901}
+  m_LocalEulerAnglesHint: {x: 0, y: 401.4, z: 0}
+--- !u!33 &6504684519431978098
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4954449959985517844}
+  m_Mesh: {fileID: -7706264441290431685, guid: 84dd657a591fe1d4e983a8a91a4d6706, type: 3}
 --- !u!1 &6978310171887438608
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,7 +490,7 @@ Transform:
   m_GameObject: {fileID: 6978310171887438608}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.017, y: 0.006599971, z: -0.169}
+  m_LocalPosition: {x: 0.017, y: 0.006599971, z: -0.13}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 1
   m_Children: []
