@@ -8,9 +8,10 @@ public class Tray : MonoBehaviour
     public Transform[] friesPositions = new Transform[2];
     public Transform[] hotdogPositions = new Transform[2];
     public Transform[] canPositions = new Transform[2];
+    public Transform[] tigercanPositions = new Transform[2];
     public Transform[] milkshakePositions = new Transform[2];
-    public string orderName;
 
+    public string orderName;
 
     private Dictionary<FoodType, Transform[]> foodPositions;
     public Dictionary<FoodType, int> counts = new Dictionary<FoodType, int>();
@@ -24,12 +25,14 @@ public class Tray : MonoBehaviour
             { FoodType.Fries, friesPositions },
             { FoodType.Hotdog, hotdogPositions },
             { FoodType.Can, canPositions },
+            { FoodType.Tigercan, tigercanPositions },
             { FoodType.Milkshake, milkshakePositions }
         };
 
         counts[FoodType.Fries] = 0;
         counts[FoodType.Hotdog] = 0;
         counts[FoodType.Can] = 0;
+        counts[FoodType.Tigercan] = 0;
         counts[FoodType.Milkshake] = 0;
     }
 
