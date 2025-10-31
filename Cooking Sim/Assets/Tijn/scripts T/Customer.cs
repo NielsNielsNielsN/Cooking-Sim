@@ -15,33 +15,37 @@ public class Customer : MonoBehaviour
     [HideInInspector] public List<Transform> pathToPickup;
     [HideInInspector] public List<Transform> pathToExit;
 
-    private float moveSpeed = 1.38f;
+    private const float MoveSpeed = 1.38f;
     private string myOrder;
     private Transform myWaitingSpot;
     private bool orderCompleted = false;
+    private bool hasRotatedAtWaitSpot = false;
+
+    public Action OnOrderComplete;
+
     private Animator animator;
 
-    public Rigidbody rb;
-
-    // Event dat de spawner kan gebruiken (voor SendToWaitingSpot)
-    public Action OnOrderComplete;
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+        SetBestelt(false);
+    }
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
         StartCoroutine(CustomerRoutine());
     }
 
     private IEnumerator CustomerRoutine()
     {
-        // Loop naar bestelscherm
-        PlayAnim("Loopje");
         if (orderScreenPoint != null) orderScreenPoint.isOccupied = true;
         yield return FollowPath(pathToOrderScreen);
-        if (orderScreenPoint != null) yield return MoveTo(orderScreenPoint.transform.position);
+        if (orderScreenPoint != null)
+        {
+            yield return MoveTo(orderScreenPoint.transform.position);
+            SetBestelt(true);
+        }
 
-        // Stop met lopen, bestel
-        PlayAnim("Order");
         float waitTime = UnityEngine.Random.Range(10f, 30f);
         yield return new WaitForSeconds(waitTime);
 
@@ -49,37 +53,27 @@ public class Customer : MonoBehaviour
         orderSystem.RegisterCustomerOrder(myOrder, this);
 
         if (orderScreenPoint != null) orderScreenPoint.isOccupied = false;
-
-        // Laat weten dat bestelling is geplaatst
         OnOrderComplete?.Invoke();
 
-        // Naar wachtrij
+        SetBestelt(false);
+
         myWaitingSpot = GetFreeWaitingSpot();
         if (myWaitingSpot != null)
         {
-            PlayAnim("Na order lopen");
             yield return MoveTo(myWaitingSpot.position);
         }
 
-        // Wacht tot bestelling klaar is
-        PlayAnim("Wachten");
         while (!orderCompleted) yield return null;
 
-        // Naar afhaalpunt
-        PlayAnim("lopen naar bestelling");
         yield return FollowPath(pathToPickup);
         if (pickupPoint != null) yield return MoveTo(pickupPoint.position);
 
-        // Animatie voor oppakken
-        PlayAnim("bestelling ophalen");
         yield return new WaitForSeconds(2f);
 
-        // Naar uitgang
-        PlayAnim("Bestelling lopen");
         yield return FollowPath(pathToExit);
         if (exitPoint != null) yield return MoveTo(exitPoint.position);
 
-        PlayAnim("bestelling doorlopen");
+        ReturnWaitingSpot();
         Destroy(gameObject);
     }
 
@@ -99,7 +93,7 @@ public class Customer : MonoBehaviour
         if (waitingSpots == null) return null;
         foreach (var spot in waitingSpots)
         {
-            WaitingSpot ws = spot.GetComponent<WaitingSpot>();
+            var ws = spot.GetComponent<WaitingSpot>();
             if (ws != null && !ws.isOccupied)
             {
                 ws.isOccupied = true;
@@ -109,9 +103,36 @@ public class Customer : MonoBehaviour
         return null;
     }
 
+    private void ReturnWaitingSpot()
+    {
+        if (myWaitingSpot == null) return;
+        var ws = myWaitingSpot.GetComponent<WaitingSpot>();
+        if (ws != null) ws.isOccupied = false;
+    }
+
+    private void SetWalking(bool walking)
+    {
+        if (animator != null)
+            animator.SetBool("isWalking", walking);
+    }
+
+    private void SetBestelt(bool value)
+    {
+        if (animator != null)
+            animator.SetBool("Bestelt", value);
+    }
+
     private IEnumerator MoveTo(Vector3 targetPos)
     {
-        animator.SetBool("isWalking", true);
+        if (Vector3.Distance(transform.position, targetPos) <= 0.1f)
+        {
+            transform.position = targetPos;
+            SetWalking(false);
+            TryRotateAtWaitingSpot(targetPos);
+            yield break;
+        }
+
+        SetWalking(true);
 
         while (Vector3.Distance(transform.position, targetPos) > 0.1f)
         {
@@ -119,25 +140,27 @@ public class Customer : MonoBehaviour
             if (direction != Vector3.zero)
             {
                 Quaternion lookRotation = Quaternion.LookRotation(direction);
-                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
             }
 
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
-
-            bool isWalking = Vector3.Distance(transform.position, targetPos) > 0.1f;
-            animator.SetBool("isWalking", isWalking);
-
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, MoveSpeed * Time.deltaTime);
             yield return null;
         }
 
-        animator.SetBool("isWalking", false);
         transform.position = targetPos;
+        SetWalking(false);
+        TryRotateAtWaitingSpot(targetPos);
+    }
 
-        // 🔹 Turn 180 degrees if at a waiting spot
+    private void TryRotateAtWaitingSpot(Vector3 pos)
+    {
+        if (hasRotatedAtWaitSpot) return;
+
         foreach (Transform spot in waitingSpots)
         {
-            if (Vector3.Distance(targetPos, spot.position) < 0.2f)
+            if (spot != null && Vector3.Distance(pos, spot.position) < 0.2f)
             {
+                hasRotatedAtWaitSpot = true;
                 StartCoroutine(Rotate180Smooth());
                 break;
             }
@@ -163,19 +186,12 @@ public class Customer : MonoBehaviour
 
     private IEnumerator FollowPath(List<Transform> waypoints)
     {
-        if (waypoints == null) yield break;
+        if (waypoints == null || waypoints.Count == 0) yield break;
+
         foreach (var point in waypoints)
         {
-            if (point == null) continue;
-            yield return MoveTo(point.position);
-        }
-    }
-
-    private void PlayAnim(string animName)
-    {
-        if (animator != null)
-        {
-            animator.Play(animName);
+            if (point != null)
+                yield return MoveTo(point.position);
         }
     }
 }
