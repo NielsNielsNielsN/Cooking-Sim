@@ -3,6 +3,13 @@ using UnityEngine;
 public class Knife : MonoBehaviour
 {
     public GameObject openBunPrefab;
+    public AudioClip cutSound;      // Assign your cutting sound in the Inspector
+    private AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = gameObject.AddComponent<AudioSource>();
+    }
 
     public void TryCut(CuttingBoard board)
     {
@@ -17,6 +24,12 @@ public class Knife : MonoBehaviour
         GameObject oldBun = board.currentItem;
         board.currentItem = null;
         Destroy(oldBun);
+
+        if (cutSound != null && audioSource != null)
+        {
+            audioSource.clip = cutSound;
+            audioSource.Play();
+        }
 
         GameObject openBun = Object.Instantiate(openBunPrefab, pos, rot);
         openBun.transform.SetParent(board.transform);

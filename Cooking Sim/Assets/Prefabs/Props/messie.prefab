@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Knife
   openBunPrefab: {fileID: 4251973644831046338, guid: 8f560d3ac83a0124eac68fa7e9cc813b, type: 3}
+  cutSound: {fileID: 8300000, guid: a11c273f0184b004d9aef2e452abb9a8, type: 3}
 --- !u!114 &7668743224103515071
 MonoBehaviour:
   m_ObjectHideFlags: 0
