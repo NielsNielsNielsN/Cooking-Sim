@@ -21,6 +21,9 @@ public class CookStation : MonoBehaviour
     private Coroutine cookingRoutine;
     private Coroutine activeQTERoutine;
     private bool isCooking;
+    public AudioClip cookingSound; // Assign your MP3 in Inspector
+    private AudioSource audioSource;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -75,6 +78,11 @@ public class CookStation : MonoBehaviour
             currentFood = null;
         }
 
+        if (audioSource != null && audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
+
         return f;
     }
 
@@ -102,6 +110,17 @@ public class CookStation : MonoBehaviour
                 float xPos = (normalizedCookPoint * sliderWidth) - (sliderWidth * 0.5f);
                 cookMarker.anchoredPosition = new Vector2(xPos, cookMarker.anchoredPosition.y);
             }
+        }
+
+        if (cookingSound != null)
+        {
+            if (audioSource == null)
+            {
+                audioSource = gameObject.AddComponent<AudioSource>();
+            }
+            audioSource.clip = cookingSound;
+            audioSource.loop = true;
+            audioSource.Play();
         }
 
         cookingRoutine = StartCoroutine(CookingProcess());
