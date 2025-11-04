@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Video;
 
 public class MenuUI : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class MenuUI : MonoBehaviour
     public Toggle fullscreenToggle;
     public Button backButton;
     private bool backButtonPressed;
+    public VideoPlayer videoPlayer1; 
+    public VideoPlayer videoPlayer2; 
+
     void Start()
     {
         Time.timeScale = 0f;
@@ -41,6 +45,16 @@ public class MenuUI : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         startMenu.SetActive(false);
+
+        if (videoPlayer1 != null)
+        {
+            videoPlayer1.Play();
+        }
+
+        if (videoPlayer2 != null)
+        {
+            videoPlayer2.Play();
+        }
     }
 
     public void Quit()
