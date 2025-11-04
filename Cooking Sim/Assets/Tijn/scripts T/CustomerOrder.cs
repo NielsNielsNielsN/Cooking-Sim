@@ -1,12 +1,10 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 
 public class CustomerOrder : MonoBehaviour
 {
-    // Only food types customers can order (exclude Buns)
     private FoodType[] orderableItems = { FoodType.Hotdog, FoodType.Fries, FoodType.Can, FoodType.Tigercan, FoodType.Milkshake };
-
     [SerializeField] private int minItems = 1;
     [SerializeField] private int maxItems = 6;
 
@@ -17,26 +15,16 @@ public class CustomerOrder : MonoBehaviour
 
     public int maxOrders = 5;
     public int activeOrders = 0;
-
     private int customerNumber = 1;
 
     private List<GameObject> activeOrderCards = new List<GameObject>();
-    private Queue<Customer> customerQueue = new Queue<Customer>();
 
-    public Tray tray;
+    // Maps order string to customer (for safety)
+    private readonly Dictionary<string, Customer> _orderToCustomer = new Dictionary<string, Customer>();
 
-    private void Update()
+    public string GenerateOrder(Customer customer)
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            TryCompleteNextOrder();
-        }
-    }
-
-    public string GenerateOrder()
-    {
-        if (activeOrders >= maxOrders)
-            return null;
+        if (activeOrders >= maxOrders) return null;
 
         int itemCount = Random.Range(minItems, maxItems + 1);
         Dictionary<FoodType, int> typeCounts = new Dictionary<FoodType, int>();
@@ -46,7 +34,6 @@ public class CustomerOrder : MonoBehaviour
         {
             FoodType selected;
             int attempts = 0;
-
             do
             {
                 selected = orderableItems[Random.Range(0, orderableItems.Length)];
@@ -69,107 +56,55 @@ public class CustomerOrder : MonoBehaviour
             orderString += $" - {ft}\n";
         }
 
-        // Spawn UI card
+        // Create UI Card
         GameObject newCard = Instantiate(orderCardPrefab, ordersContainer);
         TextMeshProUGUI orderText = newCard.GetComponentInChildren<TextMeshProUGUI>();
         orderText.text = orderString.TrimEnd();
 
-        // Position cards horizontally
+        // Link button to this customer
+        OrderCardButton btn = newCard.GetComponentInChildren<OrderCardButton>();
+        if (btn != null)
+        {
+            btn.customer = customer;
+            btn.orderSystem = this;
+        }
+
         RectTransform cardRect = newCard.GetComponent<RectTransform>();
         cardRect.anchoredPosition = new Vector2(activeOrderCards.Count * cardSpacing, 0f);
-
         activeOrderCards.Add(newCard);
+
+        // Store mapping
+        _orderToCustomer[orderString] = customer;
+
         activeOrders++;
         customerNumber++;
 
+        RegisterCustomerOrder(orderString, customer);
         return orderString;
     }
 
     public void RegisterCustomerOrder(string order, Customer customer)
     {
-        customerQueue.Enqueue(customer);
+        // Optional: keep a queue if needed elsewhere
     }
 
-    private void TryCompleteNextOrder()
-    {
-        if (activeOrderCards.Count == 0 || customerQueue.Count == 0)
-            return;
+    // Called by OrderCardButton when player clicks "Ready"
+    // ... same as before ...
 
-        if (IsTrayOrderCorrect())
-        {
-            CompleteNextOrder();
-            tray.ClearTray();
-        }
-    }
-
-    private void CompleteNextOrder()
+    public void OrderReady(Customer customer)
     {
-        GameObject firstCard = activeOrderCards[0];
-        Destroy(firstCard);
+        if (customer == null || activeOrderCards.Count == 0) return;
+
+        Destroy(activeOrderCards[0]);
         activeOrderCards.RemoveAt(0);
         activeOrders--;
 
-        // Shift UI cards left
         for (int i = 0; i < activeOrderCards.Count; i++)
         {
-            RectTransform cardRect = activeOrderCards[i].GetComponent<RectTransform>();
-            cardRect.anchoredPosition = new Vector2(i * cardSpacing, 0f);
+            RectTransform r = activeOrderCards[i].GetComponent<RectTransform>();
+            r.anchoredPosition = new Vector2(i * cardSpacing, 0f);
         }
 
-        // Mark customer as complete
-        Customer c = customerQueue.Dequeue();
-        c.CompleteOrder();
-    }
-
-    private bool IsTrayOrderCorrect()
-    {
-        if (tray == null) return false;
-
-        bool hasCookedHotdog = false;
-        bool hasOpenBun = false;
-        bool hasCookedFriesInBowl = false;
-        bool drinksPresent = false;
-
-        foreach (GameObject obj in tray.placedObjects)
-        {
-            if (obj == null) continue;
-
-            // Check for Fries inside a bowl
-            FriesBowl bowl = obj.GetComponent<FriesBowl>();
-            if (bowl != null && bowl.friesPosition != null)
-            {
-                FoodItem fries = bowl.GetComponentInChildren<FoodItem>();
-                if (fries != null && fries.foodType == FoodType.Fries && fries.state == CookState.Cooked)
-                {
-                    hasCookedFriesInBowl = true;
-                }
-                continue; // skip to next object
-            }
-
-            FoodItem food = obj.GetComponent<FoodItem>();
-            if (food == null) continue;
-
-            switch (food.foodType)
-            {
-                case FoodType.Hotdog:
-                    if (food.state == CookState.Cooked)
-                        hasCookedHotdog = true;
-                    break;
-
-                case FoodType.OpenBun:
-                    hasOpenBun = true;
-                    break;
-
-                case FoodType.Can:
-                case FoodType.Tigercan:
-                case FoodType.Milkshake:
-                    drinksPresent = true;
-                    break;
-            }
-        }
-
-        // Correct order: cooked hotdog inside open bun, cooked fries in a bowl, and drinks present
-        bool hotdogCorrect = hasCookedHotdog && hasOpenBun;
-        return hotdogCorrect && hasCookedFriesInBowl && drinksPresent;
+        customer.ForcePickupOrder();   
     }
 }

@@ -5,8 +5,7 @@ using System.Collections.Generic;
 public class CustomerSpawner : MonoBehaviour
 {
     [Header("Customer Prefabs")]
-    [SerializeField] private GameObject[] customerPrefabs; // ← multiple customer types
-
+    [SerializeField] private GameObject[] customerPrefabs;
     [SerializeField] private CustomerOrder orderSystem;
     [SerializeField] private OrderScreenPoint[] orderScreenPoints;
     [SerializeField] private Transform[] waitingSpots;
@@ -70,9 +69,7 @@ public class CustomerSpawner : MonoBehaviour
     {
         if (screen == null || customerPrefabs.Length == 0) return;
 
-        // 🌀 Randomly choose one of the three (or however many) prefabs
         GameObject chosenPrefab = customerPrefabs[Random.Range(0, customerPrefabs.Length)];
-
         GameObject newCustomer = Instantiate(chosenPrefab, transform.position, Quaternion.identity);
         Customer c = newCustomer.GetComponent<Customer>();
 
@@ -81,13 +78,11 @@ public class CustomerSpawner : MonoBehaviour
         c.waitingSpots = waitingSpots;
         c.pickupPoint = pickupPoint;
         c.exitPoint = exitPoint;
-
         c.pathToOrderScreen = pathToOrderScreen;
         c.pathToPickup = pathToPickup;
         c.pathToExit = pathToExit;
 
         screen.isOccupied = true;
-
         c.OnOrderComplete += () => SendToWaitingSpot(c);
     }
 
@@ -101,12 +96,10 @@ public class CustomerSpawner : MonoBehaviour
             if (ws != null && !ws.isOccupied)
             {
                 ws.isOccupied = true;
-                c.GoToWaitingSpot(spot); // Tell customer which spot
+                c.GoToWaitingSpot(spot);
                 return;
             }
         }
-
-        Debug.Log("⚠️ No free waiting spots available!");
+        Debug.Log("No free waiting spots available!");
     }
-
 }
