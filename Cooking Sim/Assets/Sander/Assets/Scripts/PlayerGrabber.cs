@@ -18,8 +18,8 @@ public class PlayerGrabber : MonoBehaviour
     private Tray hoveredTray;
     private Tray heldTray;
     public Animator handAnimator;
-    public string leftHandTrigger = "LeftGrab";
-    public string rightHandTrigger = "RightGrab";
+    public string leftHandTrigger = "GrabL";
+    public string rightHandTrigger = "GrabR";
 
 
 
