@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 00091c2d6444038439944399874e080e, type: 2}
+  m_LightingDataAsset: {fileID: 112000000, guid: 0807ef2f4f0276e4d94529a98b213050, type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 9333091dfbdb027479af5dfd38af8587, type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -9661,12 +9661,16 @@ PrefabInstance:
       value: ceiling light (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6262888419337953631, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
+      propertyPath: m_Range
+      value: 42.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262888419337953631, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6262888419337953631, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
       propertyPath: m_Intensity
-      value: 15.06
+      value: 4.42
       objectReference: {fileID: 0}
     - target: {fileID: 6262888419337953631, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
       propertyPath: m_Lightmapping
@@ -32680,7 +32684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6262888419337953631, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
       propertyPath: m_Intensity
-      value: 13.82
+      value: 22.23
       objectReference: {fileID: 0}
     - target: {fileID: 6262888419337953631, guid: 924272b0196c96747bfc87b821c20e16, type: 3}
       propertyPath: m_SpotAngle
