@@ -88,9 +88,7 @@ public class CustomerOrder : MonoBehaviour
         // Optional: keep a queue if needed elsewhere
     }
 
-    // Called by OrderCardButton when player clicks "Ready"
-    // ... same as before ...
-
+    
     public void OrderReady(Customer customer)
     {
         if (customer == null || activeOrderCards.Count == 0) return;

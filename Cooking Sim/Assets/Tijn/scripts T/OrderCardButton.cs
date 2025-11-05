@@ -4,17 +4,25 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
 public class OrderCardButton : MonoBehaviour
 {
-    // This will be set at runtime – NOT in the prefab!
     public Customer customer;
     public CustomerOrder orderSystem;
 
     private void Awake()
     {
-        GetComponent<Button>().onClick.AddListener(OnClicked);
+        Button btn = GetComponent<Button>();
+        if (btn != null)
+        {
+            btn.onClick.RemoveAllListeners(); // Prevent duplicates
+            btn.onClick.AddListener(OnClicked);
+        }
     }
 
     private void OnClicked()
     {
-        orderSystem?.OrderReady(customer);
+        if (orderSystem != null && customer != null)
+        {
+            Debug.Log($"[OrderCardButton] Customer {customer.name} order ready!");
+            orderSystem.OrderReady(customer);
+        }
     }
 }

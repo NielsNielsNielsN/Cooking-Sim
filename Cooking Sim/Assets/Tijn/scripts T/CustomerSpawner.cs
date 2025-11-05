@@ -42,13 +42,12 @@ public class CustomerSpawner : MonoBehaviour
 
     private void TrySpawnCustomer()
     {
-        if (orderSystem.activeOrders >= orderSystem.maxOrders)
-            return;
+        if (orderSystem == null || orderSystem.activeOrders >= orderSystem.maxOrders) return;
 
         OrderScreenPoint freeScreen = null;
         foreach (var screen in orderScreenPoints)
         {
-            if (!screen.isOccupied)
+            if (screen != null && !screen.isOccupied)
             {
                 freeScreen = screen;
                 break;
@@ -56,22 +55,18 @@ public class CustomerSpawner : MonoBehaviour
         }
 
         if (freeScreen != null)
-        {
             SpawnCustomer(freeScreen);
-        }
         else
-        {
-            Debug.Log("All order screens are occupied — waiting for a free one.");
-        }
+            Debug.Log("All order screens occupied.");
     }
 
     private void SpawnCustomer(OrderScreenPoint screen)
     {
-        if (screen == null || customerPrefabs.Length == 0) return;
+        if (screen == null || customerPrefabs == null || customerPrefabs.Length == 0) return;
 
-        GameObject chosenPrefab = customerPrefabs[Random.Range(0, customerPrefabs.Length)];
-        GameObject newCustomer = Instantiate(chosenPrefab, transform.position, Quaternion.identity);
-        Customer c = newCustomer.GetComponent<Customer>();
+        GameObject prefab = customerPrefabs[Random.Range(0, customerPrefabs.Length)];
+        GameObject newCust = Instantiate(prefab, transform.position, Quaternion.identity);
+        Customer c = newCust.GetComponent<Customer>();
 
         c.orderSystem = orderSystem;
         c.orderScreenPoint = screen;
@@ -88,7 +83,7 @@ public class CustomerSpawner : MonoBehaviour
 
     private void SendToWaitingSpot(Customer c)
     {
-        if (c == null || waitingSpots.Length == 0) return;
+        if (c == null || waitingSpots == null || waitingSpots.Length == 0) return;
 
         foreach (Transform spot in waitingSpots)
         {
@@ -100,6 +95,6 @@ public class CustomerSpawner : MonoBehaviour
                 return;
             }
         }
-        Debug.Log("No free waiting spots available!");
+        Debug.Log("No free waiting spot!");
     }
 }

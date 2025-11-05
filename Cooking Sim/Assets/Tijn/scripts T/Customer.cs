@@ -14,19 +14,11 @@ public class Customer : MonoBehaviour
     [HideInInspector] public List<Transform> pathToPickup;
     [HideInInspector] public List<Transform> pathToExit;
 
-    // ------------------------------------------------------------
-    // NEW: Direction the customer should face while waiting
-    // Drag any OrderScreenPoint (or an empty GameObject) here in the prefab
-    // ------------------------------------------------------------
-    [Header("Waiting Spot Look-At")]
-    [Tooltip("Point the customer will face when waiting (usually an OrderScreenPoint)")]
-    [SerializeField] private Transform facingDirection;
-
     private const float MoveSpeed = 1.38f;
     private string myOrder;
     private Transform myWaitingSpot;
     private bool orderCompleted = false;
-    private bool hasRotatedAtWaitSpot = false;
+    private bool hasRotatedAtWaitSpot = false;   // ← prevents double-rotate
 
     public Action OnOrderComplete;
 
@@ -39,6 +31,7 @@ public class Customer : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         SetBestelt(false);
+        SetWalking(false);
     }
 
     private void Start()
@@ -71,6 +64,7 @@ public class Customer : MonoBehaviour
         myWaitingSpot = GetFreeWaitingSpot();
         if (myWaitingSpot != null)
         {
+            // <-- THIS CALL NOW STOPS WALKING + ROTATES 180°
             yield return MoveTo(myWaitingSpot.position);
         }
 
@@ -96,9 +90,9 @@ public class Customer : MonoBehaviour
         {
             if (counter != null && counter.traySpot.childCount > 0)
             {
-                foreach (Transform trayTransform in counter.traySpot)
+                foreach (Transform t in counter.traySpot)
                 {
-                    Tray tray = trayTransform.GetComponent<Tray>();
+                    Tray tray = t.GetComponent<Tray>();
                     if (tray != null && IsTrayOrderCorrect(tray))
                     {
                         checkingForTray = false;
@@ -115,15 +109,9 @@ public class Customer : MonoBehaviour
         }
     }
 
-    private bool IsTrayOrderCorrect(Tray tray)
-    {
-        return tray.orderName == myOrder;
-    }
+    private bool IsTrayOrderCorrect(Tray tray) => tray.orderName == myOrder;
 
-    public void CompleteOrder()
-    {
-        orderCompleted = true;
-    }
+    public void CompleteOrder() => orderCompleted = true;
 
     public void GoToWaitingSpot(Transform spot)
     {
@@ -156,117 +144,86 @@ public class Customer : MonoBehaviour
 
     private void SetWalking(bool walking)
     {
-        if (animator != null)
-            animator.SetBool("isWalking", walking);
+        if (animator != null) animator.SetBool("isWalking", walking);
     }
 
     private void SetBestelt(bool value)
     {
-        if (animator != null)
-            animator.SetBool("Bestelt", value);
+        if (animator != null) animator.SetBool("Bestelt", value);
     }
 
+    // ------------------------------------------------------------
+    // MOVE → STOP → ROTATE 180° (ALL IN ONE COROUTINE)
+    // ------------------------------------------------------------
     private IEnumerator MoveTo(Vector3 targetPos)
     {
+        // Snap if already there
         if (Vector3.Distance(transform.position, targetPos) <= 0.1f)
         {
             transform.position = targetPos;
             SetWalking(false);
-            TryRotateAtWaitingSpot(targetPos);
             yield break;
         }
 
         SetWalking(true);
+
+        // ----- MOVE LOOP -----
         while (Vector3.Distance(transform.position, targetPos) > 0.1f)
         {
-            Vector3 direction = (targetPos - transform.position).normalized;
-            if (direction != Vector3.zero)
+            Vector3 dir = (targetPos - transform.position).normalized;
+            if (dir != Vector3.zero)
             {
-                Quaternion lookRotation = Quaternion.LookRotation(direction);
-                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
+                Quaternion look = Quaternion.LookRotation(dir);
+                transform.rotation = Quaternion.Slerp(transform.rotation, look, Time.deltaTime * 10f);
             }
             transform.position = Vector3.MoveTowards(transform.position, targetPos, MoveSpeed * Time.deltaTime);
             yield return null;
         }
 
+        // ----- ARRIVED -----
         transform.position = targetPos;
-        SetWalking(false);
-        TryRotateAtWaitingSpot(targetPos);
-    }
+        SetWalking(false);               // ← **FORCED STOP**
 
-    // ------------------------------------------------------------
-    // NEW: Rotate to face the order point (or 180° fallback)
-    // ------------------------------------------------------------
-    private void TryRotateAtWaitingSpot(Vector3 pos)
-    {
-        if (hasRotatedAtWaitSpot) return;
-
-        foreach (Transform spot in waitingSpots)
+        // ----- ROTATE 180° ONLY AT WAITING SPOTS -----
+        if (!hasRotatedAtWaitSpot)
         {
-            if (spot != null && Vector3.Distance(pos, spot.position) < 0.2f)
+            foreach (Transform spot in waitingSpots)
             {
-                hasRotatedAtWaitSpot = true;
-
-                if (facingDirection != null)
+                if (spot != null && Vector3.Distance(targetPos, spot.position) < 0.2f)
                 {
-                    Vector3 dir = (facingDirection.position - transform.position).normalized;
-                    dir.y = 0; // keep upright
-                    if (dir != Vector3.zero)
-                        StartCoroutine(RotateToDirection(dir));
+                    hasRotatedAtWaitSpot = true;
+                    yield return StartCoroutine(Rotate180Smooth());
+                    break;
                 }
-                else
-                {
-                    // fallback: old 180° turn
-                    StartCoroutine(Rotate180Smooth());
-                }
-                break;
             }
         }
     }
 
-    private IEnumerator RotateToDirection(Vector3 targetDir)
-    {
-        Quaternion startRot = transform.rotation;
-        Quaternion endRot = Quaternion.LookRotation(targetDir);
-        float elapsed = 0f;
-        float duration = 0.5f;
-
-        while (elapsed < duration)
-        {
-            transform.rotation = Quaternion.Slerp(startRot, endRot, elapsed / duration);
-            elapsed += Time.deltaTime;
-            yield return null;
-        }
-        transform.rotation = endRot;
-    }
-
     private IEnumerator Rotate180Smooth()
     {
-        Quaternion startRot = transform.rotation;
-        Quaternion endRot = startRot * Quaternion.Euler(0f, 180f, 0f);
-        float elapsed = 0f;
+        Quaternion start = transform.rotation;
+        Quaternion end = start * Quaternion.Euler(0f, 180f, 0f);
+        float t = 0f;
         float duration = 0.5f;
-        while (elapsed < duration)
+
+        while (t < duration)
         {
-            transform.rotation = Quaternion.Slerp(startRot, endRot, elapsed / duration);
-            elapsed += Time.deltaTime;
+            transform.rotation = Quaternion.Slerp(start, end, t / duration);
+            t += Time.deltaTime;
             yield return null;
         }
-        transform.rotation = endRot;
+        transform.rotation = end;
     }
 
     private IEnumerator FollowPath(List<Transform> waypoints)
     {
         if (waypoints == null || waypoints.Count == 0) yield break;
-        foreach (var point in waypoints)
-        {
-            if (point != null)
-                yield return MoveTo(point.position);
-        }
+        foreach (var p in waypoints)
+            if (p != null) yield return MoveTo(p.position);
     }
 
     // ------------------------------------------------------------
-    // PUBLIC: Called by button
+    // BUTTON CALL
     // ------------------------------------------------------------
     public void ForcePickupOrder()
     {
@@ -282,9 +239,9 @@ public class Customer : MonoBehaviour
         {
             yield return MoveTo(counter.traySpot.position);
 
-            foreach (Transform trayTransform in counter.traySpot)
+            foreach (Transform t in counter.traySpot)
             {
-                Tray tray = trayTransform.GetComponent<Tray>();
+                Tray tray = t.GetComponent<Tray>();
                 if (tray != null && IsTrayOrderCorrect(tray))
                 {
                     tray.transform.SetParent(transform);
