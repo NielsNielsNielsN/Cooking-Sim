@@ -17,7 +17,7 @@ public class Customer : MonoBehaviour
     public System.Action OnCustomerDestroy;
 
     private const float MoveSpeed = 1.38f;
-    private string myOrder;
+    private string myOrder;                     // keep private
     private Transform myWaitingSpot;
     private bool orderCompleted = false;
     private bool hasRotatedAtWaitSpot = false;
@@ -45,6 +45,7 @@ public class Customer : MonoBehaviour
     {
         if (orderScreenPoint != null) orderScreenPoint.isOccupied = true;
         yield return FollowPath(pathToOrderScreen);
+
         if (orderScreenPoint != null)
         {
             yield return MoveTo(orderScreenPoint.transform.position);
@@ -61,8 +62,7 @@ public class Customer : MonoBehaviour
         SetBestelt(false);
 
         myWaitingSpot = FindFreeWaitingSpotAndReserve();
-        if (myWaitingSpot != null)
-            yield return MoveTo(myWaitingSpot.position);
+        if (myWaitingSpot != null) yield return MoveTo(myWaitingSpot.position);
 
         checkingForTray = true;
         StartCoroutine(CheckForTray());
@@ -74,15 +74,17 @@ public class Customer : MonoBehaviour
         {
             yield return MoveTo(pickupPoint.position);
 
-            // DESTROY TRAY FROM COUNTER
-            bool trayDestroyed = DestroyTrayFromCounter();
-            if (trayDestroyed)
+            // ------------------------------------------------------------
+            // 1. FIND TRAY → 2. SELL CONTENTS → 3. DESTROY TRAY
+            // ------------------------------------------------------------
+            Tray tray = FindAndSellTray();
+            if (tray != null)
             {
-                Debug.Log($"[Customer] {name}: TRAY DESTROYED FOR ORDER '{myOrder}'!");
+                Debug.Log($"[Customer] {name}: TRAY DESTROYED & SOLD FOR ORDER '{myOrder}'!");
             }
             else
             {
-                Debug.LogWarning($"[Customer] {name}: NO TRAY TO DESTROY FOR '{myOrder}'");
+                Debug.LogWarning($"[Customer] {name}: NO TRAY FOUND FOR '{myOrder}'");
             }
 
             SetHeeftBestelling(true);
@@ -104,26 +106,30 @@ public class Customer : MonoBehaviour
     }
 
     // ------------------------------------------------------------
-    // DESTROY TRAY FROM traySpot (MATCHING ORDER)
+    // Find matching tray → sell it → destroy it → return Tray
     // ------------------------------------------------------------
-    private bool DestroyTrayFromCounter()
+    private Tray FindAndSellTray()
     {
         if (counter == null || counter.traySpot == null || counter.traySpot.childCount == 0)
-            return false;
+            return null;
 
         for (int i = 0; i < counter.traySpot.childCount; i++)
         {
             Transform child = counter.traySpot.GetChild(i);
             Tray tray = child.GetComponent<Tray>();
-            if (tray != null && !string.IsNullOrEmpty(tray.orderName) &&
+            if (tray != null &&
+                !string.IsNullOrEmpty(tray.orderName) &&
                 string.Equals(tray.orderName, myOrder, System.StringComparison.OrdinalIgnoreCase))
             {
+                // 1. SELL FIRST
+                GameManager.Instance.SellTrayContents(tray);
+
+                // 2. THEN DESTROY
                 Destroy(child.gameObject);
-                Debug.Log($"[Customer] {name}: DESTROYED TRAY '{myOrder}' FROM traySpot!");
-                return true;
+                return tray;
             }
         }
-        return false;
+        return null;
     }
 
     private Transform FindFreeWaitingSpotAndReserve()
@@ -175,14 +181,12 @@ public class Customer : MonoBehaviour
         if (pickupPoint != null)
         {
             yield return MoveTo(pickupPoint.position);
-            DestroyTrayFromCounter();
+            FindAndSellTray();
             SetHeeftBestelling(true);
             SetWalking(true);
             yield return new WaitForSeconds(1.5f);
             counter.ClearTraySpot();
-
         }
-
         yield return FollowPath(pathToExit);
         if (exitPoint != null) yield return MoveTo(exitPoint.position);
 
@@ -191,7 +195,6 @@ public class Customer : MonoBehaviour
             var ws = myWaitingSpot.GetComponent<WaitingSpot>();
             if (ws != null) ws.isOccupied = false;
         }
-
         OnCustomerDestroy?.Invoke();
         Destroy(gameObject);
     }
@@ -209,7 +212,6 @@ public class Customer : MonoBehaviour
             TryRotateAtWaitingSpot(targetPos);
             yield break;
         }
-
         SetWalking(true);
         while (Vector3.Distance(transform.position, targetPos) > 0.1f)
         {
@@ -219,7 +221,6 @@ public class Customer : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, targetPos, MoveSpeed * Time.deltaTime);
             yield return null;
         }
-
         transform.position = targetPos;
         SetWalking(false);
         TryRotateAtWaitingSpot(targetPos);

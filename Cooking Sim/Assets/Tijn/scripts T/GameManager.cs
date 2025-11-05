@@ -1,5 +1,4 @@
-﻿using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,134 +24,72 @@ public class GameManager : MonoBehaviour
     public float hotdogSellPrice = 15f;
     public float friesSellPrice = 10f;
     public float cansSellPrice = 8f;
-    public float bunsSellPrice = 20f;
+    public float milkshakeSellPrice = 20f;
 
     [SerializeField] private bool hasLost;
     [SerializeField] private Canvas loseCanvas;
 
     private void Awake()
     {
-        // --- Singleton setup ---
-        if (Instance != null && Instance != this)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
+        if (Instance != null && Instance != this) { Destroy(gameObject); return; }
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        // Clamp stock values
         hotdogStock = Mathf.Clamp(hotdogStock, 0, maxStock);
         friesStock = Mathf.Clamp(friesStock, 0, maxStock);
         cansStock = Mathf.Clamp(cansStock, 0, maxStock);
         bunsStock = Mathf.Clamp(bunsStock, 0, maxStock);
     }
 
-    // ----- Money helpers -----
     public bool CanAfford(float cost) => playerMoney >= cost;
+    public void SpendMoney(float amount) => playerMoney = Mathf.Max(0f, playerMoney - amount);
+    public void AddMoney(float amount) => playerMoney += amount;
 
-    public void SpendMoney(float amount)
-    {
-        playerMoney = Mathf.Max(0f, playerMoney - amount);
-    }
-
-    public void AddMoney(float amount)
-    {
-        playerMoney += amount;
-    }
-
-    // ----- Stock helpers -----
     public void AddStock(string item, int amount = 1)
     {
         if (string.IsNullOrEmpty(item)) return;
-
         switch (item.ToLower())
         {
-            case "hotdog":
-            case "hotdogs":
-                hotdogStock = Mathf.Min(maxStock, hotdogStock + amount);
-                break;
-
-            case "fries":
-                friesStock = Mathf.Min(maxStock, friesStock + amount);
-                break;
-
-            case "cans":
-            case "can":
-                cansStock = Mathf.Min(maxStock, cansStock + amount);
-                break;
-
-            case "bun":
-            case "buns":
-                bunsStock = Mathf.Min(maxStock, bunsStock + amount);
-                break;
-
-            default:
-                Debug.LogWarning($"GameManager.AddStock: unknown item '{item}'");
-                break;
+            case "hotdog": case "hotdogs": hotdogStock = Mathf.Min(maxStock, hotdogStock + amount); break;
+            case "fries": friesStock = Mathf.Min(maxStock, friesStock + amount); break;
+            case "cans": case "can": cansStock = Mathf.Min(maxStock, cansStock + amount); break;
+            case "bun": case "buns": bunsStock = Mathf.Min(maxStock, bunsStock + amount); break;
+            default: Debug.LogWarning($"GameManager.AddStock: unknown item '{item}'"); break;
         }
     }
 
-    void Update()
+    private void Update()
     {
-        if (playerMoney < 1)
+        if (playerMoney < 1f && !hasLost)
         {
-            {
-                hasLost = true;
-                print("You Lose");
-                loseCanvas.gameObject.SetActive(true);
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-            }
+            hasLost = true;
+            Debug.Log("You Lose");
+            if (loseCanvas != null) loseCanvas.gameObject.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 
-    // ----- Selling -----
-    public void SellItem(string item)
+    public void SellTrayContents(Tray tray)
     {
-        if (string.IsNullOrEmpty(item)) return;
+        if (tray == null) return;
+
+        int hotdogs = tray.counts[FoodType.Hotdog];
+        int fries = tray.counts[FoodType.Fries];
+        int cans = tray.counts[FoodType.Can];
+        int buns = tray.counts[FoodType.Hotdog];
 
         float earned = 0f;
 
-        switch (item.ToLower())
-        {
-            case "hotdog":
-            case "hotdogs":
-                if (hotdogStock <= 0) { Debug.Log("No hotdog stock to sell."); return; }
-                hotdogStock--;
-                earned = hotdogSellPrice;
-                break;
-
-            case "fries":
-                if (friesStock <= 0) { Debug.Log("No fries stock to sell."); return; }
-                friesStock--;
-                earned = friesSellPrice;
-                break;
-
-            case "cans":
-            case "can":
-                if (cansStock <= 0) { Debug.Log("No cans stock to sell."); return; }
-                cansStock--;
-                earned = cansSellPrice;
-                break;
-
-            case "bun":
-            case "buns":
-                if (bunsStock <= 0) { Debug.Log("No buns stock to sell."); return; }
-                bunsStock--;
-                earned = bunsSellPrice;
-                break;
-
-            default:
-                Debug.LogWarning($"GameManager.SellItem: unknown item '{item}'");
-                return;
-        }
+        if (hotdogs > 0 && hotdogStock >= hotdogs) { hotdogStock -= hotdogs; earned += hotdogs * hotdogSellPrice; }
+        if (fries > 0 && friesStock >= fries) { friesStock -= fries; earned += fries * friesSellPrice; }
+        if (cans > 0 && cansStock >= cans) { cansStock -= cans; earned += cans * cansSellPrice; }
+        if (buns > 0 && bunsStock >= buns) { bunsStock -= buns; earned += buns * milkshakeSellPrice; }
 
         if (earned > 0f)
         {
             AddMoney(earned);
-            Debug.Log($"Sold {item} for ${earned:F2}. Money now: ${playerMoney:F2}");
+            Debug.Log($"[GameManager] SOLD TRAY → +${earned:F2} | Money: ${playerMoney:F2}");
         }
     }
 }

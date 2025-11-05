@@ -4,10 +4,12 @@ public class Counter : MonoBehaviour
 {
     [Header("Tray Spot")]
     public Transform traySpot;
+    private Tray tray;
 
     public void AcceptTray(Tray tray)
     {
         if (tray == null) return;
+        this.tray = tray;
         Transform parent = traySpot != null ? traySpot : transform;
         tray.transform.SetParent(parent);
         tray.transform.localPosition = Vector3.zero;
@@ -50,6 +52,8 @@ public class Counter : MonoBehaviour
     public void ClearTraySpot()
     {
         if (traySpot == null) return;
+        GameManager.Instance.AddMoney(40f);
+
         for (int i = traySpot.childCount - 1; i >= 0; i--)
             Destroy(traySpot.GetChild(i).gameObject);
     }
