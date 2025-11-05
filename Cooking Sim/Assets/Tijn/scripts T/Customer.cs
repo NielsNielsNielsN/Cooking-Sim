@@ -14,11 +14,16 @@ public class Customer : MonoBehaviour
     [HideInInspector] public List<Transform> pathToPickup;
     [HideInInspector] public List<Transform> pathToExit;
 
+    // ------------------------------------------------------------
+    // SIGNAL TO SPAWNER WHEN THIS CUSTOMER IS DESTROYED
+    // ------------------------------------------------------------
+    public System.Action OnCustomerDestroy;
+
     private const float MoveSpeed = 1.38f;
     private string myOrder;
     private Transform myWaitingSpot;
     private bool orderCompleted = false;
-    private bool hasRotatedAtWaitSpot = false;   // ← prevents double-rotate
+    private bool hasRotatedAtWaitSpot = false;
 
     public Action OnOrderComplete;
 
@@ -42,7 +47,12 @@ public class Customer : MonoBehaviour
 
     private IEnumerator CustomerRoutine()
     {
-        if (orderScreenPoint != null) orderScreenPoint.isOccupied = true;
+        // === 1. GO TO ORDER SCREEN ===
+        if (orderScreenPoint != null)
+        {
+            orderScreenPoint.isOccupied = true;
+            Debug.Log($"[Customer] {name} occupies order screen.");
+        }
         yield return FollowPath(pathToOrderScreen);
 
         if (orderScreenPoint != null)
@@ -51,79 +61,78 @@ public class Customer : MonoBehaviour
             SetBestelt(true);
         }
 
+        // === 2. WAIT FOR PLAYER ===
         float waitTime = UnityEngine.Random.Range(10f, 30f);
         yield return new WaitForSeconds(waitTime);
 
+        // === 3. GENERATE ORDER ===
         myOrder = orderSystem.GenerateOrder(this);
         orderSystem.RegisterCustomerOrder(myOrder, this);
 
-        if (orderScreenPoint != null) orderScreenPoint.isOccupied = false;
-        OnOrderComplete?.Invoke();
+        // === 4. FREE ORDER SCREEN ===
+        if (orderScreenPoint != null)
+        {
+            orderScreenPoint.isOccupied = false;
+            Debug.Log($"[Customer] {name} frees order screen.");
+        }
         SetBestelt(false);
 
-        myWaitingSpot = GetFreeWaitingSpot();
+        // === 5. GO TO WAITING SPOT (RESERVE ON ARRIVAL) ===
+        myWaitingSpot = FindFreeWaitingSpotAndReserve();
         if (myWaitingSpot != null)
         {
-            // <-- THIS CALL NOW STOPS WALKING + ROTATES 180°
+            Debug.Log($"[Customer] {name} moving to waiting spot: {myWaitingSpot.name}");
             yield return MoveTo(myWaitingSpot.position);
         }
+        else
+        {
+            Debug.LogWarning($"[Customer] {name} — NO FREE WAITING SPOT!");
+        }
 
+        // === 6. CHECK TRAY ===
         checkingForTray = true;
         StartCoroutine(CheckForTray());
 
         while (!orderCompleted) yield return null;
 
+        // === 7. PICKUP VIA PATH ===
         yield return FollowPath(pathToPickup);
-        if (pickupPoint != null) yield return MoveTo(pickupPoint.position);
-        yield return new WaitForSeconds(2f);
+        if (pickupPoint != null)
+        {
+            yield return MoveTo(pickupPoint.position);
+            Tray tray = FindTrayAtPickupPoint();
+            if (tray != null)
+            {
+                tray.transform.SetParent(transform);
+                tray.transform.localPosition = new Vector3(0, 1f, 0.5f);
+                yield return new WaitForSeconds(0.5f);
+            }
+        }
 
+        yield return new WaitForSeconds(1f);
+
+        // === 8. EXIT ===
         yield return FollowPath(pathToExit);
         if (exitPoint != null) yield return MoveTo(exitPoint.position);
 
-        ReturnWaitingSpot();
+        // === 9. FREE WAITING SPOT + SIGNAL SPAWNER ===
+        if (myWaitingSpot != null)
+        {
+            var ws = myWaitingSpot.GetComponent<WaitingSpot>();
+            if (ws != null) ws.isOccupied = false;
+            Debug.Log($"[Customer] {name} frees waiting spot: {myWaitingSpot.name}");
+        }
+
+        // ← SIGNAL SPAWNER TO SPAWN NEW CUSTOMER
+        OnCustomerDestroy?.Invoke();
+
         Destroy(gameObject);
     }
 
-    private IEnumerator CheckForTray()
-    {
-        while (checkingForTray && !orderCompleted)
-        {
-            if (counter != null && counter.traySpot.childCount > 0)
-            {
-                foreach (Transform t in counter.traySpot)
-                {
-                    Tray tray = t.GetComponent<Tray>();
-                    if (tray != null && IsTrayOrderCorrect(tray))
-                    {
-                        checkingForTray = false;
-                        yield return MoveTo(counter.traySpot.position);
-                        tray.transform.SetParent(transform);
-                        tray.transform.localPosition = new Vector3(0, 1f, 0.5f);
-                        yield return new WaitForSeconds(1f);
-                        CompleteOrder();
-                        yield break;
-                    }
-                }
-            }
-            yield return new WaitForSeconds(checkInterval);
-        }
-    }
-
-    private bool IsTrayOrderCorrect(Tray tray) => tray.orderName == myOrder;
-
-    public void CompleteOrder() => orderCompleted = true;
-
-    public void GoToWaitingSpot(Transform spot)
-    {
-        if (spot == null) return;
-        myWaitingSpot = spot;
-        StartCoroutine(MoveTo(spot.position));
-    }
-
-    private Transform GetFreeWaitingSpot()
+    private Transform FindFreeWaitingSpotAndReserve()
     {
         if (waitingSpots == null) return null;
-        foreach (var spot in waitingSpots)
+        foreach (Transform spot in waitingSpots)
         {
             var ws = spot.GetComponent<WaitingSpot>();
             if (ws != null && !ws.isOccupied)
@@ -135,11 +144,38 @@ public class Customer : MonoBehaviour
         return null;
     }
 
-    private void ReturnWaitingSpot()
+    private Tray FindTrayAtPickupPoint()
     {
-        if (myWaitingSpot == null) return;
-        var ws = myWaitingSpot.GetComponent<WaitingSpot>();
-        if (ws != null) ws.isOccupied = false;
+        if (counter == null || counter.traySpot == null) return null;
+        foreach (Transform child in counter.traySpot)
+        {
+            Tray tray = child.GetComponent<Tray>();
+            if (tray != null && tray.orderName == myOrder) return tray;
+        }
+        return null;
+    }
+
+    private IEnumerator CheckForTray()
+    {
+        while (checkingForTray && !orderCompleted)
+        {
+            if (FindTrayAtPickupPoint() != null)
+            {
+                checkingForTray = false;
+                CompleteOrder();
+                yield break;
+            }
+            yield return new WaitForSeconds(checkInterval);
+        }
+    }
+
+    public void CompleteOrder() => orderCompleted = true;
+
+    public void GoToWaitingSpot(Transform spot)
+    {
+        if (spot == null) return;
+        myWaitingSpot = spot;
+        StartCoroutine(MoveTo(spot.position));
     }
 
     private void SetWalking(bool walking)
@@ -152,49 +188,43 @@ public class Customer : MonoBehaviour
         if (animator != null) animator.SetBool("Bestelt", value);
     }
 
-    // ------------------------------------------------------------
-    // MOVE → STOP → ROTATE 180° (ALL IN ONE COROUTINE)
-    // ------------------------------------------------------------
     private IEnumerator MoveTo(Vector3 targetPos)
     {
-        // Snap if already there
         if (Vector3.Distance(transform.position, targetPos) <= 0.1f)
         {
             transform.position = targetPos;
             SetWalking(false);
+            TryRotateAtWaitingSpot(targetPos);
             yield break;
         }
 
         SetWalking(true);
-
-        // ----- MOVE LOOP -----
         while (Vector3.Distance(transform.position, targetPos) > 0.1f)
         {
             Vector3 dir = (targetPos - transform.position).normalized;
             if (dir != Vector3.zero)
             {
-                Quaternion look = Quaternion.LookRotation(dir);
-                transform.rotation = Quaternion.Slerp(transform.rotation, look, Time.deltaTime * 10f);
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 10f);
             }
             transform.position = Vector3.MoveTowards(transform.position, targetPos, MoveSpeed * Time.deltaTime);
             yield return null;
         }
 
-        // ----- ARRIVED -----
         transform.position = targetPos;
-        SetWalking(false);               // ← **FORCED STOP**
+        SetWalking(false);
+        TryRotateAtWaitingSpot(targetPos);
+    }
 
-        // ----- ROTATE 180° ONLY AT WAITING SPOTS -----
-        if (!hasRotatedAtWaitSpot)
+    private void TryRotateAtWaitingSpot(Vector3 pos)
+    {
+        if (hasRotatedAtWaitSpot) return;
+        foreach (Transform spot in waitingSpots)
         {
-            foreach (Transform spot in waitingSpots)
+            if (spot != null && Vector3.Distance(pos, spot.position) < 0.2f)
             {
-                if (spot != null && Vector3.Distance(targetPos, spot.position) < 0.2f)
-                {
-                    hasRotatedAtWaitSpot = true;
-                    yield return StartCoroutine(Rotate180Smooth());
-                    break;
-                }
+                hasRotatedAtWaitSpot = true;
+                StartCoroutine(Rotate180Smooth());
+                break;
             }
         }
     }
@@ -205,7 +235,6 @@ public class Customer : MonoBehaviour
         Quaternion end = start * Quaternion.Euler(0f, 180f, 0f);
         float t = 0f;
         float duration = 0.5f;
-
         while (t < duration)
         {
             transform.rotation = Quaternion.Slerp(start, end, t / duration);
@@ -222,9 +251,6 @@ public class Customer : MonoBehaviour
             if (p != null) yield return MoveTo(p.position);
     }
 
-    // ------------------------------------------------------------
-    // BUTTON CALL
-    // ------------------------------------------------------------
     public void ForcePickupOrder()
     {
         if (orderCompleted) return;
@@ -235,32 +261,30 @@ public class Customer : MonoBehaviour
 
     private IEnumerator ForcedPickupRoutine()
     {
-        if (counter != null)
+        yield return FollowPath(pathToPickup);
+        if (pickupPoint != null)
         {
-            yield return MoveTo(counter.traySpot.position);
-
-            foreach (Transform t in counter.traySpot)
+            yield return MoveTo(pickupPoint.position);
+            Tray tray = FindTrayAtPickupPoint();
+            if (tray != null)
             {
-                Tray tray = t.GetComponent<Tray>();
-                if (tray != null && IsTrayOrderCorrect(tray))
-                {
-                    tray.transform.SetParent(transform);
-                    tray.transform.localPosition = new Vector3(0, 1f, 0.5f);
-                    yield return new WaitForSeconds(0.5f);
-                    CompleteOrder();
-                    break;
-                }
+                tray.transform.SetParent(transform);
+                tray.transform.localPosition = new Vector3(0, 1f, 0.5f);
+                yield return new WaitForSeconds(0.5f);
             }
         }
 
-        yield return FollowPath(pathToPickup);
-        if (pickupPoint != null) yield return MoveTo(pickupPoint.position);
         yield return new WaitForSeconds(1f);
-
         yield return FollowPath(pathToExit);
         if (exitPoint != null) yield return MoveTo(exitPoint.position);
 
-        ReturnWaitingSpot();
+        if (myWaitingSpot != null)
+        {
+            var ws = myWaitingSpot.GetComponent<WaitingSpot>();
+            if (ws != null) ws.isOccupied = false;
+        }
+
+        OnCustomerDestroy?.Invoke();
         Destroy(gameObject);
     }
 }
