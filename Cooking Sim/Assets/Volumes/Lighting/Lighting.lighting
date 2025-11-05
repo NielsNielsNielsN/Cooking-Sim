@@ -23,8 +23,8 @@ LightingSettings:
   m_Padding: 40
   m_LightmapCompression: 3
   m_AO: 1
-  m_AOMaxDistance: 1.41
-  m_CompAOExponent: 1.51
+  m_AOMaxDistance: 1.99
+  m_CompAOExponent: 2.02
   m_CompAOExponentDirect: 0.36
   m_ExtractAO: 0
   m_MixedBakeMode: 2
@@ -34,7 +34,7 @@ LightingSettings:
   m_ExportTrainingData: 0
   m_EnableWorkerProcessBaking: 1
   m_TrainingDataDestination: TrainingData
-  m_RealtimeResolution: 4
+  m_RealtimeResolution: 5
   m_ForceWhiteAlbedo: 0
   m_ForceUpdates: 0
   m_PVRCulling: 1
