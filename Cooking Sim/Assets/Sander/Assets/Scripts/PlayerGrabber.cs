@@ -17,6 +17,11 @@ public class PlayerGrabber : MonoBehaviour
     private FoodBag heldBag;
     private Tray hoveredTray;
     private Tray heldTray;
+    public Animator handAnimator;
+    public string leftHandTrigger = "LeftGrab";
+    public string rightHandTrigger = "RightGrab";
+
+
 
     private Drawer hoveredDrawer;
     private TrayDispenser hoveredTrayDispenser;
@@ -361,6 +366,12 @@ public class PlayerGrabber : MonoBehaviour
             heldObject.transform.SetParent(playerCamera.transform, false);
             heldObject.transform.localPosition = holdLocalPosition;
             heldObject.transform.localRotation = Quaternion.identity;
+        }
+
+        if (handAnimator != null)
+        {
+            handAnimator.SetTrigger("GrabL");
+            handAnimator.SetTrigger("GrabR");
         }
     }
 
