@@ -17,6 +17,11 @@ public class CustomerSpawner : MonoBehaviour
     [SerializeField] private List<Transform> pathToPickup;
     [SerializeField] private List<Transform> pathToExit;
 
+    [Header("Limits")]
+    [SerializeField] private int maxTotalCustomers = 5;
+
+    private int currentCustomerCount = 0;
+
     private void Start()
     {
         StartCoroutine(SpawnInitialCustomers());
@@ -34,30 +39,27 @@ public class CustomerSpawner : MonoBehaviour
     {
         while (true)
         {
-            float waitTime = Random.Range(20f, 50f);
-            yield return new WaitForSeconds(waitTime);
+            yield return new WaitForSeconds(1f);
             TrySpawnCustomer();
         }
     }
 
     private void TrySpawnCustomer()
     {
+        if (currentCustomerCount >= maxTotalCustomers) return;
         if (orderSystem == null || orderSystem.activeOrders >= orderSystem.maxOrders) return;
 
-        OrderScreenPoint freeScreen = null;
-        foreach (var screen in orderScreenPoints)
-        {
-            if (screen != null && !screen.isOccupied)
-            {
-                freeScreen = screen;
-                break;
-            }
-        }
-
+        OrderScreenPoint freeScreen = GetFreeOrderScreen();
         if (freeScreen != null)
             SpawnCustomer(freeScreen);
-        else
-            Debug.Log("All order screens occupied.");
+    }
+
+    private OrderScreenPoint GetFreeOrderScreen()
+    {
+        foreach (var screen in orderScreenPoints)
+            if (screen != null && !screen.isOccupied)
+                return screen;
+        return null;
     }
 
     private void SpawnCustomer(OrderScreenPoint screen)
@@ -77,24 +79,18 @@ public class CustomerSpawner : MonoBehaviour
         c.pathToPickup = pathToPickup;
         c.pathToExit = pathToExit;
 
+        c.OnCustomerDestroy += DecrementCount;
+
+        currentCustomerCount++;
+        Debug.Log($"[Spawner] Spawned {newCust.name} | Total: {currentCustomerCount}/{maxTotalCustomers}");
+
         screen.isOccupied = true;
-        c.OnOrderComplete += () => SendToWaitingSpot(c);
     }
 
-    private void SendToWaitingSpot(Customer c)
+    private void DecrementCount()
     {
-        if (c == null || waitingSpots == null || waitingSpots.Length == 0) return;
-
-        foreach (Transform spot in waitingSpots)
-        {
-            WaitingSpot ws = spot.GetComponent<WaitingSpot>();
-            if (ws != null && !ws.isOccupied)
-            {
-                ws.isOccupied = true;
-                c.GoToWaitingSpot(spot);
-                return;
-            }
-        }
-        Debug.Log("No free waiting spot!");
+        currentCustomerCount = Mathf.Max(0, currentCustomerCount - 1);
+        Debug.Log($"[Spawner] Customer left | Total: {currentCustomerCount}/{maxTotalCustomers}");
+        TrySpawnCustomer();
     }
 }
