@@ -14,9 +14,6 @@ public class Customer : MonoBehaviour
     [HideInInspector] public List<Transform> pathToPickup;
     [HideInInspector] public List<Transform> pathToExit;
 
-    // ------------------------------------------------------------
-    // SIGNAL TO SPAWNER WHEN THIS CUSTOMER IS DESTROYED
-    // ------------------------------------------------------------
     public System.Action OnCustomerDestroy;
 
     private const float MoveSpeed = 1.38f;
@@ -25,11 +22,8 @@ public class Customer : MonoBehaviour
     private bool orderCompleted = false;
     private bool hasRotatedAtWaitSpot = false;
 
-    public Action OnOrderComplete;
-
     private Animator animator;
     private Counter counter;
-    private float checkInterval = 1.5f;
     private bool checkingForTray = false;
 
     private void Awake()
@@ -37,96 +31,99 @@ public class Customer : MonoBehaviour
         animator = GetComponent<Animator>();
         SetBestelt(false);
         SetWalking(false);
+        SetHeeftBestelling(false);
     }
 
     private void Start()
     {
         counter = FindObjectOfType<Counter>();
+        if (counter == null) Debug.LogError("[Customer] Counter not found!");
         StartCoroutine(CustomerRoutine());
     }
 
     private IEnumerator CustomerRoutine()
     {
-        // === 1. GO TO ORDER SCREEN ===
-        if (orderScreenPoint != null)
-        {
-            orderScreenPoint.isOccupied = true;
-            Debug.Log($"[Customer] {name} occupies order screen.");
-        }
+        if (orderScreenPoint != null) orderScreenPoint.isOccupied = true;
         yield return FollowPath(pathToOrderScreen);
-
         if (orderScreenPoint != null)
         {
             yield return MoveTo(orderScreenPoint.transform.position);
             SetBestelt(true);
         }
 
-        // === 2. WAIT FOR PLAYER ===
-        float waitTime = UnityEngine.Random.Range(10f, 30f);
-        yield return new WaitForSeconds(waitTime);
+        yield return new WaitForSeconds(UnityEngine.Random.Range(10f, 30f));
 
-        // === 3. GENERATE ORDER ===
         myOrder = orderSystem.GenerateOrder(this);
         orderSystem.RegisterCustomerOrder(myOrder, this);
+        Debug.Log($"[Customer] {name}: ORDER '{myOrder}'");
 
-        // === 4. FREE ORDER SCREEN ===
-        if (orderScreenPoint != null)
-        {
-            orderScreenPoint.isOccupied = false;
-            Debug.Log($"[Customer] {name} frees order screen.");
-        }
+        if (orderScreenPoint != null) orderScreenPoint.isOccupied = false;
         SetBestelt(false);
 
-        // === 5. GO TO WAITING SPOT (RESERVE ON ARRIVAL) ===
         myWaitingSpot = FindFreeWaitingSpotAndReserve();
         if (myWaitingSpot != null)
-        {
-            Debug.Log($"[Customer] {name} moving to waiting spot: {myWaitingSpot.name}");
             yield return MoveTo(myWaitingSpot.position);
-        }
-        else
-        {
-            Debug.LogWarning($"[Customer] {name} — NO FREE WAITING SPOT!");
-        }
 
-        // === 6. CHECK TRAY ===
         checkingForTray = true;
         StartCoroutine(CheckForTray());
 
         while (!orderCompleted) yield return null;
 
-        // === 7. PICKUP VIA PATH ===
         yield return FollowPath(pathToPickup);
         if (pickupPoint != null)
         {
             yield return MoveTo(pickupPoint.position);
-            Tray tray = FindTrayAtPickupPoint();
-            if (tray != null)
+
+            // DESTROY TRAY FROM COUNTER
+            bool trayDestroyed = DestroyTrayFromCounter();
+            if (trayDestroyed)
             {
-                tray.transform.SetParent(transform);
-                tray.transform.localPosition = new Vector3(0, 1f, 0.5f);
-                yield return new WaitForSeconds(0.5f);
+                Debug.Log($"[Customer] {name}: TRAY DESTROYED FOR ORDER '{myOrder}'!");
             }
+            else
+            {
+                Debug.LogWarning($"[Customer] {name}: NO TRAY TO DESTROY FOR '{myOrder}'");
+            }
+
+            SetHeeftBestelling(true);
+            SetWalking(true);
+            yield return new WaitForSeconds(1.5f);
         }
 
-        yield return new WaitForSeconds(1f);
-
-        // === 8. EXIT ===
         yield return FollowPath(pathToExit);
         if (exitPoint != null) yield return MoveTo(exitPoint.position);
 
-        // === 9. FREE WAITING SPOT + SIGNAL SPAWNER ===
         if (myWaitingSpot != null)
         {
             var ws = myWaitingSpot.GetComponent<WaitingSpot>();
             if (ws != null) ws.isOccupied = false;
-            Debug.Log($"[Customer] {name} frees waiting spot: {myWaitingSpot.name}");
         }
 
-        // ← SIGNAL SPAWNER TO SPAWN NEW CUSTOMER
         OnCustomerDestroy?.Invoke();
-
         Destroy(gameObject);
+    }
+
+    // ------------------------------------------------------------
+    // DESTROY TRAY FROM traySpot (MATCHING ORDER)
+    // ------------------------------------------------------------
+    private bool DestroyTrayFromCounter()
+    {
+        if (counter == null || counter.traySpot == null || counter.traySpot.childCount == 0)
+            return false;
+
+        for (int i = 0; i < counter.traySpot.childCount; i++)
+        {
+            Transform child = counter.traySpot.GetChild(i);
+            Tray tray = child.GetComponent<Tray>();
+            if (tray != null && !string.IsNullOrEmpty(tray.orderName) &&
+                string.Equals(tray.orderName, myOrder, System.StringComparison.OrdinalIgnoreCase))
+            {
+                Destroy(child.gameObject);
+                Debug.Log($"[Customer] {name}: DESTROYED TRAY '{myOrder}' FROM traySpot!");
+                return true;
+            }
+        }
+        return false;
     }
 
     private Transform FindFreeWaitingSpotAndReserve()
@@ -144,49 +141,64 @@ public class Customer : MonoBehaviour
         return null;
     }
 
-    private Tray FindTrayAtPickupPoint()
-    {
-        if (counter == null || counter.traySpot == null) return null;
-        foreach (Transform child in counter.traySpot)
-        {
-            Tray tray = child.GetComponent<Tray>();
-            if (tray != null && tray.orderName == myOrder) return tray;
-        }
-        return null;
-    }
-
     private IEnumerator CheckForTray()
     {
         while (checkingForTray && !orderCompleted)
         {
-            if (FindTrayAtPickupPoint() != null)
+            if (counter != null && counter.HasMatchingTray(myOrder))
             {
                 checkingForTray = false;
                 CompleteOrder();
                 yield break;
             }
-            yield return new WaitForSeconds(checkInterval);
+            yield return new WaitForSeconds(1f);
         }
     }
 
-    public void CompleteOrder() => orderCompleted = true;
-
-    public void GoToWaitingSpot(Transform spot)
+    public void CompleteOrder()
     {
-        if (spot == null) return;
-        myWaitingSpot = spot;
-        StartCoroutine(MoveTo(spot.position));
+        orderCompleted = true;
+        Debug.Log($"[Customer] {name}: ORDER READY → GOING TO PICKUP!");
     }
 
-    private void SetWalking(bool walking)
+    public void ForcePickupOrder()
     {
-        if (animator != null) animator.SetBool("isWalking", walking);
+        if (orderCompleted) return;
+        StopAllCoroutines();
+        checkingForTray = false;
+        StartCoroutine(ForcedPickupRoutine());
     }
 
-    private void SetBestelt(bool value)
+    private IEnumerator ForcedPickupRoutine()
     {
-        if (animator != null) animator.SetBool("Bestelt", value);
+        yield return FollowPath(pathToPickup);
+        if (pickupPoint != null)
+        {
+            yield return MoveTo(pickupPoint.position);
+            DestroyTrayFromCounter();
+            SetHeeftBestelling(true);
+            SetWalking(true);
+            yield return new WaitForSeconds(1.5f);
+            counter.ClearTraySpot();
+
+        }
+
+        yield return FollowPath(pathToExit);
+        if (exitPoint != null) yield return MoveTo(exitPoint.position);
+
+        if (myWaitingSpot != null)
+        {
+            var ws = myWaitingSpot.GetComponent<WaitingSpot>();
+            if (ws != null) ws.isOccupied = false;
+        }
+
+        OnCustomerDestroy?.Invoke();
+        Destroy(gameObject);
     }
+
+    private void SetWalking(bool walking) => animator?.SetBool("isWalking", walking);
+    private void SetBestelt(bool value) => animator?.SetBool("Bestelt", value);
+    private void SetHeeftBestelling(bool value) => animator?.SetBool("HeeftBestelling", value);
 
     private IEnumerator MoveTo(Vector3 targetPos)
     {
@@ -203,9 +215,7 @@ public class Customer : MonoBehaviour
         {
             Vector3 dir = (targetPos - transform.position).normalized;
             if (dir != Vector3.zero)
-            {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * 10f);
-            }
             transform.position = Vector3.MoveTowards(transform.position, targetPos, MoveSpeed * Time.deltaTime);
             yield return null;
         }
@@ -249,42 +259,5 @@ public class Customer : MonoBehaviour
         if (waypoints == null || waypoints.Count == 0) yield break;
         foreach (var p in waypoints)
             if (p != null) yield return MoveTo(p.position);
-    }
-
-    public void ForcePickupOrder()
-    {
-        if (orderCompleted) return;
-        StopAllCoroutines();
-        checkingForTray = false;
-        StartCoroutine(ForcedPickupRoutine());
-    }
-
-    private IEnumerator ForcedPickupRoutine()
-    {
-        yield return FollowPath(pathToPickup);
-        if (pickupPoint != null)
-        {
-            yield return MoveTo(pickupPoint.position);
-            Tray tray = FindTrayAtPickupPoint();
-            if (tray != null)
-            {
-                tray.transform.SetParent(transform);
-                tray.transform.localPosition = new Vector3(0, 1f, 0.5f);
-                yield return new WaitForSeconds(0.5f);
-            }
-        }
-
-        yield return new WaitForSeconds(1f);
-        yield return FollowPath(pathToExit);
-        if (exitPoint != null) yield return MoveTo(exitPoint.position);
-
-        if (myWaitingSpot != null)
-        {
-            var ws = myWaitingSpot.GetComponent<WaitingSpot>();
-            if (ws != null) ws.isOccupied = false;
-        }
-
-        OnCustomerDestroy?.Invoke();
-        Destroy(gameObject);
     }
 }

@@ -3,53 +3,54 @@ using UnityEngine;
 public class Counter : MonoBehaviour
 {
     [Header("Tray Spot")]
-    [Tooltip("Drag the empty GameObject under the counter where trays are placed")]
     public Transform traySpot;
 
     public void AcceptTray(Tray tray)
     {
-        if (tray == null)
-        {
-            Debug.LogWarning("Counter.AcceptTray: Tray is null!");
-            return;
-        }
-
-        // Parent to traySpot (fallback to counter itself if not assigned)
+        if (tray == null) return;
         Transform parent = traySpot != null ? traySpot : transform;
-
         tray.transform.SetParent(parent);
         tray.transform.localPosition = Vector3.zero;
         tray.transform.localRotation = Quaternion.identity;
-
-        Debug.Log($"Tray accepted: {tray.orderName}");
+        Debug.Log($"[Counter] TRAY ACCEPTED: '{tray.orderName}'");
     }
 
+    // PLAYER USES THIS TO TAKE TRAY
     public Tray TakeTray()
     {
-        if (traySpot == null || traySpot.childCount == 0)
-            return null;
-
-        Tray tray = traySpot.GetChild(0).GetComponent<Tray>();
+        if (traySpot == null || traySpot.childCount == 0) return null;
+        Transform child = traySpot.GetChild(0);
+        Tray tray = child.GetComponent<Tray>();
         if (tray != null)
         {
-            tray.transform.SetParent(null); // Detach from counter
-            Debug.Log($"Tray taken by customer: {tray.orderName}");
-            return tray;
+            child.SetParent(null);
+            Debug.Log($"[Counter] TRAY TAKEN BY PLAYER: '{tray.orderName}'");
         }
-
-        return null;
+        return tray;
     }
 
     public bool HasMatchingTray(string orderName)
     {
         if (traySpot == null || traySpot.childCount == 0) return false;
-
         foreach (Transform child in traySpot)
         {
             Tray tray = child.GetComponent<Tray>();
-            if (tray != null && tray.orderName == orderName)
+            if (tray != null && !string.IsNullOrEmpty(tray.orderName) &&
+                string.Equals(tray.orderName, orderName, System.StringComparison.OrdinalIgnoreCase))
+            {
+                Debug.Log($"[Counter] MATCH FOUND: '{orderName}'");
                 return true;
+            }
         }
+        Debug.Log($"[Counter] NO MATCH for '{orderName}'");
         return false;
+    }
+
+    [ContextMenu("Clear Tray Spot")]
+    public void ClearTraySpot()
+    {
+        if (traySpot == null) return;
+        for (int i = traySpot.childCount - 1; i >= 0; i--)
+            Destroy(traySpot.GetChild(i).gameObject);
     }
 }

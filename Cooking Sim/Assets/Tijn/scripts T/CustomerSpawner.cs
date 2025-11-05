@@ -19,6 +19,8 @@ public class CustomerSpawner : MonoBehaviour
 
     [Header("Limits")]
     [SerializeField] private int maxTotalCustomers = 5;
+    [SerializeField] private float minSpawnDelay = 20f;
+    [SerializeField] private float maxSpawnDelay = 50f;
 
     private int currentCustomerCount = 0;
 
@@ -39,7 +41,8 @@ public class CustomerSpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(1f);
+            float delay = Random.Range(minSpawnDelay, maxSpawnDelay);
+            yield return new WaitForSeconds(delay);
             TrySpawnCustomer();
         }
     }
@@ -68,29 +71,33 @@ public class CustomerSpawner : MonoBehaviour
 
         GameObject prefab = customerPrefabs[Random.Range(0, customerPrefabs.Length)];
         GameObject newCust = Instantiate(prefab, transform.position, Quaternion.identity);
+
         Customer c = newCust.GetComponent<Customer>();
+        if (c != null)
+        {
+            c.orderSystem = orderSystem;
+            c.orderScreenPoint = screen;
+            c.waitingSpots = waitingSpots;
+            c.pickupPoint = pickupPoint;
+            c.exitPoint = exitPoint;
+            c.pathToOrderScreen = pathToOrderScreen;
+            c.pathToPickup = pathToPickup;
+            c.pathToExit = pathToExit;
 
-        c.orderSystem = orderSystem;
-        c.orderScreenPoint = screen;
-        c.waitingSpots = waitingSpots;
-        c.pickupPoint = pickupPoint;
-        c.exitPoint = exitPoint;
-        c.pathToOrderScreen = pathToOrderScreen;
-        c.pathToPickup = pathToPickup;
-        c.pathToExit = pathToExit;
-
-        c.OnCustomerDestroy += DecrementCount;
+            // Hook up destroy event
+            c.OnCustomerDestroy += DecrementCount;
+        }
 
         currentCustomerCount++;
-        Debug.Log($"[Spawner] Spawned {newCust.name} | Total: {currentCustomerCount}/{maxTotalCustomers}");
-
         screen.isOccupied = true;
+
+        Debug.Log($"[Spawner] Spawned {newCust.name} | Total: {currentCustomerCount}/{maxTotalCustomers}");
     }
 
     private void DecrementCount()
     {
         currentCustomerCount = Mathf.Max(0, currentCustomerCount - 1);
         Debug.Log($"[Spawner] Customer left | Total: {currentCustomerCount}/{maxTotalCustomers}");
-        TrySpawnCustomer();
+        TrySpawnCustomer(); // Try to fill the spot immediately
     }
 }
