@@ -38794,7 +38794,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: 75e4b6c24c79c4045ac825c9feadacdc, type: 2}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 107903ba0984fc94c864fdf01aa543be, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -44539,6 +44539,10 @@ PrefabInstance:
       value: MenuUIManager Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3360897518219123284, guid: 39bed2a50b8be52428f6b25f6cdf1575, type: 3}
+      propertyPath: audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 107903ba0984fc94c864fdf01aa543be, type: 3}
+    - target: {fileID: 3360897518219123284, guid: 39bed2a50b8be52428f6b25f6cdf1575, type: 3}
       propertyPath: startMenu
       value: 
       objectReference: {fileID: 2083865812}
@@ -44550,6 +44554,10 @@ PrefabInstance:
       propertyPath: backButton
       value: 
       objectReference: {fileID: 1119376407}
+    - target: {fileID: 3360897518219123284, guid: 39bed2a50b8be52428f6b25f6cdf1575, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 1750435107}
     - target: {fileID: 3360897518219123284, guid: 39bed2a50b8be52428f6b25f6cdf1575, type: 3}
       propertyPath: pauseCanvas
       value: 
@@ -49964,13 +49972,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8184375023819489954}
   serializedVersion: 2
-  m_LocalRotation: {x: -2.842171e-14, y: -0, z: 0.0000003427267, w: 1}
+  m_LocalRotation: {x: 0.00000051052257, y: 0.00000032782555, z: -0.0000103414095, w: 1}
   m_LocalPosition: {x: -0.18849972, y: 0.3972, z: -0.20000045}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2832610854866855077}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.001}
 --- !u!1001 &7054597881102423884
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -17,7 +17,9 @@ public class MenuUI : MonoBehaviour
     public Button backButton;
     private bool backButtonPressed;
     public VideoPlayer videoPlayer1; 
-    public VideoPlayer videoPlayer2; 
+    public VideoPlayer videoPlayer2;
+    public AudioSource audioSource;
+    public AudioClip audioClip;   
 
     void Start()
     {
@@ -54,6 +56,12 @@ public class MenuUI : MonoBehaviour
         if (videoPlayer2 != null)
         {
             videoPlayer2.Play();
+        }
+
+        if (audioSource != null && audioClip != null)
+        {
+            audioSource.clip = audioClip;
+            audioSource.Play();
         }
     }
 
